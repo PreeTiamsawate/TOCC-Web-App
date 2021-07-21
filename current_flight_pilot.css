@@ -1,0 +1,271 @@
+* {
+  box-sizing: border-box;
+}
+/* body {
+  font-size: 14px;
+} */
+html,
+body {
+  width: 100%;
+  /* height: 100%; */
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  font-family: "Source Sans Pro", sans-serif;
+}
+/* <!-- Top Bar Section----------------------------------------------------- --> */
+.top-bar {
+  width: 100%;
+  height: 50px;
+  background-color: #3d394a;
+}
+.USER_IMAGE {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.top-bar-header {
+  width: auto;
+  height: 40px;
+}
+.USER_NAME {
+  color: #e6e6e6;
+  font-size: 12px;
+  font-weight: 500;
+}
+#current-flight {
+  color: #e6e6e6;
+  font-size: 25px;
+  font-weight: 500;
+}
+.thai-logo {
+  height: 40px;
+}
+.hamberger-btn {
+  background-color: #3d394a;
+  border: none;
+  height: 30px;
+}
+/* <!-- Flight Data Section---------------------------------------------------  --> */
+#flt-data {
+  width: 100%;
+  height: 500px;
+}
+#flt_info {
+  background-color: #e6e6e6;
+}
+/* <!-- Aircraft Information Section------------------------------------ --> */
+#ac_info {
+  background-color: #f8f5f5;
+}
+.table-topic {
+  height: 30px;
+  border-bottom: 1px solid #d2cfcf;
+  line-height: 35px;
+}
+.table-spacing {
+  height: 10px;
+}
+.table-header {
+  color: #3f075c;
+  font-weight: 700;
+  font-size: 14px;
+}
+.table-data {
+  color: #3d394a;
+  font-size: 12px;
+  font-weight: 500;
+}
+.CTOT-data {
+  font-size: 20px;
+  font-weight: 700;
+  color: #656565;
+}
+#CTOT-header {
+  text-decoration: underline;
+}
+
+/* <!-- Nav Tabs Section--------------------------------------- */
+
+.nav-pill > .nav-item > button.active {
+  color: white;
+  background-color: #3d394a !important;
+}
+.nav-pill > .nav-item > button {
+  border: none;
+}
+.nav-item > button,
+.nav-item > button:hover,
+.nav-item > button:focus {
+  text-decoration: none;
+  background-color: #cbc6c6;
+  color: white;
+  width: 100%;
+  padding: 0;
+  border-radius: 10px 10px 0 0;
+  height: 30px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.nav-item > button.active:hover,
+.nav-item > button.active:focus {
+  color: white;
+  background-color: #3d394a;
+}
+
+.nav-item {
+  width: 33%;
+  text-align: center;
+}
+.tab-pane {
+  background-color: #fbf8f8;
+}
+.time-stamp-bar {
+  width: 100%;
+  height: 19px;
+  font-size: 11px;
+  letter-spacing: 0px;
+  color: #0a0a0a;
+  line-height: 19px;
+  text-align: end;
+}
+/* <!-- Aircraft Preparation Pane---------------- --> */
+.completed-status {
+  height: 20px;
+  line-height: 15px;
+  font-size: 10px;
+  color: #259443;
+}
+.in-process-status {
+  height: 20px;
+  line-height: 15px;
+  font-size: 10px;
+  color: #f7a502;
+}
+.submit-btn {
+  background-color: #3f075c;
+  width: 70px;
+  height: 20px;
+  font-size: 15px;
+  line-height: 10px;
+  color: white;
+}
+.header-bar {
+  width: 100%;
+  height: 19px;
+  background: #3d394a 0% 0% no-repeat padding-box;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: end;
+}
+.data-row {
+  height: 30px;
+}
+.header-column {
+  font-size: 13px;
+  line-height: 27px;
+  font-weight: 600;
+  color: #3d394a;
+  padding-left: 2em;
+  letter-spacing: 0px;
+}
+.data-column {
+  font-size: 15px;
+  line-height: 27px;
+  font-weight: 500;
+  color: #3f075c;
+  background-color: #f1ecec;
+  text-align: center;
+  border: 3px solid #fbf8f8;
+}
+/* <!-- A-CDM Pane------------------- --> */
+.TSAT-row {
+  height: 35px;
+}
+.header-column-TSAT {
+  font-size: 19px;
+  line-height: 30px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: #3d394a;
+  text-align: center;
+}
+.data-column-TSAT {
+  font-size: 19px;
+  line-height: 30px;
+  font-weight: 500;
+  color: #3d394a;
+}
+.new-TSAT-column {
+  font-size: 19px;
+  line-height: 30px;
+  font-weight: 500;
+  color: #3d394a;
+  background-color: #f1ecec;
+  text-align: center;
+}
+.list-body {
+  height: 3px !important;
+}
+.list-header {
+  font-size: 13px;
+  font-weight: 600;
+  color: #3d394a;
+  width: 25%;
+  text-align: center;
+}
+
+.request-column {
+  font-size: 13px;
+  font-weight: 700;
+  color: #3d394a;
+  width: 25%;
+  text-align: center;
+}
+
+.info-table tbody {
+  display: block;
+  overflow: auto;
+  height: 100px;
+}
+
+.info-table thead tr {
+  display: flex;
+}
+.info-table tbody tr {
+  display: flex;
+}
+.approval-column {
+  font-size: 13px;
+  font-weight: 700;
+  color: #cbc6c6;
+  width: 25%;
+  text-align: center;
+}
+/* <!-- Message Pane------------------- --> */
+.form-text {
+  font-size: 17px;
+  font-weight: 500;
+  color: #3d394a;
+}
+.form-input {
+  border: none;
+  border-bottom: 1px solid #3d394a;
+}
+.TEXT_AREA {
+  width: 100%;
+  height: 150px;
+  overflow-y: auto;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+}
+.message-column {
+  font-size: 13px;
+  font-weight: 700;
+  color: #3d394a;
+  width: 25%;
+  text-align: center;
+}

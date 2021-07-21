@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS for Bootstrap5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/avenir-lt-std" rel="stylesheet">
+    <link rel="stylesheet" href="./current_flight_pilot.css">
+    <title>Current Flight Pilot</title>
+</head>
+
+<body>
+    <!-- Top Bar Section----------------------------------------------------- -->
+    <div class="top-bar px-2 d-flex align-items-center px-sm-5 ">
+        <img src="./TOCC-icon/hamburger menu-7@2x.png" class="USER_IMAGE d-inline-block " alt="">
+        <div class="top-bar-header d-inline-block  ms-1  row">
+            <h2 class="USER_NAME mb-0">PREE TIAMSAWATE</h2>
+            <h1 id="current-flight">Current Flight</h1>
+        </div>
+        <img src="./TOCC-icon/thai-logo-icon.png" class="thai-logo d-inline-block ms-auto " alt="">
+        <button class="hamberger-btn d-inline-block "><img src="./TOCC-icon/hamburger menu.png" alt=""></button>
+    </div>
+    <div class="px-sm-5">
+        <!-- Flight Data Section---------------------------------------------------  -->
+        <div id="flt_data" class="d-flex flex-row">
+            <div id="flt_info" class="container px-1 ">
+                <div class="row row-cols-1">
+                    <div class="col table-topic table-header">Flight</div>
+                    <div class="col table-data">
+                        <span class="CARRIER_CODE">TG</span>
+                        <span class="FLIGHT_NUMBER">403</span>
+                        ( <span class="DEP_STATION">BKK</span> - <span class="ARR_STATION">SIN</span> )
+                        <span class="STD-DATE">20JUN21</span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col table-data">
+                        <span class="DEP_STATION_ICAO table-header">VTBS</span>/<span
+                            class="DEP_STATION table-header">BKK</span>
+                        <span class="STD_TIME ">0100</span>/
+                        <span class="departureUTCCorr">P07.00</span>
+                    </div>
+                    <div class="col table-data">
+                        <span class="ARR_STATION_ICAO table-header">WSSS</span>/<span
+                            class="ARR_STATION table-header">SIN</span>
+                        <span class="STA_UTC ">0315</span>/
+                        <span class="arrivalUTCCorr ">P08.00</span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col-6 table-data">
+                        <span class="table-header">FLT : </span>
+                        <span class="FlightTime ">0148</span>
+                    </div>
+                    <div class="col-6 table-data">
+                        <span class="table-header">BLK : </span>
+                        <span class="BlockTime ">0215</span>
+                    </div>
+                    <div class="col table-data">
+                        <span class="table-header">ETD : </span>
+                        <span class="ETD_TIME ">0100</span>
+                    </div>
+                    <div class="col table-data">
+                        <span class="table-header">ETD : </span>
+                        <span class="ETA_TIME ">0258</span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col table-data">
+                        <span class="table-header">DELAY CODE </span>
+                        <span class=" DELAY_CODE">-</span>
+                    </div>
+                    <div class="col table-data">
+                        <span class="table-header">DURATION(hhmm) </span>
+                        <span class=" DELAY_DUR">0000</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Aircraft Information Section------------------------------------ -->
+            <div id="ac_info" class="container px-1 ">
+                <div class="row row-cols-1">
+                    <div class="col table-topic table-header">Aircraft Information</div>
+                    <div class="col-7 table-data pe-0 ">
+                        <span class="ACREC ">HS-THK</span> /
+                        <span class="ACTYPE ">A359</span>
+                        <a href="" class="table-header"><img src="./TOCC-icon/info-icon.png" alt=""></a>
+                    </div>
+                    <div class="col-5 px-0 table-data">
+                        <span class="table-header">BAY </span>
+                        <span class="BAY">D2</span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col table-data">
+                        <span class="table-header">Previous Flight </span>
+                    </div>
+                    <div class="col table-data">
+                        <span class="CARRIER_CODE">TG</span><span class="prevFlightNo">639 </span>
+                        <span class="prevFlightSTA_UTC"> 20JUN 2200 Z </span>
+                    </div>
+                    <div class="col table-data">
+                        <span class="table-header">Next Flight </span>
+                    </div>
+                    <div class="col table-data">
+                        <span class="CARRIER_CODE">TG</span><span class="nextFlightNo">601 </span>
+                        <span class="nextFlightSTD_UTC"> 21JUN 0515 Z </span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col-5 table-data pe-0 ">
+                        <span class="table-header">CFG</span>
+                        <span class="CFG">C0/Y0</span>
+                    </div>
+                    <div class="col-5 table-data px-0 ">
+                        <span class="table-header">PAX</span>
+                        <span class="PAX">C32/Y289</span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col-6 CTOT-data pe-0 " id="CTOT-header">
+                        <img src="./TOCC-icon/clock-icon.png" class="d-inline-block me-1">CTOT
+                    </div>
+                    <div class="col-6 CTOT-data px-3 " id="CTOT-time">
+                        00:00
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="tab-section" class="container px-0">
+        <!-- Nav Tabs Section--------------------------------------- -->
+        <ul class="nav nav-pill d-flex flex-row justify-content-around" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#aircraft-prep" type="button"
+                    role="tab" aria-controls="home" aria-selected="true">Aircraft Preparation</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#a-cdm" type="button" role="tab"
+                    aria-controls="profile" aria-selected="false">A-CDM</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#message-tab" type="button" role="tab"
+                    aria-controls="contact" aria-selected="false">Message</button>
+            </li>
+        </ul>
+        <div class="time-stamp-bar pe-3">
+            Last updated <span class="time-stamp">22:30</span>
+        </div>
+        <div class="tab-content" id="myTabContent">
+
+            <!-- Aircraft Preparation Panel---------------- -->
+            <div class="tab-pane  show active" id="aircraft-prep" role="tabpanel" aria-labelledby="home-tab">
+                <div class="container px-0 d-flex flex-column">
+                    <!-- FUEL Table--------------------------------- -->
+                    <div>
+                        <div class="header-bar pe-3">
+                            FUEL
+                        </div>
+                        <div class="row data-row">
+                            <div class="col-5 header-column ">ZFW</div>
+                            <div class="col-3 data-column "><span class="ZFW">230.0</span></div>
+                            <div class="col-4 status-column">
+                                <div class="completed-status mt-1">
+                                    <img src="./TOCC-icon/completed-icon.png" alt="">
+                                    <span>Completed</span>
+                                </div>
+                                <div class="in-process-status mt-1 d-none">
+                                    <img src="./TOCC-icon/in-process-icon.png" alt="">
+                                    <span>On Process</span>
+                                </div>
+                                <div class="red-cross-status mt-1 d-none">
+                                    <img src="./TOCC-icon/red-cross-icon.png" alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row data-row">
+                            <div class="col-5 header-column ">STBY FUEL</div>
+                            <div class="col-3 data-column "><span class="STBY_FUEL">100.0</span></div>
+                            <div class="col-4 status-column">
+                                <button id="STBY_FUELL_SUBMIT_BTN" type="button" class=" submit-btn rounded-pill ">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row data-row">
+                            <div class="col-5 header-column ">FINAL FUEL</div>
+                            <div class="col-3 data-column "><span class="FINAL_FUEL">100.0</span></div>
+                            <div class="col-4 status-column">
+                                <button id="FINAL_FUEL_SUBMIT_BTN" type="button" class=" submit-btn rounded-pill">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- UTILITIES Table--------------------------------- -->
+                    <div>
+                        <div class="header-bar pe-3">
+                            UTILITIES
+                        </div>
+                        <div class="row data-row">
+                            <div class="col-5 header-column ">WATER</div>
+                            <div class="col-3 data-column "><span class="WATER">50%</span></div>
+                            <div class="col-4 status-column">
+                                <button id="WATER_SUBMIT_BTN" type="button" class=" submit-btn rounded-pill">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row data-row">
+                            <div class="col-5 header-column ">MEAL</div>
+                            <div class="col-3 data-column "><span class="MEAL">13:00</span></div>
+                            <div class="col-4 status-column">
+                                <div class="in-process-status mt-1">
+                                    <img src="./TOCC-icon/in-process-icon.png" alt="">
+                                    <span>On Process</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PASSENGER Table--------------------------------- -->
+                    <div>
+                        <div class="header-bar pe-3">
+                            PASSENGER
+                        </div>
+                        <div class="row data-row">
+                            <div class="col-5 header-column ">
+                                CREW <span class="COCKPIT_CREW">4</span>/<span class="CABIN_CREW">18</span>
+                            </div>
+                            <div class="col-3 data-column "><span class="WATER">12:00</span></div>
+                            <div class="col-4 status-column">
+                                <div class="in-process-status mt-1">
+                                    <img src="./TOCC-icon/in-process-icon.png" alt="">
+                                    <span>On Process</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row data-row">
+                            <div class="col-5 header-column pe-0  ">BRIDGE CONNECT</div>
+                            <div class="col-3 data-column "><span class="BRIDGE_CONNECT">12:00</span></div>
+                            <div class="col-4 status-column">
+                                <div class="red-cross-status mt-1">
+                                    <img src="./TOCC-icon/red-cross-icon.png" alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row data-row">
+                            <div class="col-5 header-column pe-0  ">BOARDING</div>
+                            <div class="col-3 data-column "><span class="BOARDING">12:30</span></div>
+                            <div class="col-4 status-column">
+                                <div class="completed-status mt-1">
+                                    <img src="./TOCC-icon/completed-icon.png" alt="">
+                                    <span>Completed</span>
+                                </div>
+                                <div class="in-process-status mt-1 d-none">
+                                    <img src="./TOCC-icon/in-process-icon.png" alt="">
+                                    <span>On Process</span>
+                                </div>
+                                <div class="red-cross-status mt-1 d-none">
+                                    <img src="./TOCC-icon/red-cross-icon.png" alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row data-row">
+                            <div class="col-5 header-column pe-0  ">CABIN DOOR CLOSE</div>
+                            <div class="col-3 data-column "><span class="CABIN_DOOR_CLOSE">12:30</span></div>
+                            <div class="col-4 status-column">
+                                <div class="completed-status mt-1">
+                                    <img src="./TOCC-icon/completed-icon.png" alt="">
+                                    <span>Completed</span>
+                                </div>
+                                <div class="in-process-status mt-1 d-none">
+                                    <img src="./TOCC-icon/in-process-icon.png" alt="">
+                                    <span>On Process</span>
+                                </div>
+                                <div class="red-cross-status mt-1 d-none">
+                                    <img src="./TOCC-icon/red-cross-icon.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARGO Table--------------------------------- -->
+                    <div>
+                        <div class="header-bar pe-3">
+                            CARGO
+                        </div>
+                        <div class="row data-row">
+                            <div class="col-5 header-column ">CARGO CONNECT</div>
+                            <div class="col-3 data-column "><span class="CARGO_CONNECT">13:00</span></div>
+                            <div class="col-4 status-column">
+                                <div class="completed-status mt-1">
+                                    <img src="./TOCC-icon/completed-icon.png" alt="">
+                                    <span>Completed</span>
+                                </div>
+                                <div class="in-process-status mt-1 d-none">
+                                    <img src="./TOCC-icon/in-process-icon.png" alt="">
+                                    <span>On Process</span>
+                                </div>
+                                <div class="red-cross-status mt-1 d-none">
+                                    <img src="./TOCC-icon/red-cross-icon.png" alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row data-row">
+                            <div class="col-5 header-column ">CARGO CLOSE</div>
+                            <div class="col-3 data-column "><span class="CARGO_DOOR_CLOSE"></span></div>
+                            <div class="col-4 status-column">
+                                <div class="completed-status mt-1">
+                                    <img src="./TOCC-icon/completed-icon.png" alt="">
+                                    <span>Completed</span>
+                                </div>
+                                <div class="in-process-status mt-1 d-none">
+                                    <img src="./TOCC-icon/in-process-icon.png" alt="">
+                                    <span>On Process</span>
+                                </div>
+                                <div class="red-cross-status mt-1 d-none">
+                                    <img src="./TOCC-icon/red-cross-icon.png" alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row data-row">
+                            <div class="col-5 header-column ">TOW TRUCK</div>
+                            <div class="col-3 data-column "><span class="TOW_TRUCK">12:30</span></div>
+                            <div class="col-4 status-column">
+                                <div class="completed-status mt-1">
+                                    <img src="./TOCC-icon/completed-icon.png" alt="">
+                                    <span>Completed</span>
+                                </div>
+                                <div class="in-process-status mt-1 d-none">
+                                    <img src="./TOCC-icon/in-process-icon.png" alt="">
+                                    <span>On Process</span>
+                                </div>
+                                <div class="red-cross-status mt-1 d-none">
+                                    <img src="./TOCC-icon/red-cross-icon.png" alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- A-CDM Pane------------------- -->
+            <div class="tab-pane " id="a-cdm" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="container  d-flex flex-column">
+                    <div class="TSAT-REQUEST">
+                        <div class="row TSAT-row ">
+                            <div class="col-2 header-column-TSAT ">TSAT</div>
+                            <div class="col-2 data-column-TSAT "><span class="FLT_TSAT">13:00</span> </div>
+                            <div class="col-8 header-column-TSAT  ">Request New TSAT</div>
+                        </div>
+                        <div class="row TSAT-row">
+                            <div class="col-2 header-column-TSAT ">TOBT</div>
+                            <div class="col-2 data-column-TSAT "><span class="FLT_TOBT">13:05</span></div>
+                            <div class="col-6 new-TSAT-column mx-auto "><span class="REQUEST_TSAT">13:05</span></div>
+                        </div>
+                        <div class="row TSAT-row ">
+                            <div class="col-2 header-column-TSAT ">CTOT</div>
+                            <div class="col-2 data-column-TSAT "><span class="FLT_CTOT">13:10</span> </div>
+                            <div class="col-8 header-column-TSAT  ">
+                                <button id="TSAT_SUBMIT_BTN" type="button" class=" submit-btn rounded-pill">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table id="TSAT_REQUEST_LIST" class="table info-table">
+                        <thead>
+                            <tr>
+                                <th class="list-header" scope="col">Flight</th>
+                                <th class="list-header" scope="col">Ac-Reg</th>
+                                <th class="list-header" scope="col">New TSAT</th>
+                                <th class="list-header" scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="request-row">
+                                <td class="request-column TSAT_REQUET_FLT"> TG 638</td>
+                                <td class="request-column TSAT_REQUET_AC_REG">HS-TBA</td>
+                                <td class="request-column TSAT_REQUET_VALUE">13:00</td>
+                                <td class="request-column px-0 TSAT_REQUET_STATUS">
+                                    <div class="in-process-status mt-1 ">
+                                        <img src="./TOCC-icon/in-process-icon.png" alt="">
+                                        <span>Process...</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <table id="TSAT_REQUEST_APPROVAL" class="table info-table">
+                        <thead>
+                            <tr>
+
+                                <th class="list-header w-100 text-end">Approval Status</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="approval-row">
+                                <td class="approval-column TSAT_APPOVAL_FLT"> TG 638</td>
+                                <td class="approval-column TSAT_APPOVALT_AC_REG">HS-TBA</td>
+                                <td class="approval-column TSAT_APPOVAL_VALUE">13:00></td>
+                                <td class="approval-column px-0 TSAT_APPOVAL_STATUS">
+                                    <div class="completed-status mt-1">
+                                        <img src="./TOCC-icon/completed-icon.png" alt="">
+                                        <span>Approved</span>
+                                    </div>
+
+                                    <div class="red-cross-status mt-1 d-none">
+                                        <img src="./TOCC-icon/red-cross-icon.png" alt="">
+                                        <span>rejected</span>
+                                    </div>
+
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!-- Message Pane------------------- -->
+            <div class="tab-pane " id="message-tab" role="tabpanel" aria-labelledby="contact-tab">
+
+                <form class="container  d-flex flex-column">
+                    <div class="row my-1">
+                        <div class="col-3 text-end form-text">
+                            <label>From :</label>
+                        </div>
+                        <div class="col-4 form-text form-input ps-0">
+                            FLT DCK
+                        </div>
+                    </div>
+                    <div class="row my-1">
+                        <div class="col-3 text-end form-text">
+                            <label for="MSG_RECEIVER_OPT">To :</label>
+                        </div>
+                        <select name="" id="MSG_RECEIVER_OPT" class="col-4 form-text form-input ps-0">
+                            <option value="GND">GND</option>
+                            <option value="CABIN">CABIN</option>
+                            <option value="OW">OW</option>
+                            <option value="DC">DC</option>
+                            <option value="FSC">FSC</option>
+                            <option value="GA-A">GA-A</option>
+                            <option value="GA-B">GA-B</option>
+                            <option value="CLC">CLC</option>
+                            <option value="RO">RO</option>
+                            <option value="Eng">Eng</option>
+                            <option value="Back">Back</option>
+                        </select>
+                    </div>
+                    <div class="row my-1">
+                        <div class="col-3 text-end form-text ps-0">
+                            <label for="MSG_AREA">Message:</label>
+                        </div>
+                        <div class="col-9 ps-0">
+                            <textarea name="" id="MSG_AREA" class=" TEXT_AREA "></textarea>
+                        </div>
+                    </div>
+                    <button id="MSG_SUBMIT_BTN" type="button" class="ms-auto submit-btn rounded-pill ">
+                        Submit
+                    </button>
+                </form>
+                <table id="MSG_LIST" class="table info-table">
+                    <thead>
+                        <tr>
+                            <th class="list-header" scope="col">Flight</th>
+                            <th class="list-header" scope="col">From</th>
+                            <th class="list-header" scope="col">To</th>
+                            <th class="list-header" scope="col">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="message-row" data-bs-toggle="modal" data-bs-target="#modal-product">
+                            <td class="message-column FLT_OF_MSG"> TG 638</td>
+                            <td class="message-column MSG_SENDER">FLT DCK</td>
+                            <td class="message-column MSG_RECEIVER">GND</td>
+                            <td class="message-column px-0 MSG_TIME">08:00</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <!-- Message Modal---------------------------- -->
+                <div class="modal fade" id="modal-product" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form class="container  d-flex flex-column">
+                                <div class="row my-1">
+                                    <div class="col-3 text-end form-text">
+                                        <label>From :</label>
+                                    </div>
+                                    <div class="col-4 form-text form-input ps-0 MSG_SENDER">
+                                        FLT DCK
+                                    </div>
+                                </div>
+                                <div class="row my-1">
+                                    <div class="col-3 text-end form-text">
+                                        <label>To :</label>
+                                    </div>
+                                    <div class="col-4 form-text form-input ps-0 MSG_RECEIVER">
+                                        GND
+                                    </div>
+                                </div>
+                                <div class="row my-1">
+                                    <div class="col-3 text-end form-text ps-0">
+                                        <label for="MSG_AREA">Message:</label>
+                                    </div>
+                                    <div class="col-9 ps-0">
+                                        <textarea name="" id="MSG_AREA" class=" TEXT_AREA "></textarea>
+                                    </div>
+                                </div>
+
+                                <button type="button"
+                                    class="btn-close btn-close-custom position-absolute top-0 end-0 m-3"
+                                    data-bs-dismiss="modal" aria-label="Close">
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- <script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+                            </script>
+                            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+Name: <span id="title"></span><br>
+Telephone: <span id="tel"></span><br>
+Time Stamp: <span id="dts"></span><br>
+<script>
+if(typeof(EventSource) !== "undefined") {
+  var source = new EventSource("sse_json.php");
+  source.onmessage = function(event) {
+    var data = JSON.parse(event.data);
+    document.getElementById("title").innerHTML =  data.title;
+    document.getElementById("tel").innerHTML =  data.tel;
+    document.getElementById("dts").innerHTML =  data.dts;
+  };
+} else {
+  document.getElementById("title").innerHTML = "Sorry, your browser does not support Server-Sent Events.";
+}
+</script>
+</body>
+</html>
