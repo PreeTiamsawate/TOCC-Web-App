@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS for Bootstrap5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- data table style link     -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <!-- google font links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/avenir-lt-std" rel="stylesheet">
+    <!-- local css -->
+    <link rel="stylesheet" href="./all_flights_GA.css">
+    <title>All Flight - GA</title>
+</head>
+
+<body>
+    <!-- Top Bar Section----------------------------------------------------- -->
+    <div class="top-bar px-2 d-flex justify-content-center align-items-center px-sm-5 ">
+        <img src="./TOCC-icon/thai-logo-icon.png" class="thai-logo d-inline-block mx-1 " alt="">
+        <h1 class="page-name">ALL FLIGHTS</h1>
+
+        <button class="hamberger-btn d-inline-block me-1" onclick="openNav()"><img src=" ./TOCC-icon/hamburger menu.png"
+                alt=""></button>
+    </div>
+    <!-- Side Bar Section----------------------------------------------------- -->
+    <div id="mySidebar" class="sidebar">
+        <img src="./TOCC-icon/close-btn.png" class="closebtn" onclick="closeNav()">
+        <div id="user-box" class="row">
+            <div class="col-9 p-0 USER_NAME">PREE TIAMSAWATE</div>
+            <div class="col-3 p-0"><img src="./TOCC-icon/hamburger menu-7@2x.png" class="USER_IMAGE d-inline-block "
+                    alt="">
+            </div>
+        </div>
+        <a href="#" class="nav-active">ALL FLIGHTS</a>
+        <a href="#">MY ASSIGNMENT</a>
+    </div>
+
+    <div class="container content">
+        <!-- Table Filter Section----------------------------------------------------- -->
+        <div class="row justify-content-between align-items-center table-head mt-3 w100">
+            <div class="table-header col-4 ">FILTER</div>
+            <div class="col-4 d-flex justify-content-end align-items-center px-0 ">
+                <h5 id="LT" class="checkbox-text">LT</h5>
+                <div class="form-check form-switch d-inline-block mx-1">
+                    <input class="form-check-input" type="checkbox" id="timezone-switch" name="timeFormat">
+                </div>
+                <h5 id="UTC" class=" checkbox-text">UTC</h5>
+
+            </div>
+        </div>
+        <div class="table-body-row row align-items-center">
+            <div class="col-4 table-header ">
+                FLIGHT
+            </div>
+            <div class="col-4 pe-0 form-check ">
+                <input class="form-check-input custom-checkbox " type="checkbox" value="inter" id="inter-filter"
+                    checked>
+                <label class="form-check-label table-text" for="inter-filter">
+                    INTER
+                </label>
+            </div>
+            <div class="col-4 pe-0 form-check ">
+                <input class="form-check-input custom-checkbox " type="checkbox" value="domestic" id="domestic-filter">
+                <label class="form-check-label table-text" for="domestic-filter">
+                    DOMESTIC
+                </label>
+            </div>
+        </div>
+        <div class="table-body-row row align-items-center">
+            <div class="col-4 table-header  ">
+                AIRLINE
+            </div>
+            <div class="col-4 pe-0 form-check ">
+                <input class="form-check-input custom-checkbox " type="checkbox" value="tg" id="tg-filter" checked>
+                <label class="form-check-label table-text" for="tg-filter">
+                    TG
+                </label>
+            </div>
+            <div class="col-4 pe-0 form-check ">
+                <input class="form-check-input custom-checkbox " type="checkbox" value="customer" id="customer-filter">
+                <label class="form-check-label table-text" for="customer-filter">
+                    CUSTOMER
+                </label>
+            </div>
+        </div>
+        <div class="table-body-row row align-items-center">
+            <div class="col-4 table-header  ">
+                LEG
+            </div>
+            <div class="col-4 pe-0 form-check ">
+                <input class="form-check-input custom-checkbox " type="checkbox" value="departure" id="departure-filter"
+                    checked>
+                <label class="form-check-label table-text" for="departure-filter">
+                    DEP
+                </label>
+            </div>
+            <div class="col-4 pe-0 form-check ">
+                <input class="form-check-input custom-checkbox " type="checkbox" value="arrival" id="arrival-filter">
+                <label class="form-check-label table-text" for="arrival-filter">
+                    ARR
+                </label>
+            </div>
+        </div>
+        <div class=" row align-items-center table-head mb-4">
+            <div class="col-4 table-header ">
+                ZONE
+            </div>
+
+            <select class="select-box table-text ps-3 " name="firstZone">
+                <option value="A" selected>A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+            </select>
+
+            <div class="col-1 px-0 mx-2 table-text text-center">TO</div>
+
+            <select class="select-box table-text ps-3 " name="lastZone">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G" selected>G</option>
+            </select>
+        </div>
+
+        <!-- Data Table Section----------------------------------------------------- -->
+        <table id="all_flights_table" class="display" style="width:100%;">
+            <thead>
+                <tr>
+                    <th class="data-table-header">FLIGHT</th>
+                    <th class="data-table-header">TIME</th>
+                    <th class="data-table-header">GATE/BAY</th>
+                    <th class="updated-time">UPDATED <span class="time-stamp">22:30</span></th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="data-table-text ">TG600</td>
+                    <td class="data-table-text ">0100</td>
+                    <td class="data-table-text ">508</td>
+                    <td class="data-table-text">
+                        <button id="ACKD_BTN" type="button" class=" ACKD-btn rounded-pill me-2 me-sm-4 ">
+                            ACKD
+                        </button>
+                        <a href="#"><img src="./TOCC-icon/Icon-magnifying-glass-sm.png"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data-table-text ">TG601</td>
+                    <td class="data-table-text ">0200</td>
+                    <td class="data-table-text ">A7</td>
+                    <td class="data-table-text">
+                        <button id="ACKD_BTN" type="button" class=" ACKD-btn-disabled rounded-pill me-2 me-sm-4 ">
+                            ACKD
+                        </button>
+                        <a href="#"><img src="./TOCC-icon/Icon-magnifying-glass-sm.png"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="data-table-text ">TG400</td>
+                    <td class="data-table-text ">1200</td>
+                    <td class="data-table-text ">B5</td>
+                    <td class="data-table-text">
+                        <button id="ACKD_BTN" type="button" class=" ACKD-btn rounded-pill me-2 me-sm-4 ">
+                            ACKD
+                        </button>
+                        <a href="#"><img src="./TOCC-icon/Icon-magnifying-glass-sm.png"></a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+    <!-- bootstrap 5 js link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+    <!-- Local JS -->
+    <script src="./sidebar_control.js"></script>
+    <script src="./toggle_switch_control.js"></script>
+
+    <!-- data table controlers  -->
+
+    <script>
+        $(document).ready(function () {
+            $('#all_flights_table').DataTable({
+                "paging": false,
+                "info": false,
+                "order": [[1, "asc"]],
+                columnDefs: [
+                    { orderable: false, targets: 3 }
+                ],
+            });
+        });
+    </script>
+
+</body>
+
+</html>
