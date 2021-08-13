@@ -51,71 +51,68 @@
     <section class="container content">
         <!-- Table Filter Section----------------------------------------------------- -->
         <div class="row justify-content-between align-items-center table-head mt-3 w100">
-            <div class="table-header col-4 ">FILTER</div>
+            <div class=" col-4 ">FILTER</div>
             <div class="col-4 d-flex justify-content-end align-items-center px-0 ">
                 <h5 id="LT" class="checkbox-text">LT</h5>
                 <div class="form-check form-switch d-inline-block mx-1">
                     <input class="form-check-input" type="checkbox" id="timezone-switch" name="timeFormat">
                 </div>
                 <h5 id="UTC" class=" checkbox-text">UTC</h5>
-
             </div>
         </div>
         <div class="table-body-row row align-items-center">
-            <div class="col-4 table-header ">
+            <div class="col-4 ">
                 FLIGHT
             </div>
             <div class="col-4 pe-0 form-check ">
-                <input class="form-check-input custom-checkbox " type="checkbox" value="inter" id="inter-filter"
-                    checked>
-                <label class="form-check-label table-text" for="inter-filter">
+                <input class="form-check-input  " type="checkbox" value="inter" id="INTER-filter" checked>
+                <label class="form-check-label" for="inter-filter">
                     INTER
                 </label>
             </div>
             <div class="col-4 pe-0 form-check ">
-                <input class="form-check-input custom-checkbox " type="checkbox" value="domestic" id="domestic-filter">
-                <label class="form-check-label table-text" for="domestic-filter">
+                <input class="form-check-input  " type="checkbox" value="domestic" id="DOMESTIC-filter">
+                <label class="form-check-label " for="domestic-filter">
                     DOMESTIC
                 </label>
             </div>
         </div>
         <div class="table-body-row row align-items-center">
-            <div class="col-4 table-header  ">
+            <div class="col-4   ">
                 AIRLINE
             </div>
             <div class="col-4 pe-0 form-check ">
-                <input class="form-check-input custom-checkbox " type="checkbox" value="tg" id="tg-filter" checked>
-                <label class="form-check-label table-text" for="tg-filter">
+                <input class="form-check-input  " type="checkbox" value="tg" id="TG-filter" checked>
+                <label class="form-check-label " for="tg-filter">
                     TG
                 </label>
             </div>
             <div class="col-4 pe-0 form-check ">
-                <input class="form-check-input custom-checkbox " type="checkbox" value="customer" id="customer-filter">
-                <label class="form-check-label table-text" for="customer-filter">
+                <input class="form-check-input  " type="checkbox" value="customer" id="CUSTOMER-filter">
+                <label class="form-check-label " for="customer-filter">
                     CUSTOMER
                 </label>
             </div>
         </div>
         <div class="table-body-row row align-items-center">
-            <div class="col-4 table-header  ">
+            <div class="col-4 ">
                 LEG
             </div>
             <div class="col-4 pe-0 form-check ">
-                <input class="form-check-input custom-checkbox " type="checkbox" value="departure" id="departure-filter"
-                    checked>
-                <label class="form-check-label table-text" for="departure-filter">
+                <input class="form-check-input  " type="checkbox" value="departure" id="DEP-filter" checked>
+                <label class="form-check-label" for="departure-filter">
                     DEP
                 </label>
             </div>
             <div class="col-4 pe-0 form-check ">
-                <input class="form-check-input custom-checkbox " type="checkbox" value="arrival" id="arrival-filter">
-                <label class="form-check-label table-text" for="arrival-filter">
+                <input class="form-check-input  " type="checkbox" value="arrival" id="ARR-filter">
+                <label class="form-check-label " for="arrival-filter">
                     ARR
                 </label>
             </div>
         </div>
         <div class=" row align-items-center table-head mb-4">
-            <div class="col-4 table-header ">
+            <div class="col-4  ">
                 ZONE
             </div>
 
@@ -144,22 +141,20 @@
 
         <!-- Data Table Section----------------------------------------------------- -->
         <table id="all_flights_table" class="display" style="width:100%;">
-            <thead>
+            <thead class="data-table-head">
                 <tr>
-                    <th class="data-table-header">FLIGHT</th>
-                    <th class="data-table-header">TIME</th>
-                    <th class="data-table-header">GATE/BAY</th>
-                    <th class="updated-time">UPDATED <span class="time-stamp">22:30</span></th>
-
-
+                    <th>FLIGHT</th>
+                    <th>TIME</th>
+                    <th>GATE/BAY</th>
+                    <th id="updated-time">UPDATED <span class="time-stamp">22:30</span></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="data-table-body">
                 <tr>
-                    <td class="data-table-text ">TG600</td>
-                    <td class="data-table-text ">0100</td>
-                    <td class="data-table-text ">508</td>
-                    <td class="data-table-text d-flex justify-content-between flex-wrap">
+                    <td class="FLIGHT">TG600</td>
+                    <td class="TIME">0100 (D)</td>
+                    <td class="GATE/BAY">A7/508</td>
+                    <td class=" d-flex justify-content-between flex-wrap">
                         <button type="button" class=" ACKD-btn rounded-pill  ">
                             ACKD
                         </button>
@@ -167,22 +162,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="data-table-text ">TG601</td>
-                    <td class="data-table-text ">0200</td>
-                    <td class="data-table-text ">A7</td>
-                    <td class="data-table-text d-flex justify-content-between flex-wrap">
-                        <button type="button" class=" ACKD-btn-disabled rounded-pill">
-                            ACKD
-                        </button>
-                        <a href="#"><img src="./TOCC-icon/Icon-magnifying-glass-sm.png"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="data-table-text ">TG400</td>
-                    <td class="data-table-text ">1200</td>
-                    <td class="data-table-text ">B5</td>
-                    <td class="data-table-text d-flex justify-content-between flex-wrap">
-                        <button type="button" class=" ACKD-btn rounded-pill ">
+                    <td class="FLIGHT">TG601</td>
+                    <td class="TIME">0100 (A)</td>
+                    <td class="GATE/BAY">A8</td>
+                    <td class=" d-flex justify-content-between flex-wrap">
+                        <button type="button" class=" ACKD-btn rounded-pill  ">
                             ACKD
                         </button>
                         <a href="#"><img src="./TOCC-icon/Icon-magnifying-glass-sm.png"></a>

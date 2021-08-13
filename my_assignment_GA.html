@@ -65,25 +65,39 @@
         </div>
         <!-- Data Table Section----------------------------------------------------- -->
         <table id="my_flights_table" class="display" style="width:100%;">
-            <thead>
+            <thead class="data-table-head">
                 <tr>
-                    <th class="data-table-header">FLIGHT</th>
-                    <th class="data-table-header">TIME</th>
-                    <th class="data-table-header">GATE/BAY</th>
-                    <th class="updated-time">UPDATED <span class="time-stamp">22:30</span></th>
+                    <th>FLIGHT</th>
+                    <th>TIME</th>
+                    <th>GATE/BAY</th>
+                    <th id="updated-time">UPDATED <span class="time-stamp">22:30</span></th>
 
 
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="data-table-body">
                 <tr>
-                    <td class="data-table-text ">TG600</td>
-                    <td class="data-table-text ">0100</td>
-                    <td class="data-table-text ">508</td>
-                    <td class="data-table-text">
+                    <td class="FLIGHT">TG600</td>
+                    <td class="TIME">0100 (A)</td>
+                    <td class="GATE/BAY">508</td>
+                    <td class="d-flex justify-content-between flex-wrap">
                         <button type="button" class=" view-btn rounded-pill">
                             View
                         </button>
+                        <button class="DELETE-BTN"><img src="./TOCC-icon/red-cross-icon.png"></button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="FLIGHT">TG600</td>
+                    <td class="TIME">0100 (D)</td>
+                    <td class="GATE/BAY">A7/553</td>
+                    <td class="d-flex justify-content-between flex-wrap">
+                        <button type="button" class=" view-btn rounded-pill">
+                            View
+                        </button>
+                        <button class="DELETE-BTN"><img src="./TOCC-icon/red-cross-icon.png"></button>
+
                     </td>
                 </tr>
 
