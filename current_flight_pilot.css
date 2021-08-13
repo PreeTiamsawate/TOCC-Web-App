@@ -1,8 +1,9 @@
 * {
   box-sizing: border-box;
+  font-size: 15px;
 }
 /* body {
-  font-size: 14px;
+  font-size: 20px;
 } */
 html,
 body {
@@ -105,7 +106,7 @@ body {
   padding: 0;
   border-radius: 10px 10px 0 0;
   height: 30px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -113,6 +114,7 @@ body {
 .nav-item > button.active:focus {
   color: white;
   background-color: #3d394a;
+  font-size: 14px;
 }
 
 .nav-item {
@@ -138,11 +140,20 @@ body {
   font-size: 10px;
   color: #259443;
 }
+.completed-status > span {
+  font-size: 14px;
+}
+.red-cross-status > {
+  font-size: 14px;
+}
 .in-process-status {
   height: 20px;
   line-height: 15px;
   font-size: 10px;
   color: #f7a502;
+}
+.in-process-status > span {
+  font-size: 14px;
 }
 .submit-btn {
   background-color: #3f075c;
@@ -162,10 +173,12 @@ body {
   text-align: end;
 }
 .data-row {
+  margin-top: 2px;
+  margin-bottom: 2px;
   height: 30px;
 }
 .header-column {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 27px;
   font-weight: 600;
   color: #3d394a;
@@ -173,13 +186,13 @@ body {
   letter-spacing: 0px;
 }
 .data-column {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 27px;
   font-weight: 500;
   color: #3f075c;
   background-color: #f1ecec;
   text-align: center;
-  border: 3px solid #fbf8f8;
+  /* border: 3px solid #fbf8f8; */
 }
 /* <!-- A-CDM Pane------------------- --> */
 .TSAT-row {
@@ -211,7 +224,7 @@ body {
   height: 3px !important;
 }
 .list-header {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   color: #3d394a;
   width: 25%;
@@ -219,7 +232,7 @@ body {
 }
 
 .request-column {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: #3d394a;
   width: 25%;
@@ -239,7 +252,7 @@ body {
   display: flex;
 }
 .approval-column {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: #cbc6c6;
   width: 25%;
