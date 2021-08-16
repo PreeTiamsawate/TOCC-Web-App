@@ -213,10 +213,10 @@ body {
 .view-btn {
   background-color: #755fbc;
   width: 60px;
-  height: 24px;
-  font-family: Source Sans Pro;
+  height: 28px;
+  font-family: "Source Sans Pro";
   font-size: 15px;
-  line-height: 19px;
+  line-height: 15px;
   letter-spacing: 0;
   color: white;
   border: none;

@@ -143,7 +143,7 @@ body {
 .completed-status > span {
   font-size: 14px;
 }
-.red-cross-status > {
+.red-cross-status {
   font-size: 14px;
 }
 .in-process-status {
