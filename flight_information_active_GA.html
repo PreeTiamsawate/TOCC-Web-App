@@ -248,45 +248,37 @@
                         <div class="col-5  ">CREW ARRIVED
                         </div>
                         <div class="col-3  "><span id="CREW_ARRIVED_TIME">10:00</span></div>
-                        <div class="col-4 ">
-                            <button type="button" class="completed-btn  rounded-pill">
-                                COMPLETED
+                        <div class="col-4 align-items-center ">
+                            <button type="button" class="update-btn  rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#CREW_ARRIVED_MODAL" id="crew-arrived-update-btn">
+                                UPDATE
                             </button>
                         </div>
                     </div>
                     <div class="row data-row">
-                        <div class="col-5  ">OPEN GATE
-                            <button type="button" class="ms-auto adjust-btn  rounded-pill" data-bs-toggle="modal"
-                                data-bs-target="#time-modal">
-                                <img src="./TOCC-icon/adjust-btn.png">
-                            </button>
-                        </div>
+                        <div class="col-5  ">OPEN GATE</div>
                         <div class="col-3  "><span id="CREW_ARRIVED_TIME">10:00</span></div>
-                        <div class="col-4 ">
-                            <button type="button" class="start-btn  rounded-pill">
-                                START
+                        <div class="col-4 align-items-center ">
+                            <button type="button" class="update-btn  rounded-pill">
+                                UPDATE
                             </button>
                         </div>
                     </div>
                     <div class="row data-row">
                         <div class="col-5  ">BOARDING COMMENCED</div>
-                        <div class="col-3  "><span id="BOARDING_COMMENCED_TIME">10:00</span></div>
-                        <div class="col-4 ">
-                            <button type="button" class="completed-btn-disable  rounded-pill">
-                                COMPLETED
+                        <div class="col-3  "><span id="BOARDING_COMMENCED_TIME">EST10:00</span></div>
+                        <div class="col-4 align-items-center">
+                            <button type="button" class="update-btn  rounded-pill">
+                                UPDATE
                             </button>
                         </div>
                     </div>
                     <div class="row data-row">
                         <div class="col-5  ">BOARDING COMPLETED</div>
                         <div class="col-3  "><span id="BOARDING_COMMENCED_TIME">10:00</span></div>
-                        <div class="col-4 ">
-                            <div class="on-process-status mt-1 col-9">
-                                <img src="./TOCC-icon/in-process-icon.png" alt="">
-                                <span>ON PROCESS</span>
-                            </div>
-                            <button type="button" class="green-check-btn col-2">
-                                <img src="./TOCC-icon/completed-icon.png">
+                        <div class="col-4 align-items-center">
+                            <button type="button" class="update-btn  rounded-pill">
+                                UPDATE
                             </button>
                         </div>
                     </div>
@@ -296,39 +288,45 @@
                 </div>
                 <div class="py-3">
                     <div class="row data-row">
-                        <div class="col-5  ">CARGO CONNECT</div>
-                        <div class="col-3  "><span id="CARGO_CONNECT_TIME">10:00</span></div>
-                        <div class="col-4 ">
-                            <button type="button" class="completed-btn  rounded-pill">
-                                COMPLETED
-                            </button>
+                        <div class="col-5  ">CARGO SHORT CONNECT</div>
+                        <div class="col-3  "><span id="CARGO_SHORT_CONNECT_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center">
+                            <div class="completed-status  col-9">
+                                <img src="./TOCC-icon/completed-icon.png" alt="">
+                                <span>COMPLETED</span>
+                            </div>
+
                         </div>
                     </div>
                     <div class="row data-row">
-                        <div class="col-5  ">CARGO LOADING</div>
-                        <div class="col-3  "><span id="CARGO_LOADING_TIME">10:00</span></div>
-                        <div class="col-4 ">
-                            <button type="button" class="completed-btn-disable  rounded-pill">
-                                COMPLETED
-                            </button>
+                        <div class="col-5  ">LOADING START</div>
+                        <div class="col-3  "><span id="LOADING_START_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center">
+                            <div class="on-process-status  col-9">
+                                <img src="./TOCC-icon/in-process-icon.png" alt="">
+                                <span>ON PROCESS</span>
+                            </div>
+
                         </div>
                     </div>
                     <div class="row data-row">
                         <div class="col-5  ">CARGO DOOR CLOSED</div>
                         <div class="col-3  "><span id="CARGO_DOOR_CLOSED_TIME">10:00</span></div>
-                        <div class="col-4 ">
-                            <button type="button" class="completed-btn-disable  rounded-pill">
-                                COMPLETED
-                            </button>
+                        <div class="col-4 align-items-center">
+                            <div class="not-started-status  col-9">
+                                <img src="./TOCC-icon/red-cross-icon.png" alt="">
+                                <span>NOT STARTED</span>
+                            </div>
                         </div>
                     </div>
                     <div class="row data-row">
-                        <div class="col-5  ">TOW TRUCK</div>
-                        <div class="col-3  "><span id="TOW_TRUCK_TIME">10:00</span></div>
-                        <div class="col-4 ">
-                            <button type="button" class="completed-btn-disable  rounded-pill">
-                                COMPLETED
-                            </button>
+                        <div class="col-5  ">PUSH BACK STBY</div>
+                        <div class="col-3  "><span id="PUSH_BACK_STBY_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center ">
+                            <div class="not-started-status  col-9">
+                                <img src="./TOCC-icon/red-cross-icon.png" alt="">
+                                <span>NOT STARTED</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -337,69 +335,76 @@
         </div>
     </section>
 
-    <!-- Time Modal Section---------------------------------- -->
-    <div class="modal fade" id="time-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- CREW ARRIVED Modal Section--------------------------------------------------------------------------- -->
+    <div class="modal fade" id="CREW_ARRIVED_MODAL" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <form class="modal-content container py-2">
                 <div class="data-row d-flex justify-content-between">
-                    <div class="col-6 ga-activity">TOW TRUCK</div>
+                    <div class="col-6 ga-activity">CREW ARRIVED</div>
                     <button type="button" class="btn-close btn-close-custom " data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
                 <div class="time-border">
                     <div class="data-row d-flex ">
-                        <div class="col-5 ">START</div>
-                        <div class="col-7 START_TIME ">06:00</div>
+                        <div class="col-5 ">START TIME</div>
+                        <div class="col-7" id="crew-arrived-start-now"></div>
                     </div>
-                    <div class="data-row d-flex ">
+                    <!-- <div class="data-row d-flex ">
                         <div class="col-5 ">EST. COMPLETE</div>
                         <div class="col-7 ESTIMATED_TIME ">06:00</div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="time-border">
                     <div class="data-row d-flex ">
                         <div class="col-5 "></div>
-                        <button class="col-3 math-box" id="hour-increment">
+                        <button class="col-3 math-box" id="crew-arrived-hour-increment">
                             +
                         </button>
                         <span class="col-1 text-center"></span>
-                        <button class="col-3 math-box" id="minute-increment">
+                        <button class="col-3 math-box" id="crew-arrived-minute-increment">
                             +
                         </button>
                     </div>
                     <div class="data-row d-flex ">
-                        <div class="col-5 ">NEW ESTIMATE</div>
-                        <input class="col-3 new-time " type="number" name="new-time-hour" id="new-time-hour"
-                            placeholder="HH" max="11" min="00">
+                        <div class="col-5 ">ACTUAL START</div>
+                        <input class="col-3 new-time " type="number" name="new-time-hour" id="crew-arrived-hour-actual"
+                            placeholder="HH" max="23" min="00">
                         <span class="col-1 text-center">:</span>
-                        <input class="col-3 new-time " type="number" name="new-time-hour" id="new-time-minute"
-                            placeholder="MM" max="59" min="00">
+                        <input class="col-3 new-time " type="number" name="new-time-minute"
+                            id="crew-arrived-minute-actual" placeholder="MM" max="59" min="00">
                     </div>
                     <div class="data-row d-flex ">
                         <div class="col-5 "></div>
-                        <button class="col-3 math-box" id="hour-decrement">
+                        <button class="col-3 math-box" id="crew-arrived-hour-decrement">
                             -
                         </button>
                         <span class="col-1 text-center"></span>
-                        <button class="col-3 math-box" id="minute-decrement">
+                        <button class="col-3 math-box" id="crew-arrived-minute-decrement">
                             -
                         </button>
                     </div>
                 </div>
-                <div class="time-border">
+                <div class="time-border ">
                     <div class="">
                         <label class="col-5 header-column">ADDITIONAL INFO.</label>
                     </div>
-                    <textarea name="ADDITIONAL_INFO" id="ADDITIONAL_INFO"></textarea>
-
+                    <textarea name="ADDITIONAL_INFO" class="additional-info"
+                        id="CREW-ARRIVED-ADDITIONAL_INFO"></textarea>
                 </div>
                 <div class="d-flex justify-content-end ">
-                    <button type="submit" id="submit-btn" class="">
-                        Submit
+                    <button id="crew-arrived-start-btn" class="start-btn">
+                        START
                     </button>
                 </div>
-
-
+                <div id="crew-arrived-confirm-modal" class="time-border mt-2 d-flex flex-column align-items-center">
+                    <h4 class="confirm-alert">PLEASE CONFIRM ACTUAL START TIME AT</h4>
+                    <h4 id="crew-arrived-confirm-time" class="confirm-time"></h4>
+                    <button type="submit" id="crew-arrived-confirm-btn" class="confirm-btn mt-1" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        CONFIRM
+                    </button>
+                </div>
 
             </form>
         </div>
