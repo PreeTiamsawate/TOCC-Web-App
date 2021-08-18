@@ -30,16 +30,18 @@
 </head>
 
 <body>
-    <!-- Top Bar Section----------------------------------------------------- -->
+    <!-- Top Bar Section---------------------------------------------------------------------------------------------------------------------- -->
     <section class="top-bar px-2 d-flex justify-content-center align-items-center px-sm-5 ">
         <img src="./TOCC-icon/thai-logo-icon.png" class="thai-logo d-inline-block mx-1 " alt="">
-        <h1 class="page-name">FLIGHT INFORMATION</h1>
+        <h1 class="page-name">F.A.R.M. - <span class="CARRIER_CODE">TG</span>
+            <span class="FLIGHT_NUMBER">403</span>
+        </h1>
 
         <button class="hamberger-btn d-inline-block me-1" onclick="openNav()"><img src=" ./TOCC-icon/hamburger menu.png"
                 alt="">
         </button>
     </section>
-    <!-- Side Bar Section----------------------------------------------------- -->
+    <!-- Side Bar Section------------------------------------------------------------------------------------------------------------------------- -->
     <section id="mySidebar" class="sidebar">
         <img src="./TOCC-icon/close-btn.png" class="closebtn" onclick="closeNav()">
         <div id="user-box" class="row">
@@ -51,7 +53,7 @@
         <a href="./all_flights_GA.html" class="nav-link">ALL FLIGHTS</a>
         <a href="./my_assignment_GA.html" class="nav-link">MY ASSIGNMENT</a>
     </section>
-    <!-- Time Header Section----------------------------------------------------- -->
+    <!-- Time Header Section--------------------------------------------------------------------------------------------------------------------- -->
     <section class="time-header row justify-content-between align-items-center">
         <div class="col-4 d-flex align-items-center  px-0 ">
             <img src="./TOCC-icon/black-clock.png" alt=""><span class="CURRENT_TIME  ">01:00</span>
@@ -67,7 +69,7 @@
     </section>
 
     <section class="px-sm-5">
-        <!-- Flight Data Section---------------------------------------------------  -->
+        <!-- Flight Data Section----------------------------------------------------------------------------------------------------------------  -->
         <div id="flt_data" class="d-flex flex-row">
             <div id="flt_info" class="container px-1 ">
                 <div class="row row-cols-1">
@@ -139,7 +141,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Aircraft Information Section------------------------------------ -->
+            <!-- Aircraft Information Section--------------------------------------------------------------------------------------------------- -->
             <div id="ac_info" class="container px-1 ">
                 <div class="row row-cols-1">
                     <div class="col table-topic pt-2 ">Aircraft Information</div>
@@ -203,22 +205,13 @@
                             <span class=" DELAY_DURATION">00:00</span>
                         </div>
                     </div>
-
-
-
-                    <!-- <div class="col-6 CTOT-data pe-0 " id="CTOT-header">
-                        <img src="./TOCC-icon/clock-icon.png" class="d-inline-block me-1">CTOT
-                    </div>
-                    <div class="col-6 CTOT-data px-3 " id="CTOT-time">
-                        00:00
-                    </div> -->
                 </div>
             </div>
         </div>
     </section>
 
     <section id="tab-section" class="container px-0">
-        <!-- Nav Tabs Section--------------------------------------- -->
+        <!-- Nav Tabs Section-------------------------------------------------------------------------------------------------------------- -->
         <ul class="nav nav-pill d-flex flex-row justify-content-around" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#passenger-prep" type="button"
@@ -230,13 +223,13 @@
             </li>
         </ul>
     </section>
-    <!-- Updated Time Section--------------------------------------- -->
+    <!-- Updated Time Section------------------------------------------------------------------------------------------------------------------------ -->
     <div class="time-stamp-bar pe-3">
         Last updated <span class="time-stamp">22:30</span>
     </div>
 
     <section class="tab-content" id="myTabContent">
-        <!-- Aircraft Preparation Panel---------------- -->
+        <!-- Aircraft Preparation Panel-------------------------------------------------------------------------------------------------------------- -->
         <div class="tab-pane  show active" id="passenger-prep" role="tabpanel" aria-labelledby="home-tab">
             <div class="container px-0 d-flex flex-column">
                 <!-- PASSENGER Table--------------------------------- -->
@@ -250,39 +243,43 @@
                         <div class="col-3  "><span id="CREW_ARRIVED_TIME">10:00</span></div>
                         <div class="col-4 align-items-center ">
                             <button type="button" class="update-btn  rounded-pill" data-bs-toggle="modal"
-                                data-bs-target="#CREW_ARRIVED_MODAL" id="crew-arrived-update-btn">
+                                data-bs-target="#CREW_ARRIVED_MODAL" id="CREW_ARRIVED_UPDATE_BTN">
                                 UPDATE
                             </button>
                         </div>
                     </div>
                     <div class="row data-row">
                         <div class="col-5  ">OPEN GATE</div>
-                        <div class="col-3  "><span id="CREW_ARRIVED_TIME">10:00</span></div>
+                        <div class="col-3  "><span id="OPEN_GATE_TIME">EST 10:00</span></div>
                         <div class="col-4 align-items-center ">
-                            <button type="button" class="update-btn  rounded-pill">
+                            <button type="button" class="update-btn  rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#OPEN_GATE_MODAL" id="OPEN_GATE_UPDATE_BTN">
                                 UPDATE
                             </button>
                         </div>
                     </div>
                     <div class="row data-row">
                         <div class="col-5  ">BOARDING COMMENCED</div>
-                        <div class="col-3  "><span id="BOARDING_COMMENCED_TIME">EST10:00</span></div>
+                        <div class="col-3  "><span id="BOARDING_COMMENCED_TIME">EST 10:00</span></div>
                         <div class="col-4 align-items-center">
-                            <button type="button" class="update-btn  rounded-pill">
+                            <button type="button" class="update-btn  rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#BOARDING_COMMENCED_MODAL" id="BOARDING_COMMENCED_UPDATE_BTN">
                                 UPDATE
                             </button>
                         </div>
                     </div>
                     <div class="row data-row">
                         <div class="col-5  ">BOARDING COMPLETED</div>
-                        <div class="col-3  "><span id="BOARDING_COMMENCED_TIME">10:00</span></div>
+                        <div class="col-3  "><span id="BOARDING_COMPLETED_TIME">10:00</span></div>
                         <div class="col-4 align-items-center">
-                            <button type="button" class="update-btn  rounded-pill">
+                            <button type="button" class="update-btn rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#BOARDING_COMPLETED_MODAL" id="BOARDING_COMPLETED_UPDATE_BTN">
                                 UPDATE
                             </button>
                         </div>
                     </div>
                 </div>
+                <!-- CARGO Table--------------------------------- -->
                 <div class="header-bar">
                     CARGO
                 </div>
@@ -335,52 +332,45 @@
         </div>
     </section>
 
-    <!-- CREW ARRIVED Modal Section--------------------------------------------------------------------------- -->
+    <!-- CREW ARRIVED Modal Section------------------------------------------------------------------------------------------------------------ -->
     <div class="modal fade" id="CREW_ARRIVED_MODAL" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
-            <form class="modal-content container py-2">
+            <form class="modal-content container py-2" id="CREW_ARRIVED_MODAL_FORM">
                 <div class="data-row d-flex justify-content-between">
                     <div class="col-6 ga-activity">CREW ARRIVED</div>
                     <button type="button" class="btn-close btn-close-custom " data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div class="time-border">
-                    <div class="data-row d-flex ">
-                        <div class="col-5 ">START TIME</div>
-                        <div class="col-7" id="crew-arrived-start-now"></div>
-                    </div>
-                    <!-- <div class="data-row d-flex ">
-                        <div class="col-5 ">EST. COMPLETE</div>
-                        <div class="col-7 ESTIMATED_TIME ">06:00</div>
-                    </div> -->
-                </div>
+
                 <div class="time-border">
                     <div class="data-row d-flex ">
                         <div class="col-5 "></div>
-                        <button class="col-3 math-box" id="crew-arrived-hour-increment">
+                        <button class="col-3 math-box" id="CREW_ARRIVED_HOUR_INCREMENT">
                             +
                         </button>
                         <span class="col-1 text-center"></span>
-                        <button class="col-3 math-box" id="crew-arrived-minute-increment">
+                        <button class="col-3 math-box" id="CREW_ARRIVED_MINUTE_INCREMENT">
                             +
                         </button>
                     </div>
                     <div class="data-row d-flex ">
-                        <div class="col-5 ">ACTUAL START</div>
-                        <input class="col-3 new-time " type="number" name="new-time-hour" id="crew-arrived-hour-actual"
+                        <div class="col-5 justify-content-start ">
+                            <span class="col-6">START</span>(<span class="time-zone-display"></span>)
+                        </div>
+                        <input class="col-3 new-time " type="number" name="CREW_ARRIVED_HOUR" id="CREW_ARRIVED_HOUR"
                             placeholder="HH" max="23" min="00">
                         <span class="col-1 text-center">:</span>
-                        <input class="col-3 new-time " type="number" name="new-time-minute"
-                            id="crew-arrived-minute-actual" placeholder="MM" max="59" min="00">
+                        <input class="col-3 new-time " type="number" name="CREW_ARRIVED_MINUTE" id="CREW_ARRIVED_MINUTE"
+                            placeholder="MM" max="59" min="00">
                     </div>
                     <div class="data-row d-flex ">
                         <div class="col-5 "></div>
-                        <button class="col-3 math-box" id="crew-arrived-hour-decrement">
+                        <button class="col-3 math-box" id="CREW_ARRIVED_HOUR_DECREMENT">
                             -
                         </button>
                         <span class="col-1 text-center"></span>
-                        <button class="col-3 math-box" id="crew-arrived-minute-decrement">
+                        <button class="col-3 math-box" id="CREW_ARRIVED_MINUTE_DECREMENT">
                             -
                         </button>
                     </div>
@@ -389,26 +379,263 @@
                     <div class="">
                         <label class="col-5 header-column">ADDITIONAL INFO.</label>
                     </div>
-                    <textarea name="ADDITIONAL_INFO" class="additional-info"
-                        id="CREW-ARRIVED-ADDITIONAL_INFO"></textarea>
+                    <textarea name="CREW_ARRIVED_ADDITIONAL_INFO" class="additional-info"
+                        id="CREW_ARRIVED_ADDITIONAL_INFO"></textarea>
                 </div>
                 <div class="d-flex justify-content-end ">
-                    <button id="crew-arrived-start-btn" class="start-btn">
+                    <button id="CREW_ARRIVED_START_BTN" class="start-btn">
                         START
                     </button>
                 </div>
-                <div id="crew-arrived-confirm-modal" class="time-border mt-2 d-flex flex-column align-items-center">
+                <div id="CREW_ARRIVED_CONFIRM_MODAL" class="time-border mt-2 d-flex flex-column align-items-center">
                     <h4 class="confirm-alert">PLEASE CONFIRM ACTUAL START TIME AT</h4>
-                    <h4 id="crew-arrived-confirm-time" class="confirm-time"></h4>
-                    <button type="submit" id="crew-arrived-confirm-btn" class="confirm-btn mt-1" data-bs-dismiss="modal"
-                        aria-label="Close">
-                        CONFIRM
-                    </button>
+                    <h4 id="CREW_ARRIVED_CONFIRM_TIME" class="confirm-time"></h4>
+                    <div class="col-12 d-flex justify-content-around">
+                        <button type="submit" id="CREW_ARRIVED_CONFIRM_BTN" class="confirm-btn mt-1"
+                            data-bs-dismiss="modal" aria-label="Close">
+                            CONFIRM
+                        </button>
+                        <button class="cancel-btn mt-1" data-bs-dismiss="modal" aria-label="Close">
+                            CANCEL
+                        </button>
+                    </div>
+
                 </div>
 
             </form>
         </div>
     </div>
+    <!-- OPEN GATE Modal Section--------------------------------------------------------------------------------------------------------------- -->
+    <div class="modal fade" id="OPEN_GATE_MODAL" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form class="modal-content container py-2" id="OPEN_GATE_MODAL_FORM">
+                <div class="data-row d-flex justify-content-between">
+                    <div class="col-6 ga-activity">OPEN GATE</div>
+                    <button type="button" class="btn-close btn-close-custom " data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="time-border">
+                    <div class="data-row d-flex ">
+                        <div class="col-5 "></div>
+                        <button class="col-3 math-box" id="OPEN_GATE_HOUR_INCREMENT">
+                            +
+                        </button>
+                        <span class="col-1 text-center"></span>
+                        <button class="col-3 math-box" id="OPEN_GATE_MINUTE_INCREMENT">
+                            +
+                        </button>
+                    </div>
+                    <div class="data-row d-flex ">
+                        <div class="col-5 justify-content-start ">
+                            <span class="col-6">START</span>(<span class="time-zone-display"></span>)
+                        </div>
+                        <input class="col-3 new-time " type="number" name="OPEN_GATE_HOUR" id="OPEN_GATE_HOUR"
+                            placeholder="HH" max="23" min="00">
+                        <span class="col-1 text-center">:</span>
+                        <input class="col-3 new-time " type="number" name="OPEN_GATE_MINUTE" id="OPEN_GATE_MINUTE"
+                            placeholder="MM" max="59" min="00">
+                    </div>
+                    <div class="data-row d-flex ">
+                        <div class="col-5 "></div>
+                        <button class="col-3 math-box" id="OPEN_GATE_HOUR_DECREMENT">
+                            -
+                        </button>
+                        <span class="col-1 text-center"></span>
+                        <button class="col-3 math-box" id="OPEN_GATE_MINUTE_DECREMENT">
+                            -
+                        </button>
+                    </div>
+                </div>
+                <div class="time-border ">
+                    <div class="">
+                        <label class="col-5 header-column">ADDITIONAL INFO.</label>
+                    </div>
+                    <textarea name="OPEN_GATE_ADDITIONAL_INFO" class="additional-info"
+                        id="OPEN_GATE_ADDITIONAL_INFO"></textarea>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <button id="SET_EST_START_BTN" class="set-est-start-btn">
+                        SET EST START TIME
+                    </button>
+                    <button id="OPEN_GATE_START_BTN" class="start-btn">
+                        START
+                    </button>
+                </div>
+                <div id="OPEN_GATE_CONFIRM_MODAL" class="time-border mt-2 d-flex flex-column align-items-center">
+                    <h4 class="confirm-alert">PLEASE CONFIRM ACTUAL START TIME AT</h4>
+                    <h4 id="OPEN_GATE_CONFIRM_TIME" class="confirm-time"></h4>
+                    <div class="col-12 d-flex justify-content-around">
+                        <button type="submit" id="OPEN_GATE_CONFIRM_BTN" class="confirm-btn mt-1"
+                            data-bs-dismiss="modal" aria-label="Close">
+                            CONFIRM
+                        </button>
+                        <button class="cancel-btn mt-1" data-bs-dismiss="modal" aria-label="Close">
+                            CANCEL
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- BOARDING COMMENCE Modal Section----------------------------------------------------------------------------------------------------------- -->
+    <div class="modal fade" id="BOARDING_COMMENCED_MODAL" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <form class="modal-content container py-2" id="BOARDING_COMMENCED_MODAL_FORM">
+                <div class="data-row d-flex justify-content-between">
+                    <div class="col-6 ga-activity">OPEN GATE</div>
+                    <button type="button" class="btn-close btn-close-custom " data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="time-border">
+                    <div class="data-row d-flex ">
+                        <div class="col-5 "></div>
+                        <button class="col-3 math-box" id="BOARDING_COMMENCED_HOUR_INCREMENT">
+                            +
+                        </button>
+                        <span class="col-1 text-center"></span>
+                        <button class="col-3 math-box" id="BOARDING_COMMENCED_MINUTE_INCREMENT">
+                            +
+                        </button>
+                    </div>
+                    <div class="data-row d-flex ">
+                        <div class="col-5 justify-content-start ">
+                            <span class="col-6">START</span>(<span class="time-zone-display"></span>)
+                        </div>
+                        <input class="col-3 new-time " type="number" name="BOARDING_COMMENCED_HOUR"
+                            id="BOARDING_COMMENCED_HOUR" placeholder="HH" max="23" min="00">
+                        <span class="col-1 text-center">:</span>
+                        <input class="col-3 new-time " type="number" name="BOARDING_COMMENCED_MINUTE"
+                            id="BOARDING_COMMENCED_MINUTE" placeholder="MM" max="59" min="00">
+                    </div>
+                    <div class="data-row d-flex ">
+                        <div class="col-5 "></div>
+                        <button class="col-3 math-box" id="BOARDING_COMMENCED_HOUR_DECREMENT">
+                            -
+                        </button>
+                        <span class="col-1 text-center"></span>
+                        <button class="col-3 math-box" id="BOARDING_COMMENCED_MINUTE_DECREMENT">
+                            -
+                        </button>
+                    </div>
+                </div>
+                <div class="time-border ">
+                    <div class="">
+                        <label class="col-5 header-column">ADDITIONAL INFO.</label>
+                    </div>
+                    <textarea name="BOARDING_COMMENCED_ADDITIONAL_INFO" class="additional-info"
+                        id="BOARDING_COMMENCED_ADDITIONAL_INFO"></textarea>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <button id="SET_EST_START_BTN" class="set-est-start-btn">
+                        SET EST START TIME
+                    </button>
+                    <button id="BOARDING_COMMENCED_START_BTN" class="start-btn">
+                        START
+                    </button>
+                </div>
+                <div id="BOARDING_COMMENCED_CONFIRM_MODAL"
+                    class="time-border mt-2 d-flex flex-column align-items-center">
+                    <h4 class="confirm-alert">PLEASE CONFIRM ACTUAL START TIME AT</h4>
+                    <h4 id="BOARDING_COMMENCED_CONFIRM_TIME" class="confirm-time"></h4>
+                    <div class="col-12 d-flex justify-content-around">
+                        <button type="submit" id="BOARDING_COMMENCED_CONFIRM_BTN" class="confirm-btn mt-1"
+                            data-bs-dismiss="modal" aria-label="Close">
+                            CONFIRM
+                        </button>
+                        <button class="cancel-btn mt-1" data-bs-dismiss="modal" aria-label="Close">
+                            CANCEL
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <!-- BOARDING COMPLETED Modal Section--------------------------------------------------------------------------------------------------------------- -->
+    <div class="modal fade" id="BOARDING_COMPLETED_MODAL" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <form class="modal-content container py-2" id="BOARDING_COMPLETED_MODAL_FORM">
+                <div class="data-row d-flex justify-content-between">
+                    <div class="col-6 ga-activity">BOARDING COMPLETED</div>
+                    <button type="button" class="btn-close btn-close-custom " data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <!-- <div class="time-border">
+                    <div class="data-row d-flex ">
+                        <div class="col-5 ">COMPLETE TIME</div>
+                        <div class="col-7" id="BOARDING_COMPLETED_NOW"></div>
+                    </div>
+                </div> -->
+                <div class="time-border">
+                    <div class="data-row d-flex ">
+                        <div class="col-5 "></div>
+                        <button class="col-3 math-box" id="BOARDING_COMPLETED_HOUR_INCREMENT">
+                            +
+                        </button>
+                        <span class="col-1 text-center"></span>
+                        <button class="col-3 math-box" id="BOARDING_COMPLETED_MINUTE_INCREMENT">
+                            +
+                        </button>
+                    </div>
+                    <div class="data-row d-flex ">
+                        <div class="col-5 justify-content-start ">
+                            <span class="col-6">COMPLETE</span>(<span class="time-zone-display"></span>)
+                        </div>
+                        <input class="col-3 new-time " type="number" name="BOARDING_COMPLETED_HOUR"
+                            id="BOARDING_COMPLETED_HOUR" placeholder="HH" max="23" min="00">
+                        <span class="col-1 text-center">:</span>
+                        <input class="col-3 new-time " type="number" name="BOARDING_COMPLETED_MINUTE"
+                            id="BOARDING_COMPLETED_MINUTE" placeholder="MM" max="59" min="00">
+                    </div>
+                    <div class="data-row d-flex ">
+                        <div class="col-5 "></div>
+                        <button class="col-3 math-box" id="BOARDING_COMPLETED_HOUR_DECREMENT">
+                            -
+                        </button>
+                        <span class="col-1 text-center"></span>
+                        <button class="col-3 math-box" id="BOARDING_COMPLETED_MINUTE_DECREMENT">
+                            -
+                        </button>
+                    </div>
+                </div>
+                <div class="time-border ">
+                    <div class="">
+                        <label class="col-5 header-column">ADDITIONAL INFO.</label>
+                    </div>
+                    <textarea name="BOARDING_COMPLETED_ADDITIONAL_INFO" class="additional-info"
+                        id="BOARDING_COMPLETED_ADDITIONAL_INFO"></textarea>
+                </div>
+                <div class="d-flex justify-content-end ">
+                    <button id="BOARDING_COMPLETED_START_BTN" class="start-btn">
+                        COMPLETE
+                    </button>
+                </div>
+                <div id="BOARDING_COMPLETED_CONFIRM_MODAL"
+                    class="time-border mt-2 d-flex flex-column align-items-center">
+                    <h4 class="confirm-alert">PLEASE CONFIRM ACTUAL COMPLETE TIME AT</h4>
+                    <h4 id="BOARDING_COMPLETED_CONFIRM_TIME" class="confirm-time"></h4>
+                    <div class="col-12 d-flex justify-content-around">
+                        <button type="submit" id="BOARDING_COMPLETED_CONFIRM_BTN" class="confirm-btn mt-1">
+                            CONFIRM
+                        </button>
+                        <button class="cancel-btn mt-1" data-bs-dismiss="modal" aria-label="Close">
+                            CANCEL
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
 
 
     <!-- bootstrap 5 js link -->
