@@ -11,6 +11,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  background-color: #fbf8f8;
 }
 .row {
   margin: auto;
@@ -147,12 +148,35 @@ body {
   margin: 0;
 }
 /* <!-- Table Filter Section----------------------------------------------------- --> */
-.content {
+/* .accordion {
+  background-color: transparent !important;
+} */
+
+/* .content {
+  background-color: #fbf8f8;
+} */
+.accordion > div {
   background-color: #fbf8f8;
 }
 .table-head {
   height: 45px !important;
   border-bottom: 3px solid #707070;
+}
+.filter-btn {
+  background-color: #755fbc;
+  width: 85px;
+  height: 24px;
+  font-family: "Bebas Neue", sans-serif;
+  font: normal normal normal 20px/24px Bebas Neue;
+  letter-spacing: 0.45px;
+  color: white;
+  border: none;
+}
+.filter-mark {
+  font-family: "Bebas Neue", sans-serif;
+  font: normal normal normal 40px/24px Bebas Neue;
+  letter-spacing: 0.45px;
+  color: white;
 }
 .table-head > div:nth-of-type(1) {
   font-family: "Bebas Neue", sans-serif;
@@ -229,7 +253,9 @@ input[type="checkbox"]:checked {
   border: 1px solid #755fbc;
 }
 /* <!-- Data Table Section----------------------------------------------------- --> */
-
+input[type="search"] {
+  background-color: #ffffff !important;
+}
 .ACKD-btn {
   background-color: #755fbc;
   width: 60px;
@@ -255,14 +281,16 @@ input[type="checkbox"]:checked {
 .data-table-head > tr > th {
   font-family: "Bebas Neue", sans-serif;
   color: #755fbc;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 20px;
   letter-spacing: 0;
   font-style: normal;
   font-weight: 400 !important;
-
+  padding-right: 10px !important;
+  padding-left: 5px !important;
   text-align: center;
 }
+
 /* .data-table-header {
   font-family: "Bebas Neue", sans-serif;
   color: #755fbc;
@@ -277,8 +305,8 @@ input[type="checkbox"]:checked {
 #updated-time {
   font-family: "Bebas Neue", sans-serif;
   color: #0a0a0a;
-  font-size: 15px;
-  line-height: 17px;
+  font-size: 18px;
+  line-height: 19px;
   letter-spacing: 0;
   font-weight: 400 !important;
   padding-left: 0 !important;
@@ -288,13 +316,13 @@ input[type="checkbox"]:checked {
 .data-table-body > tr > td {
   font-family: "Bebas Neue", sans-serif;
   color: #3d394a;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 20px;
   letter-spacing: 0;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  padding-left: 0px !important;
   text-align: center;
 }
+
 /* .data-table-text {
   font-family: "Bebas Neue", sans-serif;
   color: #3d394a;

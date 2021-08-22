@@ -11,6 +11,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  background-color: #fbf8f8;
 }
 .row {
   margin: auto;
@@ -111,9 +112,9 @@ body {
     font-size: 18px;
   }
 }
-.content {
+/* .content {
   background-color: #fbf8f8;
-}
+} */
 /* <!-- Time Header Section----------------------------------------------------- --> */
 .time-header {
   width: 100%;

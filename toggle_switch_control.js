@@ -1,3 +1,4 @@
+// Time Toggle Switch Control
 const UTC = document.querySelector("#UTC");
 const LT = document.querySelector("#LT");
 toggleSwitch = document.querySelector("#timezone-switch");
@@ -13,3 +14,5 @@ function checkTimezone() {
 }
 checkTimezone();
 toggleSwitch.addEventListener("click", checkTimezone);
+
+// Filter Button Control
