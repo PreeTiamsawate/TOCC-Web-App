@@ -547,6 +547,9 @@ button:focus {
 .data-table-body > tr > td:nth-of-type(3) {
   width: 22%;
 }
+.data-table-body > tr > td:nth-of-type(5) {
+  width: 15%;
+}
 .data-table-body > tr > td:nth-of-type(2) > span,
 .data-table-body > tr > td:nth-of-type(3) > span {
   display: inline-block;
