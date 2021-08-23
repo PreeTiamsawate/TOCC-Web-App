@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS for Bootstrap5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- data table style link     -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <!-- google font links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/avenir-lt-std" rel="stylesheet">
+    <!-- local css -->
+    <link rel="stylesheet" href="./flight_information_GA.css">
+    <title>Flight Information - GA</title>
+</head>
+
+<body>
+    <!-- Top Bar Section---------------------------------------------------------------------------------------------------------------------- -->
+    <section class="top-bar px-2 d-flex justify-content-center align-items-center px-sm-5 ">
+        <img src="./TOCC-icon/thai-logo-icon.png" class="thai-logo d-inline-block mx-1 " alt="">
+        <h1 class="page-name">F.A.R.M. - <span class="CARRIER_CODE">TG</span>
+            <span class="FLIGHT_NUMBER">403</span>
+        </h1>
+
+        <button class="hamberger-btn d-inline-block me-1" onclick="openNav()"><img src=" ./TOCC-icon/hamburger menu.png"
+                alt="">
+        </button>
+    </section>
+    <!-- Side Bar Section------------------------------------------------------------------------------------------------------------------------- -->
+    <section id="mySidebar" class="sidebar">
+        <img src="./TOCC-icon/close-btn.png" class="closebtn" onclick="closeNav()">
+        <div id="user-box" class="row">
+            <div class="col-9 p-0 USER_NAME">PREE TIAMSAWATE</div>
+            <div class="col-3 p-0"><img src="./TOCC-icon/hamburger menu-7@2x.png" class="USER_IMAGE d-inline-block "
+                    alt="">
+            </div>
+        </div>
+        <a href="./all_flights_GA.html" class="nav-link">ALL FLIGHTS</a>
+        <a href="./my_assignment_GA.html" class="nav-link">MY ASSIGNMENT</a>
+    </section>
+
+
+    <section class="px-sm-5">
+        <!-- Time Header Section--------------------------------------------------------------------------------------------------------------------- -->
+        <div class="time-header row justify-content-between align-items-center">
+            <div class="col-4 d-flex align-items-center  px-0 ">
+                <img src="./TOCC-icon/black-clock.png" alt=""><span class="CURRENT_TIME  ">01:00</span>
+            </div>
+            <div class="col-4  d-flex justify-content-end align-items-center px-0 ">
+                <h5 id="LT" class="checkbox-text">LT</h5>
+                <div class="form-check form-switch d-inline-block mx-1">
+                    <input class="form-check-input" type="checkbox" id="timezone-switch" name="timeFormat">
+                </div>
+                <h5 id="UTC" class=" checkbox-text">UTC</h5>
+            </div>
+        </div>
+        <!-- Flight Data Section----------------------------------------------------------------------------------------------------------------  -->
+        <div id="flt_data" class="d-flex flex-row">
+            <div id="flt_info" class="container px-1 ">
+                <div class="row row-cols-1">
+                    <div class="col table-topic light-purple pt-2">Flight</div>
+                    <div class="col">
+                        <span class="CARRIER_CODE">TG</span>
+                        <span class="FLIGHT_NUMBER">403</span>
+                        ( <span class="DEP_STATION">BKK</span> - <span class="ARR_STATION">SIN</span> )
+                        <span class="STD-DATE">20JUN21</span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col-5 ">
+                        <span class="DEP_STATION_ICAO light-purple ">VTBS</span>/<span
+                            class="DEP_STATION light-purple ">BKK</span>
+                    </div>
+                    <div class="col-7">
+                        <span class="STD_TIME ">0100</span>/
+                        <span class="departureUTCCorr">P07.00</span>
+                    </div>
+                    <div class="col-5">
+                        <span class="ARR_STATION_ICAO light-purple ">WSSS</span>/<span
+                            class="ARR_STATION light-purple ">SIN</span>
+                    </div>
+                    <div class="col-7">
+                        <span class="STA_UTC ">0315</span>/
+                        <span class="arrivalUTCCorr ">P08.00</span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col-3">
+                        <span class="light-purple ">FLT : </span>
+
+                    </div>
+                    <div class="col-3">
+
+                        <span class="FlightTime ">0148</span>
+                    </div>
+                    <div class="col-3">
+                        <span class="light-purple ">BLK : </span>
+                    </div>
+                    <div class="col-3">
+                        <span class="BlockTime ">0215</span>
+                    </div>
+                    <div class="col-3">
+                        <span class="light-purple ">ETD : </span>
+                    </div>
+                    <div class="col-3">
+                        <span class="ETD_TIME ">0100</span>
+                    </div>
+                    <div class="col-3">
+                        <span class="light-purple ">ETA : </span>
+                    </div>
+                    <div class="col-3">
+                        <span class="ETA_TIME ">0258</span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="row ">
+                        <div class=" col-8 text-lg px-0 ">
+                            <span class=" light-purple ">DELAY CODE: </span>
+                        </div>
+                        <div class=" col-4 text-center text-lg px-0">
+                            <span class=" DELAY_CODE ">-</span>
+                        </div>
+                        <div class=" col-8 text-lg px-0 ">
+                            <span class="light-purple ">DURATION: </span>
+                        </div>
+                        <div class=" col-4 text-center text-lg px-0">
+                            <span class=" DELAY_DURATION">00:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Aircraft Information Section--------------------------------------------------------------------------------------------------- -->
+            <div id="ac_info" class="container px-1 ">
+                <div class="row row-cols-1">
+                    <div class="col table-topic pt-2 ">Aircraft Information</div>
+
+                    <div class="col   ">
+                        <span class="ACREC ">HS-THK</span> /
+                        <span class="ACTYPE ">A359</span>
+
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col-6 ">
+                        <span class="light-purple ">GATE/BAY: </span>
+                    </div>
+                    <div class="col-6 ">
+                        <span class="GATE">D2</span>/<span class="BAY">508</span>
+                    </div>
+                    <div class="col-2   ">
+                        <span class="light-purple ">CFG:</span>
+
+                    </div>
+                    <div class="col-4   ">
+
+                        <span class="CFG">C0/Y0</span>
+                    </div>
+                    <div class="col-2   ">
+                        <span class="light-purple ">PAX:</span>
+                    </div>
+                    <div class="col-4   ">
+                        <span class="PAX">C32/Y289</span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col ">
+                        <span class="light-purple ">Previous Flight </span>
+                    </div>
+                    <div class="col-4 ">
+                        <span class="CARRIER_CODE">TG</span><span class="prevFlightNo">639 </span>
+                    </div>
+                    <div class="col-8 ">
+                        <span class="prevFlightSTA"> 20JUN 2200</span>
+                    </div>
+                    <div class="col ">
+                        <span class="light-purple ">Next Flight </span>
+                    </div>
+                    <div class="col-4 ">
+                        <span class="CARRIER_CODE">TG</span><span class="nextFlightNo">601 </span>
+                    </div>
+                    <div class="col-8 ">
+                        <span class="nextFlightSTD_UTC"> 21JUN 0515 Z </span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col-6 ">
+                        <span class="light-purple ">BAGGAGE BELT: </span>
+                    </div>
+                    <div class="col-6 ">
+                        <span class="BAGGAGE_BELT">15</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tab-section" class="container px-0">
+        <!-- Nav Tabs Section-------------------------------------------------------------------------------------------------------------- -->
+        <ul class="nav nav-pill d-flex flex-row justify-content-around" id="myTab" role="tablist">
+
+            <li class="nav-item arrival-item" role="presentation">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#inbound-connection" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false">INBOUND CONX</button>
+            </li>
+            <li class="nav-item arrival-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#outbound-connection" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false">OUTBOUND CONX</button>
+            </li>
+
+        </ul>
+    </section>
+    <!-- Updated Time Section------------------------------------------------------------------------------------------------------------------------ -->
+    <section class="time-stamp-bar pe-2 container">
+        Last updated <span class="time-stamp">22:30</span>
+    </section>
+
+    <section class="tab-content" id="myTabContent">
+
+        <!-- IN CONX Panel-------------------------------------------------------------------------------------------------------------- -->
+        <div class="tab-pane show active " id="inbound-connection" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="container">
+                <h3 class="total-header">TOTAL <img src="./TOCC-icon/PAX-Icon.png"> (<img
+                        src="./TOCC-icon/bag-Icon.png">) - <span class="TOTAL_INBOUND_PAX_NUM">50</span><span
+                        class="TOTAL_INBOUND_BAG_NUM">(50)</span>
+                </h3>
+                <!-- Data Table Section----------------------------------------------------- -->
+                <table id="inbound-connection-table" class="display" style="width:100%;">
+                    <thead class="data-table-head">
+                        <tr>
+                            <th>FLIGHT</th>
+                            <th>STA(ETA)</th>
+                            <th>CONX TIME</th>
+                            <th>GATE/BAY</th>
+                            <th><img src="./TOCC-icon/PAX-Icon.png"> (<img src="./TOCC-icon/bag-Icon.png">)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="data-table-body">
+                        <tr>
+                            <td class="IN_CONX_FLIGHT">TG 7600</td>
+                            <td> <span class="INBOUND_STA">04:00</span><span class="INBOUND_ETA">(05:00)</span><span
+                                    class="INBOUND_STA_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="CONX_TIME">04:00</span><span class="CONX_EST_TIME">(05:00)</span><span
+                                    class="CONX_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="IN_CONX_GATE">A7</span>-<span class="IN_CONX_BAY">508</span> </td>
+                            <td>
+                                <span class="INBOUND_PAX_NUM">10</span> (<span class="INBOUND_BAG_NUM">10</span>)
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="IN_CONX_FLIGHT">TG 7600</td>
+                            <td> <span class="INBOUND_STA">04:00</span><span class="INBOUND_ETA">(05:00)</span><span
+                                    class="INBOUND_STA_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="CONX_TIME">04:00</span><span class="CONX_EST_TIME">(05:00)</span><span
+                                    class="CONX_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="IN_CONX_GATE">A7</span>-<span class="IN_CONX_BAY">508</span> </td>
+                            <td>
+                                <span class="INBOUND_PAX_NUM">10</span> (<span class="INBOUND_BAG_NUM">10</span>)
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- OUT CONX Panel-------------------------------------------------------------------------------------------------------------- -->
+        <div class="tab-pane " id="outbound-connection" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="container">
+                <h3 class="total-header">TOTAL <img src="./TOCC-icon/PAX-Icon.png"> (<img
+                        src="./TOCC-icon/bag-Icon.png">) - <span class="TOTAL_OUTBOUND_PAX_NUM">50</span><span
+                        class="TOTAL_OUTBOUND_BAG_NUM">(50)</span>
+                </h3>
+                <!-- Data Table Section----------------------------------------------------- -->
+                <table id="outbound-connection-table" class="display" style="width:100%;">
+                    <thead class="data-table-head">
+                        <tr>
+                            <th>FLIGHT</th>
+                            <th>STD(ETD)</th>
+                            <th>CONX TIME</th>
+                            <th>GATE/BAY</th>
+                            <th><img src="./TOCC-icon/PAX-Icon.png"> (<img src="./TOCC-icon/bag-Icon.png">)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="data-table-body">
+                        <tr>
+                            <td class="OUT_CONX_FLIGHT">TG 3111</td>
+                            <td> <span class="OUTBOUND_STA">03:00</span><span class="OUTBOUND_ETA">(05:00)</span><span
+                                    class="OUTBOUND_STA_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="OUT_CONX_TIME">03:00</span><span
+                                    class="OUT_CONX_EST_TIME">(05:00)</span><span
+                                    class="OUT_CONX_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="OUT_CONX_GATE">A7</span>-<span class="OUT_CONX_BAY">508</span> </td>
+                            <td>
+                                <span class="OUTBOUND_PAX_NUM">10</span> (<span class="OUTBOUND_BAG_NUM">10</span>)
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="OUT_CONX_FLIGHT">TG 7600</td>
+                            <td> <span class="OUTBOUND_STA">04:00</span><span class="OUTBOUND_ETA">(05:00)</span><span
+                                    class="OUTBOUND_STA_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="OUT_CONX_TIME">04:00</span><span
+                                    class="OUT_CONX_EST_TIME">(05:00)</span><span
+                                    class="OUT_CONX_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="OUT_CONX_GATE">A7</span>-<span class="OUT_CONX_BAY">508</span> </td>
+                            <td>
+                                <span class="OUTBOUND_PAX_NUM">10</span> (<span class="OUTBOUND_BAG_NUM">10</span>)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- bootstrap 5 js link -->
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+    <!-- Local JS -->
+    <script src="./sidebar_control.js"></script>
+    <script src="./toggle_switch_control.js"></script>
+    <script src="./time_modal_control.js"></script>
+
+    <!-- data table controlers  -->
+
+    <script>
+        $(document).ready(function () {
+            $('#inbound-connection-table').DataTable({
+                "paging": false,
+                "info": false,
+                "searching": false,
+                "order": [[1, "asc"]],
+                // columnDefs: [
+                //     { orderable: false, targets: 3 }
+                // ],
+            });
+        });
+        $(document).ready(function () {
+            $('#outbound-connection-table').DataTable({
+                "paging": false,
+                "info": false,
+                "searching": false,
+                "order": [[1, "asc"]],
+                // columnDefs: [
+                //     { orderable: false, targets: 3 }
+                // ],
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -252,9 +252,12 @@ button:focus {
   background-color: #3d394a;
   font-size: 14px;
 }
-
 .nav-item {
   width: 33%;
+  text-align: center;
+}
+.nav-pill > .arrival-item {
+  width: 49.5%;
   text-align: center;
 }
 .tab-pane {
