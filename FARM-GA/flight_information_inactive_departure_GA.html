@@ -32,22 +32,21 @@
 <body>
     <!-- Top Bar Section---------------------------------------------------------------------------------------------------------------------- -->
     <section class="top-bar px-2 d-flex justify-content-center align-items-center px-sm-5 ">
-        <img src="./TOCC-icon/thai-logo-icon.png" class="thai-logo d-inline-block mx-1 " alt="">
+        <img src="./FARM-GA-image/thai-logo-icon.png" class="thai-logo d-inline-block mx-1 " alt="">
         <h1 class="page-name">F.A.R.M. - <span class="CARRIER_CODE">TG</span>
             <span class="FLIGHT_NUMBER">403</span>
         </h1>
 
-        <button class="hamberger-btn d-inline-block me-1" onclick="openNav()"><img src=" ./TOCC-icon/hamburger menu.png"
-                alt="">
+        <button class="hamberger-btn d-inline-block me-1" onclick="openNav()"><img
+                src=" ./FARM-GA-image/hamburger menu.png" alt="">
         </button>
     </section>
     <!-- Side Bar Section------------------------------------------------------------------------------------------------------------------------- -->
     <section id="mySidebar" class="sidebar">
-        <img src="./TOCC-icon/close-btn.png" class="closebtn" onclick="closeNav()">
+        <img src="./FARM-GA-image/close-btn.png" class="closebtn" onclick="closeNav()">
         <div id="user-box" class="row">
             <div class="col-9 p-0 USER_NAME">PREE TIAMSAWATE</div>
-            <div class="col-3 p-0"><img src="./TOCC-icon/hamburger menu-7@2x.png" class="USER_IMAGE d-inline-block "
-                    alt="">
+            <div class="col-3 p-0"><img src="./FARM-GA-image/user icon.png" class="USER_IMAGE d-inline-block " alt="">
             </div>
         </div>
         <a href="./all_flights_GA.html" class="nav-link">ALL FLIGHTS</a>
@@ -59,7 +58,7 @@
         <!-- Time Header Section--------------------------------------------------------------------------------------------------------------------- -->
         <div class="time-header row justify-content-between align-items-center">
             <div class="col-4 d-flex align-items-center  px-0 ">
-                <img src="./TOCC-icon/black-clock.png" alt=""><span class="CURRENT_TIME  ">01:00</span>
+                <img src="./FARM-GA-image/black-clock.png" alt=""><span class="CURRENT_TIME  ">01:00</span>
             </div>
             <div class="col-4  d-flex justify-content-end align-items-center px-0 ">
                 <h5 id="LT" class="checkbox-text">LT</h5>
@@ -67,6 +66,7 @@
                     <input class="form-check-input" type="checkbox" id="timezone-switch" name="timeFormat">
                 </div>
                 <h5 id="UTC" class=" checkbox-text">UTC</h5>
+
             </div>
         </div>
         <!-- Flight Data Section----------------------------------------------------------------------------------------------------------------  -->
@@ -191,12 +191,19 @@
                     <div class="col-8 ">
                         <span class="nextFlightSTD_UTC"> 21JUN 0515 Z </span>
                     </div>
-                    <div class="col table-spacing"></div>
-                    <div class="col-6 ">
-                        <span class="light-purple ">BAGGAGE BELT: </span>
-                    </div>
-                    <div class="col-6 ">
-                        <span class="BAGGAGE_BELT">15</span>
+                    <div class="row pt-1 ">
+                        <div class=" col-2 text-md px-0 ">
+                            <span class=" text-red ">TSAT: </span>
+                        </div>
+                        <div class=" col-4 text-center text-md px-0">
+                            <span class=" DELAY_CODE ">00:00</span>
+                        </div>
+                        <div class=" col-2 text-md px-0 ">
+                            <span class="text-red ">CTOT: </span>
+                        </div>
+                        <div class=" col-4 text-center text-md px-0">
+                            <span class=" DELAY_DURATION">00:00</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -206,16 +213,18 @@
     <section id="tab-section" class="container px-0">
         <!-- Nav Tabs Section-------------------------------------------------------------------------------------------------------------- -->
         <ul class="nav nav-pill d-flex flex-row justify-content-around" id="myTab" role="tablist">
-
-            <li class="nav-item arrival-item" role="presentation">
-                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#inbound-connection" type="button"
-                    role="tab" aria-controls="profile" aria-selected="false">INBOUND CONX</button>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#flight-prep" type="button"
+                    role="tab" aria-controls="home" aria-selected="true">FLIGHT PREP</button>
             </li>
-            <li class="nav-item arrival-item" role="presentation">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#inbound-connection" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false">IN CONX</button>
+            </li>
+            <li class="nav-item" role="presentation">
                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#outbound-connection" type="button"
-                    role="tab" aria-controls="profile" aria-selected="false">OUTBOUND CONX</button>
+                    role="tab" aria-controls="profile" aria-selected="false">OUT CONX</button>
             </li>
-
         </ul>
     </section>
     <!-- Updated Time Section------------------------------------------------------------------------------------------------------------------------ -->
@@ -224,12 +233,112 @@
     </section>
 
     <section class="tab-content" id="myTabContent">
+        <!-- Aircraft Preparation Panel-------------------------------------------------------------------------------------------------------------- -->
+        <div class="tab-pane  show active" id="flight-prep" role="tabpanel" aria-labelledby="home-tab">
+            <div class="container px-0 d-flex flex-column">
+                <!-- PASSENGER Table--------------------------------- -->
+                <div class="header-bar">
+                    PASSENGER
+                </div>
+                <div class="py-3">
+                    <div class="row data-row">
+                        <div class="col-5  ">CREW ARRIVED
+                        </div>
+                        <div class="col-3  "><span id="CREW_ARRIVED_TIME"></span></div>
+                        <div class="col-4 align-items-center ">
+                            <!-- <button type="button" class="update-btn  rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#CREW_ARRIVED_MODAL" id="CREW_ARRIVED_UPDATE_BTN">
+                                UPDATE
+                            </button> -->
+                        </div>
+                    </div>
+                    <div class="row data-row">
+                        <div class="col-5  ">OPEN GATE</div>
+                        <div class="col-3  "><span id="OPEN_GATE_TIME"></span></div>
+                        <div class="col-4 align-items-center ">
+                            <!-- <button type="button" class="update-btn  rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#OPEN_GATE_MODAL" id="OPEN_GATE_UPDATE_BTN">
+                                UPDATE
+                            </button> -->
+                        </div>
+                    </div>
+                    <div class="row data-row">
+                        <div class="col-5  ">BOARDING COMMENCED</div>
+                        <div class="col-3  "><span id="BOARDING_COMMENCED_TIME"></span></div>
+                        <div class="col-4 align-items-center">
+                            <!-- <button type="button" class="update-btn  rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#BOARDING_COMMENCED_MODAL" id="BOARDING_COMMENCED_UPDATE_BTN">
+                                UPDATE
+                            </button> -->
+                        </div>
+                    </div>
+                    <div class="row data-row">
+                        <div class="col-5  ">BOARDING COMPLETED</div>
+                        <div class="col-3  "><span id="BOARDING_COMPLETED_TIME"></span></div>
+                        <div class="col-4 align-items-center">
+                            <!-- <button type="button" class="update-btn rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#BOARDING_COMPLETED_MODAL" id="BOARDING_COMPLETED_UPDATE_BTN">
+                                UPDATE
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- CARGO Table--------------------------------- -->
+                <div class="header-bar">
+                    CARGO
+                </div>
+                <div class="py-3">
+                    <div class="row data-row">
+                        <div class="col-5  ">CARGO SHORT CONNECT</div>
+                        <div class="col-3  "><span id="CARGO_SHORT_CONNECT_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center">
+                            <div class="completed-status  col-9">
+                                <img src="./FARM-GA-image/completed-icon.png" alt="">
+                                <span>COMPLETED</span>
+                            </div>
 
+                        </div>
+                    </div>
+                    <div class="row data-row">
+                        <div class="col-5  ">LOADING START</div>
+                        <div class="col-3  "><span id="LOADING_START_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center">
+                            <div class="on-process-status  col-9">
+                                <img src="./FARM-GA-image/in-process-icon.png" alt="">
+                                <span>ON PROCESS</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row data-row">
+                        <div class="col-5  ">CARGO DOOR CLOSED</div>
+                        <div class="col-3  "><span id="CARGO_DOOR_CLOSED_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center">
+                            <div class="not-started-status  col-9">
+                                <img src="./FARM-GA-image/red-cross-icon.png" alt="">
+                                <span>NOT STARTED</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row data-row">
+                        <div class="col-5  ">PUSH BACK STBY</div>
+                        <div class="col-3  "><span id="PUSH_BACK_STBY_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center ">
+                            <div class="not-started-status  col-9">
+                                <img src="./FARM-GA-image/red-cross-icon.png" alt="">
+                                <span>NOT STARTED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <!-- IN CONX Panel-------------------------------------------------------------------------------------------------------------- -->
-        <div class="tab-pane show active " id="inbound-connection" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="tab-pane " id="inbound-connection" role="tabpanel" aria-labelledby="profile-tab">
             <div class="container">
-                <h3 class="total-header">TOTAL <img src="./TOCC-icon/PAX-Icon.png"> (<img
-                        src="./TOCC-icon/bag-Icon.png">) - <span class="TOTAL_INBOUND_PAX_NUM">50</span><span
+                <h3 class="total-header">TOTAL <img src="./FARM-GA-image/PAX-Icon.png"> (<img
+                        src="./FARM-GA-image/bag-Icon.png">) - <span class="TOTAL_INBOUND_PAX_NUM">50</span><span
                         class="TOTAL_INBOUND_BAG_NUM">(50)</span>
                 </h3>
                 <!-- Data Table Section----------------------------------------------------- -->
@@ -240,7 +349,7 @@
                             <th>STA(ETA)</th>
                             <th>CONX TIME</th>
                             <th>GATE/BAY</th>
-                            <th><img src="./TOCC-icon/PAX-Icon.png"> (<img src="./TOCC-icon/bag-Icon.png">)</th>
+                            <th><img src="./FARM-GA-image/PAX-Icon.png"> (<img src="./FARM-GA-image/bag-Icon.png">)</th>
                         </tr>
                     </thead>
                     <tbody class="data-table-body">
@@ -281,8 +390,8 @@
         <!-- OUT CONX Panel-------------------------------------------------------------------------------------------------------------- -->
         <div class="tab-pane " id="outbound-connection" role="tabpanel" aria-labelledby="profile-tab">
             <div class="container">
-                <h3 class="total-header">TOTAL <img src="./TOCC-icon/PAX-Icon.png"> (<img
-                        src="./TOCC-icon/bag-Icon.png">) - <span class="TOTAL_OUTBOUND_PAX_NUM">50</span><span
+                <h3 class="total-header">TOTAL <img src="./FARM-GA-image/PAX-Icon.png"> (<img
+                        src="./FARM-GA-image/bag-Icon.png">) - <span class="TOTAL_OUTBOUND_PAX_NUM">50</span><span
                         class="TOTAL_OUTBOUND_BAG_NUM">(50)</span>
                 </h3>
                 <!-- Data Table Section----------------------------------------------------- -->
@@ -293,7 +402,7 @@
                             <th>STD(ETD)</th>
                             <th>CONX TIME</th>
                             <th>GATE/BAY</th>
-                            <th><img src="./TOCC-icon/PAX-Icon.png"> (<img src="./TOCC-icon/bag-Icon.png">)</th>
+                            <th><img src="./FARM-GA-image/PAX-Icon.png"> (<img src="./FARM-GA-image/bag-Icon.png">)</th>
                         </tr>
                     </thead>
                     <tbody class="data-table-body">

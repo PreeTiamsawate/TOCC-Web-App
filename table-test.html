@@ -16,8 +16,7 @@
     <div class="accordion accordion-flush" id="accordionPanelsStayOpenExample">
         <div class="accordion-item">
             <div class="accordion-header" id="panelsStayOpen-headingOne">
-                <button class="btn" type="button" data-bs-toggle="collapse" 
-                data-bs-target="#panelsStayOpen-collapseOne"
+                <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne"
                     aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                     Accordion Item #1
                 </button>
@@ -48,8 +47,11 @@
                 <th>Age</th>
 
             </tr>
+
         </thead>
+
         <tbody>
+
             <tr>
                 <td>Tiger Nixon</td>
                 <td>System Architect</td>
@@ -99,6 +101,12 @@
                     "info": false
                 });
             });
+        </script>
+        <script>
+            const tRows = document.querySelectorAll("tr")
+            for (let tRow of tRows) {
+                console.log(tRow);
+            }
         </script>
 </body>
 
