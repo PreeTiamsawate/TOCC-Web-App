@@ -25,40 +25,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/avenir-lt-std" rel="stylesheet">
     <!-- local css -->
-    <link rel="stylesheet" href="./flight_information_GA.css">
-    <title>Flight Information - GA</title>
+    <link rel="stylesheet" href="./flight_information_FSC.css">
+    <title>Flight Information - FSC</title>
 </head>
 
 <body>
     <!-- Top Bar Section---------------------------------------------------------------------------------------------------------------------- -->
     <section class="top-bar px-2 d-flex justify-content-center align-items-center px-sm-5 ">
-        <img src="./FARM-GA-image/thai-logo-icon.png" class="thai-logo d-inline-block mx-1 " alt="">
+        <a href="./all_flights_FSC.html" class="goBack-btn"><img src="./FARM-FSC-image/arrow-back.svg"></a>
+        <img src="./FARM-FSC-image/thai-logo-icon.png" class="thai-logo d-inline-block mx-1 " alt="">
         <h1 class="page-name">F.A.R.M. - <span class="CARRIER_CODE">TG</span>
             <span class="FLIGHT_NUMBER">403</span>
         </h1>
 
-        <button class="hamberger-btn d-inline-block me-1" onclick="openNav()"><img
-                src=" ./FARM-GA-image/hamburger menu.png" alt="">
-        </button>
+
     </section>
-    <!-- Side Bar Section------------------------------------------------------------------------------------------------------------------------- -->
-    <section id="mySidebar" class="sidebar">
-        <img src="./FARM-GA-image/close-btn.png" class="closebtn" onclick="closeNav()">
-        <div id="user-box" class="row">
-            <div class="col-9 p-0 USER_NAME">PREE TIAMSAWATE</div>
-            <div class="col-3 p-0"><img src="./FARM-GA-image/user icon.png" class="USER_IMAGE d-inline-block " alt="">
-            </div>
-        </div>
-        <a href="./all_flights_GA.html" class="nav-link">ALL FLIGHTS</a>
-        <a href="./my_assignment_GA.html" class="nav-link">MY ASSIGNMENT</a>
-    </section>
+
 
 
     <section class="px-sm-5">
         <!-- Time Header Section--------------------------------------------------------------------------------------------------------------------- -->
         <div class="time-header row justify-content-between align-items-center">
             <div class="col-4 d-flex align-items-center  px-0 ">
-                <img src="./FARM-GA-image/black-clock.png" alt=""><span class="CURRENT_TIME  ">01:00</span>
+                <img src="./FARM-FSC-image/black-clock.png" alt=""><span class="CURRENT_TIME  ">01:00</span>
             </div>
             <div class="col-4  d-flex justify-content-end align-items-center px-0 ">
                 <h5 id="LT" class="checkbox-text">LT</h5>
@@ -116,28 +105,19 @@
                     </div>
                     <div class="col-3 standard_time">
                         <span class="STA_TIME ">0100</span>
+                        <span class="STA_MILLISECOND d-none">33333333</span>
+
                     </div>
                     <div class="col-3">
                         <span class="light-purple ">ETA : </span>
                     </div>
                     <div class="col-3 estimated_time">
                         <span class="ETA_TIME ">0258</span>
+                        <span class="ETA_MILLISECOND d-none ">44444444</span>
                     </div>
+
                     <div class="col table-spacing"></div>
-                    <div class="row ">
-                        <div class=" col-8 text-lg px-0 ">
-                            <span class=" light-purple ">DELAY CODE: </span>
-                        </div>
-                        <div class=" col-4 text-center text-lg px-0">
-                            <span class=" DELAY_CODE ">-</span>
-                        </div>
-                        <div class=" col-8 text-lg px-0 ">
-                            <span class="light-purple ">DURATION: </span>
-                        </div>
-                        <div class=" col-4 text-center text-lg px-0">
-                            <span class=" DELAY_DURATION">00:00</span>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <!-- Aircraft Information Section--------------------------------------------------------------------------------------------------- -->
@@ -194,12 +174,8 @@
                         <span class="nextFlight_ETD">0515</span> / <span class="nextFlight_Date">21JUN</span>
                     </div>
                     <div class="col table-spacing"></div>
-                    <div class="col-6 ">
-                        <span class="light-purple ">BAGGAGE BELT: </span>
-                    </div>
-                    <div class="col-6 ">
-                        <span class="BAGGAGE_BELT">15</span>
-                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -230,8 +206,8 @@
         <!-- IN CONX Panel-------------------------------------------------------------------------------------------------------------- -->
         <div class="tab-pane show active " id="inbound-connection" role="tabpanel" aria-labelledby="profile-tab">
             <div class="container">
-                <h3 class="total-header">TOTAL <img src="./FARM-GA-image/PAX-Icon.png"> (<img
-                        src="./FARM-GA-image/bag-Icon.png">) - <span class="TOTAL_INBOUND_PAX_NUM">50</span><span
+                <h3 class="total-header">TOTAL <img src="./FARM-FSC-image/PAX-Icon.png"> (<img
+                        src="./FARM-FSC-image/bag-Icon.png">) - <span class="TOTAL_INBOUND_PAX_NUM">50</span><span
                         class="TOTAL_INBOUND_BAG_NUM">(50)</span>
                 </h3>
                 <!-- Data Table Section----------------------------------------------------- -->
@@ -242,7 +218,8 @@
                             <th>STA(ETA)</th>
                             <th>CONX TIME</th>
                             <th>GATE/BAY</th>
-                            <th><img src="./FARM-GA-image/PAX-Icon.png"> (<img src="./FARM-GA-image/bag-Icon.png">)</th>
+                            <th><img src="./FARM-FSC-image/PAX-Icon.png"> (<img src="./FARM-FSC-image/bag-Icon.png">)
+                            </th>
                         </tr>
                     </thead>
                     <tbody class="data-table-body">
@@ -283,8 +260,8 @@
         <!-- OUT CONX Panel-------------------------------------------------------------------------------------------------------------- -->
         <div class="tab-pane " id="outbound-connection" role="tabpanel" aria-labelledby="profile-tab">
             <div class="container">
-                <h3 class="total-header">TOTAL <img src="./FARM-GA-image/PAX-Icon.png"> (<img
-                        src="./FARM-GA-image/bag-Icon.png">) - <span class="TOTAL_OUTBOUND_PAX_NUM">50</span><span
+                <h3 class="total-header">TOTAL <img src="./FARM-FSC-image/PAX-Icon.png"> (<img
+                        src="./FARM-FSC-image/bag-Icon.png">) - <span class="TOTAL_OUTBOUND_PAX_NUM">50</span><span
                         class="TOTAL_OUTBOUND_BAG_NUM">(50)</span>
                 </h3>
                 <!-- Data Table Section----------------------------------------------------- -->
@@ -295,7 +272,8 @@
                             <th>STD(ETD)</th>
                             <th>CONX TIME</th>
                             <th>GATE/BAY</th>
-                            <th><img src="./FARM-GA-image/PAX-Icon.png"> (<img src="./FARM-GA-image/bag-Icon.png">)</th>
+                            <th><img src="./FARM-FSC-image/PAX-Icon.png"> (<img src="./FARM-FSC-image/bag-Icon.png">)
+                            </th>
                         </tr>
                     </thead>
                     <tbody class="data-table-body">
@@ -315,7 +293,7 @@
 
                         </tr>
                         <tr>
-                            <td class="OUT_CONX_FLIGHT">TG 7600</td>
+                            <td class="OUT_CONX_FLIGHT">TG 7500</td>
                             <td> <span class="OUTBOUND_STA">04:00</span><span class="OUTBOUND_ETA">(05:00)</span><span
                                     class="OUTBOUND_STA_DATE">20-09-2021</span>
                             </td>
@@ -345,9 +323,10 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
     <!-- Local JS -->
-    <script src="./sidebar_control.js"></script>
+
     <script src="./toggle_switch_control.js"></script>
     <script src="./previous_flight_ETA_control.js"></script>
+    <script src="./check_delay.js"></script>
 
 
     <!-- data table controlers  -->

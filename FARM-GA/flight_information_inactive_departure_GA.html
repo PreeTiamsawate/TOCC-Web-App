@@ -113,16 +113,17 @@
                         <span class="BlockTime ">0215</span>
                     </div>
                     <div class="col-3">
+                        <span class="light-purple ">STD : </span>
+                    </div>
+                    <div class="col-3 standard_time">
+                        <span class="STD_TIME ">0100</span>
+                    </div>
+                    <div class="col-3">
                         <span class="light-purple ">ETD : </span>
                     </div>
-                    <div class="col-3">
-                        <span class="ETD_TIME ">0100</span>
-                    </div>
-                    <div class="col-3">
-                        <span class="light-purple ">ETA : </span>
-                    </div>
-                    <div class="col-3">
-                        <span class="ETA_TIME ">0258</span>
+                    <div class="col-3 estimated_time">
+                        <span class="ETD_TIME ">0258</span>
+
                     </div>
                     <div class="col table-spacing"></div>
                     <div class="row ">
@@ -180,7 +181,10 @@
                         <span class="CARRIER_CODE">TG</span><span class="prevFlightNo">639 </span>
                     </div>
                     <div class="col-8 ">
-                        <span class="prevFlightSTA"> 20JUN 2200</span>
+                        <!-- Controled by previous_flight_ETA_control -->
+                        <span class="prevFlight_ETA">2200</span><span class="prevFlight_ATA d-none"></span> /
+                        <span class="prevFlight_Est_Date">20JUN</span><span
+                            class="prevFlight_Actual_Date d-none"></span>
                     </div>
                     <div class="col ">
                         <span class="light-purple ">Next Flight </span>
@@ -189,7 +193,7 @@
                         <span class="CARRIER_CODE">TG</span><span class="nextFlightNo">601 </span>
                     </div>
                     <div class="col-8 ">
-                        <span class="nextFlightSTD_UTC"> 21JUN 0515 Z </span>
+                        <span class="nextFlight_ETD">0515</span> / <span class="nextFlight_Date">21JUN</span>
                     </div>
                     <div class="row pt-1 ">
                         <div class=" col-2 text-md px-0 ">
@@ -244,42 +248,36 @@
                     <div class="row data-row">
                         <div class="col-5  ">CREW ARRIVED
                         </div>
-                        <div class="col-3  "><span id="CREW_ARRIVED_TIME"></span></div>
+                        <div class="col-3  "><span id="CREW_ARRIVED_TIME">11:00</span></div>
                         <div class="col-4 align-items-center ">
-                            <!-- <button type="button" class="update-btn  rounded-pill" data-bs-toggle="modal"
-                                data-bs-target="#CREW_ARRIVED_MODAL" id="CREW_ARRIVED_UPDATE_BTN">
-                                UPDATE
-                            </button> -->
+                            <div class="completed-status  col-9">
+                                <img src="./FARM-GA-image/completed-icon.png" alt="">
+                                <span>COMPLETED</span>
+                            </div>
                         </div>
                     </div>
                     <div class="row data-row">
                         <div class="col-5  ">OPEN GATE</div>
-                        <div class="col-3  "><span id="OPEN_GATE_TIME"></span></div>
+                        <div class="col-3  "><span id="OPEN_GATE_TIME">11:10</span></div>
                         <div class="col-4 align-items-center ">
-                            <!-- <button type="button" class="update-btn  rounded-pill" data-bs-toggle="modal"
-                                data-bs-target="#OPEN_GATE_MODAL" id="OPEN_GATE_UPDATE_BTN">
-                                UPDATE
-                            </button> -->
+                            <div class="completed-status  col-9">
+                                <img src="./FARM-GA-image/completed-icon.png" alt="">
+                                <span>COMPLETED</span>
+                            </div>
                         </div>
                     </div>
                     <div class="row data-row">
                         <div class="col-5  ">BOARDING COMMENCED</div>
                         <div class="col-3  "><span id="BOARDING_COMMENCED_TIME"></span></div>
                         <div class="col-4 align-items-center">
-                            <!-- <button type="button" class="update-btn  rounded-pill" data-bs-toggle="modal"
-                                data-bs-target="#BOARDING_COMMENCED_MODAL" id="BOARDING_COMMENCED_UPDATE_BTN">
-                                UPDATE
-                            </button> -->
+
                         </div>
                     </div>
                     <div class="row data-row">
                         <div class="col-5  ">BOARDING COMPLETED</div>
                         <div class="col-3  "><span id="BOARDING_COMPLETED_TIME"></span></div>
                         <div class="col-4 align-items-center">
-                            <!-- <button type="button" class="update-btn rounded-pill" data-bs-toggle="modal"
-                                data-bs-target="#BOARDING_COMPLETED_MODAL" id="BOARDING_COMPLETED_UPDATE_BTN">
-                                UPDATE
-                            </button> -->
+
                         </div>
                     </div>
                 </div>
@@ -454,7 +452,8 @@
     <!-- Local JS -->
     <script src="./sidebar_control.js"></script>
     <script src="./toggle_switch_control.js"></script>
-    <script src="./time_modal_control.js"></script>
+    <script src="./previous_flight_ETA_control.js"></script>
+
 
     <!-- data table controlers  -->
 

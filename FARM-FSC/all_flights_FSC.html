@@ -22,30 +22,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/avenir-lt-std" rel="stylesheet">
     <!-- local css -->
-    <link rel="stylesheet" href="./all_flights_GA.css">
-    <title>All Flight - GA</title>
+    <link rel="stylesheet" href="./all_flights_FSC.css">
+    <title>All Flight - FSC</title>
 </head>
 
 <body>
     <!-- Top Bar Section----------------------------------------------------- -->
     <section class="top-bar px-2 d-flex justify-content-center align-items-center px-sm-5 ">
-        <img src="./FARM-GA-image/thai-logo-icon.png" class="thai-logo d-inline-block mx-1 " alt="">
+        <img src="./FARM-FSC-image/thai-logo-icon.png" class="thai-logo d-inline-block mx-1 " alt="">
         <h1 class="page-name">ALL FLIGHTS</h1>
 
-        <button class="hamberger-btn d-inline-block me-1" onclick="openNav()"><img
-                src=" ./FARM-GA-image/hamburger menu.png" alt=""></button>
+
     </section>
-    <!-- Side Bar Section----------------------------------------------------- -->
-    <section id="mySidebar" class="sidebar">
-        <img src="./FARM-GA-image/close-btn.png" class="closebtn" onclick="closeNav()">
-        <div id="user-box" class="row">
-            <div class="col-9 p-0 USER_NAME">PREE TIAMSAWATE</div>
-            <div class="col-3 p-0"><img src="./FARM-GA-image/user icon.png" class="USER_IMAGE d-inline-block " alt="">
-            </div>
-        </div>
-        <a href="./all_flights_GA.html" class="nav-link">ALL FLIGHTS</a>
-        <a href="./my_assignment_GA.html" class="nav-link">MY ASSIGNMENT</a>
-    </section>
+
 
 
 
@@ -53,7 +42,7 @@
         <!-- Time Header Section----------------------------------------------------- -->
         <div class="time-header row justify-content-between align-items-center">
             <div class="col-4 d-flex align-items-center  px-0 ">
-                <img src="./FARM-GA-image/black-clock.png" alt=""><span class="CURRENT_TIME  ">01:00</span>
+                <img src="./FARM-FSC-image/black-clock.png" alt=""><span class="CURRENT_TIME  ">01:00</span>
             </div>
             <div class="col-4  d-flex justify-content-end align-items-center px-0 ">
                 <h5 id="LT" class="checkbox-text">LT</h5>
@@ -130,22 +119,23 @@
                                 </label>
                             </div>
                         </div>
-                        <div class=" row align-items-center table-head mb-4">
-                            <div class="col-4  ">
-                                ZONE
-                            </div>
 
-                            <select class="select-box table-text " name="terminalZone">
-                                <option value="A" selected>A</option>
-                                <option value="B">B</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
-                                <option value="F">F</option>
-                                <option value="G">G</option>
-                            </select>
-                        </div>
                     </div>
+                </div>
+                <div class=" row align-items-center table-head mb-4">
+                    <div class="col-4  ">
+                        ZONE
+                    </div>
+
+                    <select class="select-box table-text " name="terminalZone">
+                        <option value="A" selected>A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                    </select>
                 </div>
 
 
@@ -165,26 +155,30 @@
             <tbody class="data-table-body">
                 <tr>
                     <td class="FLIGHT">TG600 </td>
-                    <td> <span class="STD_STA">1600</span> (<span class="LEG">D</span>)</td>
+                    <td class="TIME_DATA">
+                        <span class="STD_STA">1600</span> (<span class="LEG">D</span>)
+                        <span class="STD_STA_MILLISECOND d-none">9999</span>
+                        <span class="ETD_ETA_MILLISECOND d-none">1111</span>
+                    </td>
                     <td class="GATE/BAY"> <span class="GATE">A7</span>-<span class="BAY">508</span> </td>
-                    <td class=" d-flex justify-content-between flex-wrap">
-                        <button type="button" class=" ACKD-btn rounded-pill  ">
-                            ACKD
-                        </button>
-                        <a href="./flight_information_inactive_departure_GA.html"><img
-                                src="./FARM-GA-image/Icon-magnifying-glass-sm.png"></a>
+                    <td class="text-center">
+
+                        <a href="./flight_information_departure_FSC.html"><img
+                                src="./FARM-FSC-image/Icon-magnifying-glass-sm.png"></a>
                     </td>
                 </tr>
                 <tr>
-                    <td class="FLIGHT">TG601</td>
-                    <td> <span class="STD_STA">1500</span> (<span class="LEG">A</span>)</td>
-                    <td class="GATE/BAY"><span class="GATE">A7</span></td>
-                    <td class=" d-flex justify-content-between flex-wrap">
-                        <button type="button" class=" ACKD-btn-disabled  rounded-pill  ">
-                            ACKD
-                        </button>
-                        <a href="./flight_information_active_departure_GA.html"><img
-                                src="./FARM-GA-image/Icon-magnifying-glass-sm.png"></a>
+                    <td class="FLIGHT">TG601 </td>
+                    <td class="TIME_DATA">
+                        <span class="STD_STA">1500</span> (<span class="LEG">A</span>)
+                        <span class="STD_STA_MILLISECOND d-none">2222</span>
+                        <span class="ETD_ETA_MILLISECOND d-none">3333</span>
+                    </td>
+                    <td class="GATE/BAY"> <span class="GATE">A7</span> </td>
+                    <td class="text-center">
+
+                        <a href="./flight_information_arrival_FSC.html"><img
+                                src="./FARM-FSC-image/Icon-magnifying-glass-sm.png"></a>
                     </td>
                 </tr>
 
@@ -200,7 +194,7 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
     <!-- Local JS -->
-    <script src="./sidebar_control.js"></script>
+
     <script src="./toggle_switch_control.js"></script>
     <script src="./table_filter_btn_control.js"></script>
 
@@ -216,7 +210,22 @@
                     { orderable: false, targets: 3 }
                 ],
             });
+
+            let timeDatas = $(".TIME_DATA");
+            const checkDelay = function () {
+                for (let timeData of timeDatas) {
+                    let standardTime = Number($(timeData).children()[2].innerText)
+                    let estimatedTime = Number($(timeData).children()[3].innerText)
+                    if (estimatedTime - standardTime > 0) {
+                        $(timeData).parent().children().css("background-color", "#F99292")
+                    }
+                }
+            }
+            checkDelay();
+            setInterval(checkDelay, 60000);
         });
+
+
     </script>
 
 </body>
