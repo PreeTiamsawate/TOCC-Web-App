@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS for Bootstrap5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- data table style link     -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <!-- google font links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/avenir-lt-std" rel="stylesheet">
+    <!-- local css -->
+    <link rel="stylesheet" href="./flight_information_RO.css">
+    <title>Flight Information - RO</title>
+</head>
+
+<body>
+    <!-- Top Bar Section---------------------------------------------------------------------------------------------------------------------- -->
+    <section class="top-bar px-2 d-flex justify-content-center align-items-center px-sm-5 ">
+        <img src="./FARM-RO-image/thai-logo-icon.png" class="thai-logo d-inline-block mx-1 " alt="">
+        <h1 class="page-name">F.A.R.M. - <span class="CARRIER_CODE">TG</span>
+            <span class="FLIGHT_NUMBER">403</span>
+        </h1>
+
+        <button class="hamberger-btn d-inline-block me-1" onclick="openNav()"><img
+                src=" ./FARM-RO-image/hamburger menu.png" alt="">
+        </button>
+    </section>
+    <!-- Side Bar Section------------------------------------------------------------------------------------------------------------------------- -->
+    <section id="mySidebar" class="sidebar">
+        <img src="./FARM-RO-image/close-btn.png" class="closebtn" onclick="closeNav()">
+        <div id="user-box" class="row">
+            <div class="col-9 p-0 USER_NAME">PREE TIAMSAWATE</div>
+            <div class="col-3 p-0"><img src="./FARM-RO-image/user icon.png" class="USER_IMAGE d-inline-block " alt="">
+            </div>
+        </div>
+        <a href="./all_flights_RO.html" class="nav-link">ALL FLIGHTS</a>
+        <a href="./my_assignment_RO.html" class="nav-link">MY ASSIGNMENT</a>
+    </section>
+
+
+    <section class="px-sm-5">
+        <!-- Time Header Section--------------------------------------------------------------------------------------------------------------------- -->
+        <div class="time-header row justify-content-between align-items-center">
+            <div class="col-4 d-flex align-items-center  px-0 ">
+                <img src="./FARM-RO-image/black-clock.png" alt=""><span class="CURRENT_TIME  ">01:00</span>
+            </div>
+            <div class="col-4  d-flex justify-content-end align-items-center px-0 ">
+                <h5 id="LT" class="checkbox-text">LT</h5>
+                <div class="form-check form-switch d-inline-block mx-1">
+                    <input class="form-check-input" type="checkbox" id="timezone-switch" name="timeFormat">
+                </div>
+                <h5 id="UTC" class=" checkbox-text">UTC</h5>
+
+            </div>
+        </div>
+        <!-- Flight Data Section----------------------------------------------------------------------------------------------------------------  -->
+        <div id="flt_data" class="d-flex flex-row">
+            <div id="flt_info" class="container px-1 ">
+                <div class="row row-cols-1">
+                    <div class="col table-topic light-purple pt-2">Flight</div>
+                    <div class="col">
+                        <span class="CARRIER_CODE">TG</span>
+                        <span class="FLIGHT_NUMBER">403</span>
+                        ( <span class="DEP_STATION">BKK</span> - <span class="ARR_STATION">SIN</span> )
+                        <span class="STD-DATE">20JUN21</span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col-5 ">
+                        <span class="DEP_STATION_ICAO light-purple ">VTBS</span>/<span
+                            class="DEP_STATION light-purple ">BKK</span>
+                    </div>
+                    <div class="col-7">
+                        <span class="STD_TIME ">0100</span>/
+                        <span class="departureUTCCorr">P07.00</span>
+                    </div>
+                    <div class="col-5">
+                        <span class="ARR_STATION_ICAO light-purple ">WSSS</span>/<span
+                            class="ARR_STATION light-purple ">SIN</span>
+                    </div>
+                    <div class="col-7">
+                        <span class="STA_UTC ">0315</span>/
+                        <span class="arrivalUTCCorr ">P08.00</span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col-3">
+                        <span class="light-purple ">FLT : </span>
+
+                    </div>
+                    <div class="col-3">
+
+                        <span class="FlightTime ">0148</span>
+                    </div>
+                    <div class="col-3">
+                        <span class="light-purple ">BLK : </span>
+                    </div>
+                    <div class="col-3">
+                        <span class="BlockTime ">0215</span>
+                    </div>
+                    <div class="col-3">
+                        <span class="light-purple ">STD : </span>
+                    </div>
+                    <div class="col-3 standard_time">
+                        <span class="STD_TIME ">0100</span>
+                    </div>
+                    <div class="col-3">
+                        <span class="light-purple ">ETD : </span>
+                    </div>
+                    <div class="col-3 estimated_time">
+                        <span class="ETD_TIME ">0258</span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="row ">
+                        <div class=" col-8 text-lg px-0 ">
+                            <span class=" light-purple ">DELAY CODE: </span>
+                        </div>
+                        <div class=" col-4 text-center text-lg px-0">
+                            <span class=" DELAY_CODE ">-</span>
+                        </div>
+                        <div class=" col-8 text-lg px-0 ">
+                            <span class="light-purple ">DURATION: </span>
+                        </div>
+                        <div class=" col-4 text-center text-lg px-0">
+                            <span class=" DELAY_DURATION">00:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Aircraft Information Section--------------------------------------------------------------------------------------------------- -->
+            <div id="ac_info" class="container px-1 ">
+                <div class="row row-cols-1">
+                    <div class="col table-topic pt-2 ">Aircraft Information</div>
+
+                    <div class="col   ">
+                        <span class="ACREC ">HS-THK</span> /
+                        <span class="ACTYPE ">A359</span>
+
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col-6 ">
+                        <span class="light-purple ">GATE/BAY: </span>
+                    </div>
+                    <div class="col-6 ">
+                        <span class="GATE">D2</span>/<span class="BAY">508</span>
+                    </div>
+                    <div class="col-2   ">
+                        <span class="light-purple ">CFG:</span>
+
+                    </div>
+                    <div class="col-4   ">
+
+                        <span class="CFG">C0/Y0</span>
+                    </div>
+                    <div class="col-2   ">
+                        <span class="light-purple ">PAX:</span>
+                    </div>
+                    <div class="col-4   ">
+                        <span class="PAX">C32/Y289</span>
+                    </div>
+                    <div class="col table-spacing"></div>
+                    <div class="col ">
+                        <span class="light-purple ">Previous Flight </span>
+                    </div>
+                    <div class="col-4 ">
+                        <span class="CARRIER_CODE">TG</span><span class="prevFlightNo">639 </span>
+                    </div>
+                    <div class="col-8 ">
+                        <!-- Controled by previous_flight_ETA_control -->
+                        <span class="prevFlight_ETA">2200</span><span class="prevFlight_ATA d-none"></span> /
+                        <span class="prevFlight_Est_Date">20JUN</span><span
+                            class="prevFlight_Actual_Date d-none"></span>
+
+                    </div>
+                    <div class="col ">
+                        <span class="light-purple ">Next Flight </span>
+                    </div>
+                    <div class="col-4 ">
+                        <span class="CARRIER_CODE">TG</span><span class="nextFlightNo">601 </span>
+                    </div>
+                    <div class="col-8 ">
+                        <span class="nextFlight_ETD">0515</span> / <span class="nextFlight_Date">21JUN</span>
+                    </div>
+                    <div class="row pt-1 ">
+                        <div class=" col-2 text-md px-0 ">
+                            <span class=" text-red ">TSAT: </span>
+                        </div>
+                        <div class=" col-4 text-center text-md px-0">
+                            <span class=" DELAY_CODE ">00:00</span>
+                        </div>
+                        <div class=" col-2 text-md px-0 ">
+                            <span class="text-red ">CTOT: </span>
+                        </div>
+                        <div class=" col-4 text-center text-md px-0">
+                            <span class=" DELAY_DURATION">00:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tab-section" class="container px-0">
+        <!-- Nav Tabs Section-------------------------------------------------------------------------------------------------------------- -->
+        <ul class="nav nav-pill d-flex flex-row justify-content-around" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#flight-prep" type="button"
+                    role="tab" aria-controls="home" aria-selected="true">FLIGHT PREP</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#inbound-connection" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false">IN CONX</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#outbound-connection" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false">OUT CONX</button>
+            </li>
+        </ul>
+    </section>
+    <!-- Updated Time Section------------------------------------------------------------------------------------------------------------------------ -->
+    <section class="time-stamp-bar pe-2 container">
+        Last updated <span class="time-stamp">22:30</span>
+    </section>
+
+    <section class="tab-content" id="myTabContent">
+        <!-- Aircraft Preparation Panel-------------------------------------------------------------------------------------------------------------- -->
+        <div class="tab-pane  show active" id="flight-prep" role="tabpanel" aria-labelledby="home-tab">
+            <div class="container px-0 d-flex flex-column">
+                <!-- PASSENGER Table--------------------------------- -->
+                <div class="header-bar">
+                    RAMP OFFICER
+                </div>
+                <div class="py-3">
+                    <div class="row data-row">
+                        <div class="col-5  ">LOADING START</div>
+                        <div class="col-3  "><span id="LOADING_START_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center ">
+                            <button type="button" class="update-btn  rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#LOADING_START_MODAL" id="LOADING_START_UPDATE_BTN">
+                                UPDATE
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row data-row">
+                        <div class="col-5  ">LOADING COMPLETED</div>
+                        <div class="col-3  "><span id="LOADING_COMPLETED_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center ">
+                            <button type="button" class="update-btn  rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#LOADING_COMPLETED_MODAL" id="LOADING_COMPLETED_UPDATE_BTN">
+                                UPDATE
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row data-row">
+                        <div class="col-5  ">PUSH BACK STBY</div>
+                        <div class="col-3  "><span id="PUSH_BACK_STBY_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center">
+                            <button type="button" class="update-btn  rounded-pill" data-bs-toggle="modal"
+                                data-bs-target="#PUSH_BACK_STBY_MODAL" id="PUSH_BACK_STBY_UPDATE_BTN">
+                                UPDATE
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- PASSENGER Table--------------------------------- -->
+                <div class="header-bar">
+                    PASSENGER
+                </div>
+                <div class="py-3">
+                    <div class="row data-row">
+                        <div class="col-5  ">CREW ARRIVED</div>
+                        <div class="col-3  "><span id="CREW_ARRIVED_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center">
+                            <div class="completed-status  col-9">
+                                <img src="./FARM-RO-image/completed-icon.png" alt="">
+                                <span>COMPLETED</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row data-row">
+                        <div class="col-5  ">OPEN GATE</div>
+                        <div class="col-3  "><span id="OPEN_GATE_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center">
+                            <div class="on-process-status  col-9">
+                                <img src="./FARM-RO-image/in-process-icon.png" alt="">
+                                <span>ON PROCESS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row data-row">
+                        <div class="col-5  ">BOARDING COMMENCED</div>
+                        <div class="col-3  "><span id="BOARDING_COMMENCED_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center">
+                            <div class="not-started-status  col-9">
+                                <img src="./FARM-RO-image/red-cross-icon.png" alt="">
+                                <span>NOT STARTED</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row data-row">
+                        <div class="col-5  ">BOADING COMPLETED</div>
+                        <div class="col-3  "><span id="BOADING_COMPLETED_TIME">10:00</span></div>
+                        <div class="col-4 align-items-center ">
+                            <div class="not-started-status  col-9">
+                                <img src="./FARM-RO-image/red-cross-icon.png" alt="">
+                                <span>NOT STARTED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- LOADING START Modal Section------------------------------------------------------------------------------------------------------------ -->
+            <div class="modal fade" id="LOADING_START_MODAL" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <form class="modal-content container py-2" id="LOADING_START_MODAL_FORM">
+                        <div class="data-row d-flex justify-content-between">
+                            <div class="col-6 RO-activity">LOADING START</div>
+                            <button type="button" class="btn-close btn-close-custom " data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+
+                        <div class="time-border">
+                            <div class="data-row d-flex ">
+                                <div class="col-5 "></div>
+                                <button class="col-3 math-box" id="LOADING_START_HOUR_INCREMENT">
+                                    +
+                                </button>
+                                <span class="col-1 text-center"></span>
+                                <button class="col-3 math-box" id="LOADING_START_MINUTE_INCREMENT">
+                                    +
+                                </button>
+                            </div>
+                            <div class="data-row d-flex ">
+                                <div class="col-5 justify-content-start ">
+                                    <span class="col-6">START</span>(<span class="time-zone-display"></span>)
+                                </div>
+                                <input class="col-3 new-time " type="number" name="LOADING_START_HOUR"
+                                    id="LOADING_START_HOUR" placeholder="HH" max="23" min="00">
+                                <span class="col-1 text-center">:</span>
+                                <input class="col-3 new-time " type="number" name="LOADING_START_MINUTE"
+                                    id="LOADING_START_MINUTE" placeholder="MM" max="59" min="00">
+                            </div>
+                            <div class="data-row d-flex ">
+                                <div class="col-5 "></div>
+                                <button class="col-3 math-box" id="LOADING_START_HOUR_DECREMENT">
+                                    -
+                                </button>
+                                <span class="col-1 text-center"></span>
+                                <button class="col-3 math-box" id="LOADING_START_MINUTE_DECREMENT">
+                                    -
+                                </button>
+                            </div>
+                        </div>
+                        <div class="time-border ">
+                            <div class="">
+                                <label class="col-5 header-column">ADDITIONAL INFO.</label>
+                            </div>
+                            <textarea name="LOADING_START_ADDITIONAL_INFO" class="additional-info"
+                                id="LOADING_START_ADDITIONAL_INFO"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-end ">
+                            <button id="LOADING_START_START_BTN" class="start-btn">
+                                START
+                            </button>
+                        </div>
+                        <div id="LOADING_START_CONFIRM_MODAL"
+                            class="time-border mt-2 d-flex flex-column align-items-center">
+                            <h4 class="confirm-alert">PLEASE CONFIRM ACTUAL START TIME AT</h4>
+                            <h4 id="LOADING_START_CONFIRM_TIME" class="confirm-time"></h4>
+                            <div class="col-12 d-flex justify-content-around">
+                                <button type="submit" id="LOADING_START_CONFIRM_BTN" class="confirm-btn mt-1"
+                                    data-bs-dismiss="modal" aria-label="Close">
+                                    CONFIRM
+                                </button>
+                                <button class="cancel-btn mt-1" data-bs-dismiss="modal" aria-label="Close">
+                                    CANCEL
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <!-- LOADING COMPLETED Modal Section--------------------------------------------------------------------------------------------------------------- -->
+            <div class="modal fade" id="LOADING_COMPLETED_MODAL" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <form class="modal-content container py-2" id="LOADING_COMPLETED_MODAL_FORM">
+                        <div class="data-row d-flex justify-content-between">
+                            <div class="col-6 RO-activity">LOADING COMPLETED</div>
+                            <button type="button" class="btn-close btn-close-custom " data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="time-border">
+                            <div class="data-row d-flex ">
+                                <div class="col-5 "></div>
+                                <button class="col-3 math-box" id="LOADING_COMPLETED_HOUR_INCREMENT">
+                                    +
+                                </button>
+                                <span class="col-1 text-center"></span>
+                                <button class="col-3 math-box" id="LOADING_COMPLETED_MINUTE_INCREMENT">
+                                    +
+                                </button>
+                            </div>
+                            <div class="data-row d-flex ">
+                                <div class="col-5 justify-content-start ">
+                                    <span class="col-6">START</span>(<span class="time-zone-display"></span>)
+                                </div>
+                                <input class="col-3 new-time " type="number" name="LOADING_COMPLETED_HOUR"
+                                    id="LOADING_COMPLETED_HOUR" placeholder="HH" max="23" min="00">
+                                <span class="col-1 text-center">:</span>
+                                <input class="col-3 new-time " type="number" name="LOADING_COMPLETED_MINUTE"
+                                    id="LOADING_COMPLETED_MINUTE" placeholder="MM" max="59" min="00">
+                            </div>
+                            <div class="data-row d-flex ">
+                                <div class="col-5 "></div>
+                                <button class="col-3 math-box" id="LOADING_COMPLETED_HOUR_DECREMENT">
+                                    -
+                                </button>
+                                <span class="col-1 text-center"></span>
+                                <button class="col-3 math-box" id="LOADING_COMPLETED_MINUTE_DECREMENT">
+                                    -
+                                </button>
+                            </div>
+                        </div>
+                        <div class="time-border ">
+                            <div class="">
+                                <label class="col-5 header-column">ADDITIONAL INFO.</label>
+                            </div>
+                            <textarea name="LOADING_COMPLETED_ADDITIONAL_INFO" class="additional-info"
+                                id="LOADING_COMPLETED_ADDITIONAL_INFO"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-end ">
+                            <button id="LOADING_COMPLETED_START_BTN" class="start-btn">
+                                START
+                            </button>
+                        </div>
+
+                        <div id="LOADING_COMPLETED_CONFIRM_MODAL"
+                            class="time-border mt-2 d-flex flex-column align-items-center">
+                            <h4 class="confirm-alert">PLEASE CONFIRM ACTUAL START TIME AT</h4>
+                            <h4 id="LOADING_COMPLETED_CONFIRM_TIME" class="confirm-time"></h4>
+                            <div class="col-12 d-flex justify-content-around">
+                                <button type="submit" id="LOADING_COMPLETED_CONFIRM_BTN" class="confirm-btn mt-1"
+                                    data-bs-dismiss="modal" aria-label="Close">
+                                    CONFIRM
+                                </button>
+                                <button class="cancel-btn mt-1" data-bs-dismiss="modal" aria-label="Close">
+                                    CANCEL
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- PUSH BACK STBY Modal Section----------------------------------------------------------------------------------------------------------- -->
+            <div class="modal fade" id="PUSH_BACK_STBY_MODAL" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <form class="modal-content container py-2" id="PUSH_BACK_STBY_MODAL_FORM">
+                        <div class="data-row d-flex justify-content-between">
+                            <div class="col-6 RO-activity">PUSH BACK STBY</div>
+                            <button type="button" class="btn-close btn-close-custom " data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="time-border">
+                            <div class="data-row d-flex ">
+                                <div class="col-5 "></div>
+                                <button class="col-3 math-box" id="PUSH_BACK_STBY_HOUR_INCREMENT">
+                                    +
+                                </button>
+                                <span class="col-1 text-center"></span>
+                                <button class="col-3 math-box" id="PUSH_BACK_STBY_MINUTE_INCREMENT">
+                                    +
+                                </button>
+                            </div>
+                            <div class="data-row d-flex ">
+                                <div class="col-5 justify-content-start ">
+                                    <span class="col-6">START</span>(<span class="time-zone-display"></span>)
+                                </div>
+                                <input class="col-3 new-time " type="number" name="PUSH_BACK_STBY_HOUR"
+                                    id="PUSH_BACK_STBY_HOUR" placeholder="HH" max="23" min="00">
+                                <span class="col-1 text-center">:</span>
+                                <input class="col-3 new-time " type="number" name="PUSH_BACK_STBY_MINUTE"
+                                    id="PUSH_BACK_STBY_MINUTE" placeholder="MM" max="59" min="00">
+                            </div>
+                            <div class="data-row d-flex ">
+                                <div class="col-5 "></div>
+                                <button class="col-3 math-box" id="PUSH_BACK_STBY_HOUR_DECREMENT">
+                                    -
+                                </button>
+                                <span class="col-1 text-center"></span>
+                                <button class="col-3 math-box" id="PUSH_BACK_STBY_MINUTE_DECREMENT">
+                                    -
+                                </button>
+                            </div>
+                        </div>
+                        <div class="time-border ">
+                            <div class="">
+                                <label class="col-5 header-column">ADDITIONAL INFO.</label>
+                            </div>
+                            <textarea name="PUSH_BACK_STBY_ADDITIONAL_INFO" class="additional-info"
+                                id="PUSH_BACK_STBY_ADDITIONAL_INFO"></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-end ">
+                            <button id="PUSH_BACK_STBY_START_BTN" class="start-btn">
+                                START
+                            </button>
+                        </div>
+                        <div id="PUSH_BACK_STBY_CONFIRM_MODAL"
+                            class="time-border mt-2 d-flex flex-column align-items-center">
+                            <h4 class="confirm-alert">PLEASE CONFIRM ACTUAL START TIME AT</h4>
+                            <h4 id="PUSH_BACK_STBY_CONFIRM_TIME" class="confirm-time"></h4>
+                            <div class="col-12 d-flex justify-content-around">
+                                <button type="submit" id="PUSH_BACK_STBY_CONFIRM_BTN" class="confirm-btn mt-1"
+                                    data-bs-dismiss="modal" aria-label="Close">
+                                    CONFIRM
+                                </button>
+                                <button class="cancel-btn mt-1" data-bs-dismiss="modal" aria-label="Close">
+                                    CANCEL
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+        <!-- IN CONX Panel-------------------------------------------------------------------------------------------------------------- -->
+        <div class="tab-pane " id="inbound-connection" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="container">
+                <h3 class="total-header">TOTAL <img src="./FARM-RO-image/PAX-Icon.png"> (<img
+                        src="./FARM-RO-image/bag-Icon.png">) - <span class="TOTAL_INBOUND_PAX_NUM">50</span><span
+                        class="TOTAL_INBOUND_BAG_NUM">(50)</span>
+                </h3>
+                <!-- Data Table Section----------------------------------------------------- -->
+                <table id="inbound-connection-table" class="display" style="width:100%;">
+                    <thead class="data-table-head">
+                        <tr>
+                            <th>FLIGHT</th>
+                            <th>STA(ETA)</th>
+                            <th>CONX TIME</th>
+                            <th>GATE/BAY</th>
+                            <th><img src="./FARM-RO-image/PAX-Icon.png"> (<img src="./FARM-RO-image/bag-Icon.png">)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="data-table-body">
+                        <tr>
+                            <td class="IN_CONX_FLIGHT">TG 7600</td>
+                            <td> <span class="INBOUND_STA">04:00</span><span class="INBOUND_ETA">(05:00)</span><span
+                                    class="INBOUND_STA_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="CONX_TIME">04:00</span><span class="CONX_EST_TIME">(05:00)</span><span
+                                    class="CONX_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="IN_CONX_GATE">A7</span>-<span class="IN_CONX_BAY">508</span> </td>
+                            <td>
+                                <span class="INBOUND_PAX_NUM">10</span> (<span class="INBOUND_BAG_NUM">10</span>)
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="IN_CONX_FLIGHT">TG 7600</td>
+                            <td> <span class="INBOUND_STA">04:00</span><span class="INBOUND_ETA">(05:00)</span><span
+                                    class="INBOUND_STA_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="CONX_TIME">04:00</span><span class="CONX_EST_TIME">(05:00)</span><span
+                                    class="CONX_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="IN_CONX_GATE">A7</span>-<span class="IN_CONX_BAY">508</span> </td>
+                            <td>
+                                <span class="INBOUND_PAX_NUM">10</span> (<span class="INBOUND_BAG_NUM">10</span>)
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- OUT CONX Panel-------------------------------------------------------------------------------------------------------------- -->
+        <div class="tab-pane " id="outbound-connection" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="container">
+                <h3 class="total-header">TOTAL <img src="./FARM-RO-image/PAX-Icon.png"> (<img
+                        src="./FARM-RO-image/bag-Icon.png">) - <span class="TOTAL_OUTBOUND_PAX_NUM">50</span><span
+                        class="TOTAL_OUTBOUND_BAG_NUM">(50)</span>
+                </h3>
+                <!-- Data Table Section----------------------------------------------------- -->
+                <table id="outbound-connection-table" class="display" style="width:100%;">
+                    <thead class="data-table-head">
+                        <tr>
+                            <th>FLIGHT</th>
+                            <th>STD(ETD)</th>
+                            <th>CONX TIME</th>
+                            <th>GATE/BAY</th>
+                            <th><img src="./FARM-RO-image/PAX-Icon.png"> (<img src="./FARM-RO-image/bag-Icon.png">)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="data-table-body">
+                        <tr>
+                            <td class="OUT_CONX_FLIGHT">TG 3111</td>
+                            <td> <span class="OUTBOUND_STA">03:00</span><span class="OUTBOUND_ETA">(05:00)</span><span
+                                    class="OUTBOUND_STA_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="OUT_CONX_TIME">03:00</span><span
+                                    class="OUT_CONX_EST_TIME">(05:00)</span><span
+                                    class="OUT_CONX_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="OUT_CONX_GATE">A7</span>-<span class="OUT_CONX_BAY">508</span> </td>
+                            <td>
+                                <span class="OUTBOUND_PAX_NUM">10</span> (<span class="OUTBOUND_BAG_NUM">10</span>)
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="OUT_CONX_FLIGHT">TG 7600</td>
+                            <td> <span class="OUTBOUND_STA">04:00</span><span class="OUTBOUND_ETA">(05:00)</span><span
+                                    class="OUTBOUND_STA_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="OUT_CONX_TIME">04:00</span><span
+                                    class="OUT_CONX_EST_TIME">(05:00)</span><span
+                                    class="OUT_CONX_DATE">20-09-2021</span>
+                            </td>
+                            <td> <span class="OUT_CONX_GATE">A7</span>-<span class="OUT_CONX_BAY">508</span> </td>
+                            <td>
+                                <span class="OUTBOUND_PAX_NUM">10</span> (<span class="OUTBOUND_BAG_NUM">10</span>)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- bootstrap 5 js link -->
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+    <!-- Local JS -->
+    <script src="./sidebar_control.js"></script>
+    <script src="./toggle_switch_control.js"></script>
+    <script src="./previous_flight_ETA_control.js"></script>
+    <script src="./time_modal_control.js"></script>
+
+    <!-- data table controlers  -->
+
+    <script>
+        $(document).ready(function () {
+            $('#inbound-connection-table').DataTable({
+                "paging": false,
+                "info": false,
+                "searching": false,
+                "order": [[1, "asc"]],
+                // columnDefs: [
+                //     { orderable: false, targets: 3 }
+                // ],
+            });
+        });
+        $(document).ready(function () {
+            $('#outbound-connection-table').DataTable({
+                "paging": false,
+                "info": false,
+                "searching": false,
+                "order": [[1, "asc"]],
+                // columnDefs: [
+                //     { orderable: false, targets: 3 }
+                // ],
+            });
+        });
+    </script>
+</body>
+
+</html>

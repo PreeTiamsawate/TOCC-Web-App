@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS for Bootstrap5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- data table style link     -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <!-- google font links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/avenir-lt-std" rel="stylesheet">
+    <!-- local css -->
+    <link rel="stylesheet" href="./all_flights_RO.css">
+    <title>All Flight - RO</title>
+</head>
+
+<body>
+    <!-- Top Bar Section----------------------------------------------------- -->
+    <section class="top-bar px-2 d-flex justify-content-center align-items-center px-sm-5 ">
+        <img src="./FARM-RO-image/thai-logo-icon.png" class="thai-logo d-inline-block mx-1 " alt="">
+        <h1 class="page-name">ALL FLIGHTS</h1>
+
+        <button class="hamberger-btn d-inline-block me-1" onclick="openNav()"><img
+                src=" ./FARM-RO-image/hamburger menu.png" alt=""></button>
+    </section>
+    <!-- Side Bar Section----------------------------------------------------- -->
+    <section id="mySidebar" class="sidebar">
+        <img src="./FARM-RO-image/close-btn.png" class="closebtn" onclick="closeNav()">
+        <div id="user-box" class="row">
+            <div class="col-9 p-0 USER_NAME">PREE TIAMSAWATE</div>
+            <div class="col-3 p-0"><img src="./FARM-RO-image/user icon.png" class="USER_IMAGE d-inline-block " alt="">
+            </div>
+        </div>
+        <a href="./all_flights_RO.html" class="nav-link">ALL FLIGHTS</a>
+        <a href="./my_assignment_RO.html" class="nav-link">MY ASSIGNMENT</a>
+    </section>
+
+
+
+    <section class="container">
+        <!-- Time Header Section----------------------------------------------------- -->
+        <div class="time-header row justify-content-between align-items-center">
+            <div class="col-4 d-flex align-items-center  px-0 ">
+                <img src="./FARM-RO-image/black-clock.png" alt=""><span class="CURRENT_TIME  ">01:00</span>
+            </div>
+            <div class="col-4  d-flex justify-content-end align-items-center px-0 ">
+                <h5 id="LT" class="checkbox-text">LT</h5>
+                <div class="form-check form-switch d-inline-block mx-1">
+                    <input class="form-check-input" type="checkbox" id="timezone-switch" name="timeFormat">
+                </div>
+                <h5 id="UTC" class=" checkbox-text">UTC</h5>
+
+            </div>
+        </div>
+        <!-- Table Filter Section----------------------------------------------------- -->
+        <div class="accordion accordion-flush">
+            <div class="accordion-item">
+                <div class="accordion-header d-flex align-items-center table-head" id="panelsStayOpen-headingOne">
+                    <button class=" filter-btn rounded-pill d-flex" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        <span class="col-8">FILTER</span> <span class="col-4 filter-mark">-</span>
+                    </button>
+                </div>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body p-0">
+                        <div class="table-body-row row align-items-center">
+                            <div class="col-4 ">
+                                FLIGHT
+                            </div>
+                            <div class="col-4 pe-0 form-check ">
+                                <input class="form-check-input  " type="checkbox" value="inter" id="INTER-filter"
+                                    checked>
+                                <label class="form-check-label" for="inter-filter">
+                                    INTER
+                                </label>
+                            </div>
+                            <div class="col-4 pe-0 form-check ">
+                                <input class="form-check-input  " type="checkbox" value="domestic" id="DOMESTIC-filter">
+                                <label class="form-check-label " for="domestic-filter">
+                                    DOMESTIC
+                                </label>
+                            </div>
+                        </div>
+                        <div class="table-body-row row align-items-center">
+                            <div class="col-4   ">
+                                AIRLINE
+                            </div>
+                            <div class="col-4 pe-0 form-check ">
+                                <input class="form-check-input  " type="checkbox" value="tg" id="TG-filter" checked>
+                                <label class="form-check-label " for="tg-filter">
+                                    TG
+                                </label>
+                            </div>
+                            <div class="col-4 pe-0 form-check ">
+                                <input class="form-check-input  " type="checkbox" value="customer" id="CUSTOMER-filter">
+                                <label class="form-check-label " for="customer-filter">
+                                    CUSTOMER
+                                </label>
+                            </div>
+                        </div>
+                        <div class="table-body-row row align-items-center">
+                            <div class="col-4 ">
+                                LEG
+                            </div>
+                            <div class="col-4 pe-0 form-check ">
+                                <input class="form-check-input  " type="checkbox" value="departure" id="DEP-filter"
+                                    checked>
+                                <label class="form-check-label" for="departure-filter">
+                                    DEP
+                                </label>
+                            </div>
+                            <div class="col-4 pe-0 form-check ">
+                                <input class="form-check-input  " type="checkbox" value="arrival" id="ARR-filter">
+                                <label class="form-check-label " for="arrival-filter">
+                                    ARR
+                                </label>
+                            </div>
+                        </div>
+                        <div class=" row align-items-center table-head mb-4">
+                            <div class="col-4  ">
+                                ZONE
+                            </div>
+
+                            <select class="select-box table-text " name="terminalZone">
+                                <option value="A" selected>A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                                <option value="F">F</option>
+                                <option value="G">G</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Data Table Section----------------------------------------------------- -->
+        <table id="all_flights_table" class="display" style="width:100%;">
+            <thead class="data-table-head">
+                <tr>
+                    <th>FLIGHT</th>
+                    <th>TIME(A/D)</th>
+                    <th>GATE/BAY</th>
+                    <th id="updated-time">UPDATED <span class="time-stamp">22:30</span></th>
+                </tr>
+            </thead>
+            <tbody class="data-table-body">
+                <tr>
+                    <td class="FLIGHT">TG600 </td>
+                    <td> <span class="STD_STA">1600</span> (<span class="LEG">D</span>)</td>
+                    <td class="GATE/BAY"> <span class="GATE">A7</span>-<span class="BAY">508</span> </td>
+                    <td class=" d-flex justify-content-between flex-wrap">
+                        <button type="button" class=" ACKD-btn rounded-pill  ">
+                            ACKD
+                        </button>
+                        <a href="./flight_information_inactive_departure_RO.html"><img
+                                src="./FARM-RO-image/Icon-magnifying-glass-sm.png"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="FLIGHT">TG601</td>
+                    <td> <span class="STD_STA">1500</span> (<span class="LEG">A</span>)</td>
+                    <td class="GATE/BAY"><span class="GATE">A7</span></td>
+                    <td class=" d-flex justify-content-between flex-wrap">
+                        <button type="button" class=" ACKD-btn-disabled  rounded-pill  ">
+                            ACKD
+                        </button>
+                        <a href="./flight_information_active_departure_RO.html"><img
+                                src="./FARM-RO-image/Icon-magnifying-glass-sm.png"></a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+    </section>
+
+
+    <!-- bootstrap 5 js link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+    <!-- Local JS -->
+    <script src="./sidebar_control.js"></script>
+    <script src="./toggle_switch_control.js"></script>
+    <script src="./table_filter_btn_control.js"></script>
+
+    <!-- data table controlers  -->
+
+    <script>
+        $(document).ready(function () {
+            $('#all_flights_table').DataTable({
+                "paging": false,
+                "info": false,
+                "order": [[1, "asc"]],
+                columnDefs: [
+                    { orderable: false, targets: 3 }
+                ],
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -129,6 +129,8 @@ const openGateConfirmModal = document.querySelector("#OPEN_GATE_CONFIRM_MODAL");
 openGateConfirmTime = document.querySelector("#OPEN_GATE_CONFIRM_TIME");
 
 openGateUpdateBtn.addEventListener("click", function () {
+  openGateHour.value = getCurrentTime().substring(0, 2);
+  openGateMinute.value = getCurrentTime().substring(3, 5);
   openGateConfirmModal.classList.add("d-none");
   for (let timeZoneDisplay of timeZoneDisplays) {
     timeZoneDisplay.innerText = getTimeZone();
@@ -210,6 +212,8 @@ boardingCommencedConfirmTime = document.querySelector(
 );
 
 boardingCommencedUpdateBtn.addEventListener("click", function () {
+  boardingCommencedHour.value = getCurrentTime().substring(0, 2);
+  boardingCommencedMinute.value = getCurrentTime().substring(3, 5);
   boardingCommencedConfirmModal.classList.add("d-none");
   for (let timeZoneDisplay of timeZoneDisplays) {
     timeZoneDisplay.innerText = getTimeZone();
