@@ -227,7 +227,28 @@ button:focus {
 .text-red {
   color: #bf2c1b;
 }
-
+/* STAFF STBY Form -----------------------------------*/
+.stby-form {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stby-form > div {
+  height: 30px;
+  text-align: center;
+}
+.stby-form > div:nth-of-type(1) {
+  font: normal normal normal 24px/29px Bebas Neue;
+  letter-spacing: 0px;
+  color: #755fbc;
+}
+.stby-form > div:nth-of-type(2) {
+  font: normal normal normal 24px/29px Bebas Neue;
+  letter-spacing: 0px;
+  color: #3d394a;
+  background-color: #f1ecec;
+}
 /* <!-- Nav Tabs Section--------------------------------------- */
 
 .nav-pill > .nav-item > button.active {
