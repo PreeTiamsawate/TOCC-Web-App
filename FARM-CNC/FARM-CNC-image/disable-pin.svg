@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43.958" height="40.462" viewBox="0 0 43.958 40.462">
+  <defs>
+    <filter id="pin" x="0" y="0" width="43.958" height="40.462" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#pin)">
+    <path id="pin-2" data-name="pin" d="M19.982,18.794,13.1,14.555a1.708,1.708,0,0,0-2.413.689,1.955,1.955,0,0,0,.647,2.574l6.884,4.239a1.707,1.707,0,0,0,2.413-.69,1.951,1.951,0,0,0-.646-2.573ZM14.3,14.21l5.355,3.3L21.48,12.1l-3.7-2.276L14.3,14.21ZM10.356,28.1l5.122-6.636-2.295-1.413L10.356,28.1ZM23.693,9.112,19.1,6.286a1.281,1.281,0,0,0-1.81.517,1.465,1.465,0,0,0,.485,1.93l4.59,2.826a1.281,1.281,0,0,0,1.81-.517A1.465,1.465,0,0,0,23.693,9.112Z" transform="matrix(0.45, -0.89, 0.89, 0.45, -1.13, 24.93)" fill="#a5a6b5"/>
+  </g>
+</svg>
