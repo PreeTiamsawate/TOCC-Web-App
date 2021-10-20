@@ -18,7 +18,7 @@ body {
 }
 /* side bar================================== */
 aside {
-  width: 220px;
+  width: 200px;
   background-color: #572483;
   box-shadow: 3px 0px 6px #00000029;
   border-radius: 0px 20px 20px 0px;
@@ -81,8 +81,8 @@ nav > a:hover {
   margin-right: 15px;
   transition: transform 0.5s;
 }
-.accordion-body{
-  padding: 0.2rem 0.2rem ;
+.accordion-body {
+  padding: 0.2rem 0.2rem;
   box-shadow: 0px 3px 3px #00000029;
   border: 1px solid #707070;
   border-radius: 10px;
@@ -90,61 +90,60 @@ nav > a:hover {
 }
 
 /* Flight Preparation Box =============================== */
-.flight-prep-box{
+.flight-prep-box {
   width: 100%;
   height: auto;
   min-height: 72px;
- 
+
   display: flex;
   justify-content: space-between;
   position: relative;
 }
-.pin-mark{
+.pin-mark {
   position: absolute;
-  top:-15px;
+  top: -15px;
   left: -15px;
   cursor: pointer;
 }
-.flight-number-box{
+.flight-number-box {
   width: 7%;
-  height:72px;
+  height: 72px;
   display: flex;
   flex-direction: column;
-  justify-content: center
+  justify-content: center;
 }
-.flight-number-box  > div:nth-of-type(1){
+.flight-number-box > div:nth-of-type(1) {
   padding-left: 5px;
   font: normal normal bold 20px/28px Poppins;
   letter-spacing: 0px;
   color: #572483;
   text-align: center;
 }
-.flight-number-box  > div:nth-of-type(2){
+.flight-number-box > div:nth-of-type(2) {
   padding-left: 5px;
   font: normal normal bold 16px/20px Poppins;
   letter-spacing: 0px;
   color: #572483;
   text-align: center;
 }
-.airplane-icon-box{
+.airplane-icon-box {
   width: 50px;
   height: 72px;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.airplane-icon-box > div{
+.airplane-icon-box > div {
   width: 40px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #E6E6E6 0% 0% no-repeat padding-box;
+  background: #e6e6e6 0% 0% no-repeat padding-box;
   border-radius: 10px;
   cursor: pointer;
 }
-.flight-task-status{
+.flight-task-status {
   height: auto;
   min-height: 72px;
   width: 75%;
@@ -153,7 +152,7 @@ nav > a:hover {
   display: flex;
   justify-content: space-between;
 }
-.flight-task-status > div{
+.flight-task-status > div {
   height: auto;
   min-height: 72px;
   width: 11%;
@@ -161,26 +160,25 @@ nav > a:hover {
   flex-direction: column;
   justify-content: space-evenly;
 }
-.status-bar{
+.status-bar {
   width: 100%;
   height: 8px;
-  background: #E6E6E6 0% 0% no-repeat padding-box;
+  background: #e6e6e6 0% 0% no-repeat padding-box;
   border: 1px solid #707070;
   border-radius: 10px;
 }
 /* Fligt Status Boxes========== */
-.flight-task-status > div > div:nth-of-type(2){
+.flight-task-status > div > div:nth-of-type(2) {
   width: 100%;
   height: 72px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
 }
-.flight-task-status > div > div:nth-of-type(2) > div{
+.flight-task-status > div > div:nth-of-type(2) > div {
   width: 100%;
   height: 24px;
-  background: #E6E6E6 0% 0% no-repeat padding-box;
+  background: #e6e6e6 0% 0% no-repeat padding-box;
   border: 1px solid #707070;
   border-radius: 10px;
   text-align: center;
@@ -189,35 +187,35 @@ nav > a:hover {
   color: #707070;
 }
 /* Count Down box============ */
-.count-down-box{
+.count-down-box {
   display: flex;
   width: 100%;
   height: 23px;
   align-items: center;
   /* justify-content: space-between; */
 }
-.count-down-box > div:nth-of-type(1){
+.count-down-box > div:nth-of-type(1) {
   text-align: left;
   font: normal normal 600 12px/23px Poppins;
   letter-spacing: 0px;
-  color: #CA637A;
+  color: #ca637a;
   width: 25%;
 }
-.count-down-box > div:nth-of-type(2){
-  background: #E6E6E6 0% 0% no-repeat padding-box;
+.count-down-box > div:nth-of-type(2) {
+  background: #e6e6e6 0% 0% no-repeat padding-box;
   border: 1px solid #707070;
   border-radius: 10px;
   width: 75%;
   height: 8px;
 }
-.count-down-box > div:nth-of-type(2) > div{
+.count-down-box > div:nth-of-type(2) > div {
   width: 100%;
   height: 100%;
-  background: #CA637A 0% 0% no-repeat padding-box;
+  background: #ca637a 0% 0% no-repeat padding-box;
   border-radius: 10px;
 }
 /* Departure Time Box */
-.departure-time-box{
+.departure-time-box {
   height: auto;
   min-height: 72px;
   width: 10%;
@@ -226,62 +224,61 @@ nav > a:hover {
   flex-direction: column;
   justify-content: space-between;
 }
-.departure-time-box > div:nth-of-type(1){
+.departure-time-box > div:nth-of-type(1) {
   width: 100%;
   height: 56px;
-  background: #A2F6CA 0% 0% no-repeat padding-box;
-  border: 1px solid #5FA980;
+  background: #a2f6ca 0% 0% no-repeat padding-box;
+  border: 1px solid #5fa980;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.departure-time-box > div:nth-of-type(1) > div{
+.departure-time-box > div:nth-of-type(1) > div {
   text-align: center;
   font: normal normal 600 16px/22px Poppins;
   letter-spacing: 0px;
-  color: #5FA980;
+  color: #5fa980;
 }
-.update-time-btn{
+/* Update Time Button===== */
+.update-time-btn {
   width: 100%;
   height: 24px;
-  background: #CBB1F9 0% 0% no-repeat padding-box;
+  background: #cbb1f9 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
-  border: 1px solid #3E075B;
+  border: 1px solid #3e075b;
   border-radius: 10px;
   text-align: center;
   font: normal normal 600 15px/20px Poppins;
   letter-spacing: 0px;
-  color: #3E075B;
+  color: #3e075b;
   cursor: pointer;
 }
-.collapse-btn-box{
+.collapse-btn-box {
   width: 50px;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-.collapse-btn-box > img{
+.collapse-btn-box > img {
   cursor: pointer;
-  transform: rotate(180deg); 
+  transform: rotate(180deg);
   transition: 0.5s;
 }
 
 /* Form Group */
-.flight-info-inputs{
+.flight-info-inputs {
   width: 75%;
   height: 72px;
   margin-left: 11%;
   display: flex;
   justify-content: space-between;
 }
-.flight-info-inputs > div{
+.flight-info-inputs > div {
   height: 100%;
-  
 }
-.passenger-numbers{
+.passenger-numbers {
   width: 11%;
   display: flex;
   flex-direction: column;
@@ -289,54 +286,51 @@ nav > a:hover {
   text-align: start;
   font: normal normal 600 16px/32px Poppins;
   letter-spacing: 0px;
-  color: #3E075B;
-  
+  color: #3e075b;
 }
-.passenger-numbers > img{
+.passenger-numbers > img {
   width: 36px;
   height: 21px;
 }
-.form-group{
-  background: #CBB1F9 0% 0% no-repeat padding-box;
+.form-group {
+  background: #cbb1f9 0% 0% no-repeat padding-box;
   box-shadow: 0px 7px 4px #00000029;
-  border: 1px solid #3E075B;
+  border: 1px solid #3e075b;
   border-radius: 10px;
   padding-left: 0.5%;
   padding-right: 0.5%;
   display: flex;
   justify-content: space-between;
 }
-.form-group > form{
+.form-group > form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 112px;
 }
-.form-group > form > label{
+.form-group > form > label {
   font: normal normal 600 14px/20px Poppins;
   letter-spacing: 0px;
-  color: #3E075B;
+  color: #3e075b;
   text-align: center;
 }
-.form-group > form > input{
-  background: #FFFFFF 0% 0% no-repeat padding-box;
+.form-group > form > input {
+  background: #ffffff 0% 0% no-repeat padding-box;
   border-radius: 10px;
   opacity: 1;
   height: 24px;
   text-align: center;
 }
 
-
-.flight-info-inputs > div:nth-of-type(2){
-  width: 23.5%;
-  
-}
-
-.flight-info-inputs > div:nth-of-type(3){
+.flight-info-inputs > div:nth-of-type(2) {
   width: 23.5%;
 }
-#flight-time{
-  background: #FFFFFF 0% 0% no-repeat padding-box;
+
+.flight-info-inputs > div:nth-of-type(3) {
+  width: 23.5%;
+}
+#flight-time {
+  background: #ffffff 0% 0% no-repeat padding-box;
   border-radius: 10px;
   opacity: 1;
   height: 24px;
@@ -344,12 +338,36 @@ nav > a:hover {
   padding-left: 18px;
   padding-right: 18px;
 }
-.controlsDivStyle{
+.controlsDivStyle {
   display: none !important;
 }
-.flight-info-inputs > div:nth-of-type(4){
+.flight-info-inputs > div:nth-of-type(4) {
   width: 36.5%;
 }
-
-
-
+@media (max-width: 1480px) {
+  .flight-number-box > div:nth-of-type(1) {
+    font: normal normal bold 16px/20px Poppins;
+  }
+  .flight-number-box > div:nth-of-type(2) {
+    font: normal normal bold 12px/20px Poppins;
+  }
+  .flight-task-status > div > div:nth-of-type(2) > div {
+    font: normal normal 600 10.5px/20px Poppins;
+  }
+  .count-down-box > div:nth-of-type(1) {
+    font: normal normal 600 10px/23px Poppins;
+    width: 33%;
+  }
+  .update-time-btn {
+    font: normal normal 600 12px/20px Poppins;
+  }
+  .passenger-numbers {
+    font: normal normal 600 14px/32px Poppins;
+  }
+  .form-group > form {
+    width: 90px;
+  }
+  .form-group > form > label {
+    font: normal normal 600 12px/20px Poppins;
+  }
+}
