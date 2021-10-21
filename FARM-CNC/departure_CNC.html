@@ -51,11 +51,12 @@
                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
                     aria-labelledby="panelsStayOpen-headingOne">
                     <div class="accordion-body">
+                        <!-- Flight Preparation Box for each flight -->
                         <div class="flight-prep-box">
                             <div class="pin-mark">
                                 <img src="./FARM-CNC-image/active-pin.svg">
                             </div>
-                        
+                            <!-- Flight Number and Route ========== -->
                             <div class="flight-number-box">
                                 <div>
                                     <span class="CARRIER_CODE">TG</span>
@@ -68,108 +69,155 @@
                                 </div>
                             </div>
                             <div class="airplane-icon-box">
-                                <div>
+                                <div class="closed">
                                     <img src="./FARM-CNC-image/Icon_airplane_grey.svg">
                                 </div>
                             </div>
-                            <div class="flight-task-status">
-                                <div>
-                                    <div class="status-bar  ">
+
+                            <!-- Main Box ============================ -->
+                            <section class="main-box">
+                                
+                                <!-- Status of all tasks -->
+                                <div class="flight-task-status">
+                                    <div>
+                                        <div class="status-bar  ">
+                                        </div>
+                                        <div >
+                                            <div class="Crew-ARR-status">Crew ARR</div>
+                                            <div class="Catering-ARR-status">Catering ARR</div>
+                                        </div>
+                                        <div class="count-down-box">
+                                            <div>01:30</div>
+                                            <div><div></div></div>
+                                        </div>
                                     </div>
                                     <div>
-                                        <div class="Crew-ARR-status">Crew ARR</div>
-                                        <div class="Catering-ARR-status">Catering ARR</div>
+                                        <div class="status-bar  ">
+                                        </div>
+                                        <div>
+                                            <div class="Crew-ARR-status">Cleaner ARR</div>
+                                            
+                                        </div>
+                                        <div class="count-down-box">
+                                            <div>01:20</div>
+                                            <div><div></div></div>
+                                        </div>
                                     </div>
-                                    <div class="count-down-box">
-                                        <div>01:30</div>
-                                        <div><div></div></div>
+                                    <div>
+                                        <div class="status-bar  ">
+                                        </div>
+                                        <div>
+                                            <div class="Crew-ARR-status">Gate Open</div>
+                                            
+                                        </div>
+                                        <div class="count-down-box">
+                                            <div>01:15</div>
+                                            <div><div></div></div>
+                                        </div>
                                     </div>
+                                    <div>
+                                        <div class="status-bar  ">
+                                        </div>
+                                        <div>
+                                            <div class="Crew-ARR-status">Cargo ARR</div>
+                                            <div class="Catering-ARR-status">PAX Step</div>
+                                        </div>
+                                        <div class="count-down-box">
+                                            <div>01:00</div>
+                                            <div><div></div></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="status-bar  ">
+                                        </div>
+                                        <div>
+                                            <div class="Crew-ARR-status">Ramp Bus</div>
+                                            <div class="Catering-ARR-status">Cleaner COMP</div>
+                                        </div>
+                                        <div class="count-down-box">
+                                            <div>00:50</div>
+                                            <div><div></div></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="status-bar  ">
+                                        </div>
+                                        <div>
+                                            <div class="Crew-ARR-status">Catering COMP</div>
+                                            <div class="Catering-ARR-status">Boarding</div>
+                                        </div>
+                                        <div class="count-down-box">
+                                            <div>00:40</div>
+                                            <div><div></div></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="status-bar  ">
+                                        </div>
+                                        <div>
+                                            <div class="Crew-ARR-status">Pushback STBY</div>
+                                            <div class="Catering-ARR-status">Boarding COMP</div>
+                                        </div>
+                                        <div class="count-down-box">
+                                            <div>00:10</div>
+                                            <div><div></div></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="status-bar  ">
+                                        </div>
+                                        <div>
+                                            <div class="Crew-ARR-status">Cargo COMP</div>
+                                            
+                                        </div>
+                                        <div class="count-down-box">
+                                            <div>00:05</div>
+                                            <div><div></div></div>
+                                        </div>
+                                    </div>   
                                 </div>
-                                <div>
-                                    <div class="status-bar  ">
+                                <!-- Airceaft Status Box ====== -->
+                                <div class="aircraft-status">
+                                    <div class="aircraft-registration">
+                                        <span class="AC_REG">HS-THBC</span>
                                     </div>
-                                    <div>
-                                        <div class="Crew-ARR-status">Cleaner ARR</div>
-                                        
+                                    <div class="aircraft-movement">
+                                        <div>
+                                            <div>START</div>
+                                            <div>
+                                                <span class="START_TIME">00:00</span>
+                                                <span class="START_GATE_BAY">H234</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div>ARRIVED</div>
+                                            <div>
+                                                <span class="ARRIVED_TIME">00:00</span>
+                                                <span class="ARRIVED_GATE_BAY">G234</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="count-down-box">
-                                        <div>01:20</div>
-                                        <div><div></div></div>
+                                    <div class="aircraft-repair">
+                                        <div>
+                                            <div>Repair Status</div>
+                                            <div>
+                                                <a href="#"><img src="./FARM-CNC-image/photo-icon.svg"></a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div>Est. Complete</div>
+                                            <div>
+                                                <span class="EST_COMPLETE_TIME">00:00</span>
+                                                
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="power-up-status">Power Up</div>
+                                    <div class="release-status">A/C Released</div>
+
                                 </div>
-                                <div>
-                                    <div class="status-bar  ">
-                                    </div>
-                                    <div>
-                                        <div class="Crew-ARR-status">Gate Open</div>
-                                        
-                                    </div>
-                                    <div class="count-down-box">
-                                        <div>01:15</div>
-                                        <div><div></div></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="status-bar  ">
-                                    </div>
-                                    <div>
-                                        <div class="Crew-ARR-status">Cargo ARR</div>
-                                        <div class="Catering-ARR-status">PAX Step</div>
-                                    </div>
-                                    <div class="count-down-box">
-                                        <div>01:00</div>
-                                        <div><div></div></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="status-bar  ">
-                                    </div>
-                                    <div>
-                                        <div class="Crew-ARR-status">Ramp Bus</div>
-                                        <div class="Catering-ARR-status">Cleaner COMP</div>
-                                    </div>
-                                    <div class="count-down-box">
-                                        <div>00:50</div>
-                                        <div><div></div></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="status-bar  ">
-                                    </div>
-                                    <div>
-                                        <div class="Crew-ARR-status">Catering COMP</div>
-                                        <div class="Catering-ARR-status">Boarding</div>
-                                    </div>
-                                    <div class="count-down-box">
-                                        <div>00:40</div>
-                                        <div><div></div></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="status-bar  ">
-                                    </div>
-                                    <div>
-                                        <div class="Crew-ARR-status">Pushback STBY</div>
-                                        <div class="Catering-ARR-status">Boarding COMP</div>
-                                    </div>
-                                    <div class="count-down-box">
-                                        <div>00:10</div>
-                                        <div><div></div></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="status-bar  ">
-                                    </div>
-                                    <div>
-                                        <div class="Crew-ARR-status">Cargo COMP</div>
-                                        
-                                    </div>
-                                    <div class="count-down-box">
-                                        <div>00:05</div>
-                                        <div><div></div></div>
-                                    </div>
-                                </div>   
-                            </div>
+                            </section>
+                                <!-- STD ETD Time box -->
                             <div class="departure-time-box">
                                 <div>
                                     <div>
@@ -183,15 +231,17 @@
                                         <span class="LT_UTC">LT</span>
                                     </div>
                                 </div>
-                                <div class="update-time-btn">
-                                    <img src="./FARM-CNC-image/update-time.svg" alt="">
+                                <!-- Update Time Button -->
+                                <div class="update-time-btn"  >
+                                    <img  src="./FARM-CNC-image/update-time.svg" >
                                     Update Time
                                 </div>
                             </div>
-                            <div class="collapse-btn-box">
-                                    <img src="./FARM-CNC-image/dropdown.svg">
+                            <div class="collapse-btn">
+                                    <img src="./FARM-CNC-image/dropdown.svg" class="closed">
                             </div>
                         </div>
+                        <!-- Input from Office Units  -->
                         <div class="flight-info-inputs">
                             <div class="passenger-numbers">
                                 <img src="./FARM-CNC-image/passenger-icon.svg">
@@ -205,20 +255,24 @@
                                 <form action="">
                                     <label for="gross-wight">Gross Weight</label>
                                     <input type="number" name="" id="gross-wight">
+                                    <button type="submit">Submit</button>
                                 </form>
                                 <form action="">
                                     <label for="ballast">ballast</label>
                                     <input type="number" name="" id="ballast">
+                                    <button type="submit">Submit</button>
                                 </form>
                             </div>
                             <div class=" form-group">
                                 <form action="">
                                     <label for="planning-fuel">Planning Fuel</label>
                                     <input type="number" name="" id="planning-fuel">
+                                    <button type="submit">Submit</button>
                                 </form>
                                 <form action="">
                                     <label for="flight-time">Flight Time</label>
                                     <input class="html-duration-picker" data-hide-seconds name="" id="flight-time">
+                                    <button type="submit">Submit</button>
                                 </form>
 
                             </div>
@@ -226,14 +280,17 @@
                                 <form action="">
                                     <label for="TOBT">TOBT</label>
                                     <input type="time" name="" id="TOBT">
+                                    <button type="submit">Submit</button>
                                 </form>
                                 <form action="">
                                     <label for="TSAT">TSAT</label>
                                     <input type="time" name="" id="TSAT">
+                                    <button type="submit">Submit</button>
                                 </form>
                                 <form action="">
                                     <label for="CTOT">CTOT</label>
                                     <input type="time" name="" id="CTOT">
+                                    <button type="submit">Submit</button>
                                 </form>
                             </div>
 
@@ -281,6 +338,7 @@
     <script src="./duration-picker.min.js"></script>
     <!-- local js -->
     <script src="./accordion-mark-contol.js"></script>
+    <script src="./flight-box-control.js"></script>
 </body>
 
 </html>
