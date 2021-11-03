@@ -87,13 +87,19 @@ $(document).ready(function() {
         const flightTaskStatusBox = $(this).parents(".flight-prep-box").find(".flight-task-status");
         const flightInfoInputs = $(this).parents(".flight-box").find(".flight-info-inputs")
         const aircraftBtn = $(this).parents(".flight-box").find(".airplane-icon-box > div")
+        const confirmBtn = $(this).parents(".flight-box").find(".time-update-buttons > button")
         if (aircraftBtn.hasClass("closed")) {
             if ($(this).hasClass("closed")) {
                 $(this).toggleClass("closed")
                 $(this).css({ "margin-bottom": "10px" })
-                updateTimeForm.slideDown(200).css({ "display": "flex", "flex-direction": "column" });
+                updateTimeForm.slideDown(200);
                 flightTaskStatusBox.hide()
                 flightInfoInputs.slideUp(200)
+                $(this).text("Cancel").css({
+                    "background": "#FCC1CA 0% 0% no-repeat padding-box",
+                    "border": "1px solid #CA637A"
+                })
+
 
             } else if (!$(this).hasClass("closed")) {
                 $(this).toggleClass("closed")
@@ -101,6 +107,11 @@ $(document).ready(function() {
                 flightTaskStatusBox.delay(200).slideDown(500)
                 $(this).css({ "margin-bottom": "0px" })
                 flightInfoInputs.slideDown(200)
+                $(this).text("").append("<img src='./FARM-CNC-image/update-time.svg'> Update Time").css({
+                    "background": "#CBB1F9  0% 0% no-repeat padding-box",
+                    "border": "1px solid #3E075B"
+                })
+                confirmBtn.css({ "display": "none" })
             }
         }
         $(this).mousedown(function() {
@@ -113,7 +124,21 @@ $(document).ready(function() {
                 aircraftBtn.css({ "background-color": "#E6E6E6" })
             }
         });
-
-
     })
+
+    //Save Time Buttom Control=============================
+    $(".time-update-buttons > div:nth-of-type(1)").click(function() {
+        $(this).siblings("button").fadeIn(500)
+            // $(this).css({ "display": "none" })
+    })
+
+    //Cancel Time Button Control===========================
+    // $(".time-update-buttons > div:nth-of-type(2)").click(function() {
+    //     $(this).siblings("button").css({ "display": "none" })
+    //     $(this).siblings(".save").css({ "display": "block" })
+    // });
+    // Inputs after update=============================
+    $(".time-update-inputs > div > div > input").change(function() {
+        $(this).css({ "border": "2px solid black", "color": "black" })
+    });
 });
