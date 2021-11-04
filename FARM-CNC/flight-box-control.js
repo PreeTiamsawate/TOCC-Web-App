@@ -37,7 +37,6 @@ $(document).ready(function() {
             aircraftStatusbox.css({ "margin-bottom": "0px" })
             submitBtns.slideUp(100)
 
-
         }
     })
 
@@ -63,12 +62,12 @@ $(document).ready(function() {
 
         $(this).mousedown(function() {
             if (!updateTimeBtn.hasClass("closed")) {
-                updateTimeBtn.css({ "background-color": "#FCC1CA " })
+                updateTimeBtn.css({ "background-color": "orange" })
             }
         });
         $(this).mouseup(function() {
             if (!updateTimeBtn.hasClass("closed")) {
-                updateTimeBtn.css({ "background-color": "#CBB1F9" })
+                updateTimeBtn.css({ "background-color": "#FCC1CA " })
             }
         });
     })
@@ -116,7 +115,7 @@ $(document).ready(function() {
         }
         $(this).mousedown(function() {
             if (!aircraftBtn.hasClass("closed")) {
-                aircraftBtn.css({ "background-color": "#FCC1CA " })
+                aircraftBtn.css({ "background-color": "orange" })
             }
         });
         $(this).mouseup(function() {

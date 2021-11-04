@@ -267,6 +267,7 @@ nav>a:hover {
     height: 100%;
     background: #CA637A 0% 0% no-repeat padding-box;
     border-radius: 10px;
+    float: right;
 }
 
 
