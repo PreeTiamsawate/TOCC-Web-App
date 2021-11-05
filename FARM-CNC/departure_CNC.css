@@ -251,7 +251,7 @@ nav>a:hover {
     font: normal normal 600 11px/23px Poppins;
     letter-spacing: 0px;
     color: #CA637A;
-    width: 25%;
+    width: 23%;
 }
 
 .count-down-box>div:nth-of-type(2) {
@@ -628,14 +628,15 @@ nav>a:hover {
     width: 23.5%;
 }
 
-#flight-time {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border-radius: 10px;
+.html-duration-picker-wrapper>.html-duration-picker {
+    background: #FFFFFF 0% 0% no-repeat padding-box !important;
+    border-radius: 10px !important;
     opacity: 1;
-    height: 24px;
+    height: 24px!important;
     text-align: center;
     padding-left: 18px;
     padding-right: 18px;
+    margin: 0 !important;
 }
 
 .controlsDivStyle {
@@ -650,7 +651,7 @@ nav>a:hover {
     width: 36.5%;
 }
 
-@media (max-width: 1480px) {
+@media (max-width: 1550px) {
     .flight-number-box>div:nth-of-type(1) {
         font: normal normal bold 16px/20px Poppins;
     }
@@ -662,7 +663,7 @@ nav>a:hover {
     }
     .count-down-box>div:nth-of-type(1) {
         font: normal normal 600 10px/23px Poppins;
-        width: 33%;
+        width: 28%;
     }
     .update-time-btn {
         font: normal normal 600 12px/20px Poppins;
