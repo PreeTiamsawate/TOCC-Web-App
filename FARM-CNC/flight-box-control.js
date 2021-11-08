@@ -1,14 +1,14 @@
 $(document).ready(function() {
     // Collapse Button Control=======================
     $(".collapse-btn > img").click(function() {
-        const taskBoxes = $(this).parents(".flight-prep-box").find(".flight-task-status > div > div:nth-of-type(2)")
-        const updateTimeBtn = $(this).parents(".flight-prep-box").find(".update-time-btn")
+        const taskBoxes = $(this).parents(".flight-data-box").find(".flight-task-status > div > div:nth-of-type(2)")
+        const updateTimeBtn = $(this).parents(".flight-data-box").find(".update-time-btn")
         const flightInfoInputs = $(this).parents(".flight-box").find(".flight-info-inputs")
-        const statusBars = $(this).parents(".flight-prep-box").find(".status-bar ")
-        const aircraftStatusbox = $(this).parents(".flight-prep-box").find(".aircraft-status");
+        const statusBars = $(this).parents(".flight-data-box").find(".status-bar ")
+        const aircraftStatusbox = $(this).parents(".flight-data-box").find(".aircraft-status");
         const submitBtns = $(this).parents(".flight-box").find(".flight-info-inputs > .form-group > form > button");
         const updateTimeForm = $(this).parents(".flight-box").find(".time-update-form");
-        const flightTaskStatusBox = $(this).parents(".flight-prep-box").find(".flight-task-status");
+        const flightTaskStatusBox = $(this).parents(".flight-data-box").find(".flight-task-status");
         if (updateTimeBtn.hasClass("closed")) {
             if ($(this).hasClass("closed")) {
                 $(this).css("transform", "rotate(0deg)").toggleClass("closed");
@@ -26,25 +26,42 @@ $(document).ready(function() {
                 aircraftStatusbox.css({ "margin-bottom": "0px" })
                 submitBtns.slideUp(100)
             }
-        } else if (!updateTimeBtn.hasClass("closed")) {
-            updateTimeBtn.toggleClass("closed")
-            $(this).css("transform", "rotate(180deg)").toggleClass("closed");
-            updateTimeBtn.slideUp(200)
-            updateTimeForm.slideUp(200)
-            flightTaskStatusBox.delay(200).slideDown(500)
-            taskBoxes.slideUp(100)
-            statusBars.slideDown(200)
-            aircraftStatusbox.css({ "margin-bottom": "0px" })
-            submitBtns.slideUp(100)
-
         }
+
+        // } else if (!updateTimeBtn.hasClass("closed")) {
+        $(this).mousedown(function() {
+            if (!updateTimeBtn.hasClass("closed")) {
+                updateTimeBtn.css({ "background-color": "orange" })
+            }
+        });
+        $(this).mouseup(function() {
+            if (!updateTimeBtn.hasClass("closed")) {
+                updateTimeBtn.css({ "background-color": "#FCC1CA " })
+            }
+        });
+        // updateTimeBtn.toggleClass("closed")
+        // $(this).css("transform", "rotate(180deg)").toggleClass("closed");
+        // updateTimeBtn.slideUp(200).text("").append("<img src='./FARM-CNC-image/update-time.svg'> Update Time").css({
+        //     "background": "#CBB1F9  0% 0% no-repeat padding-box",
+        //     "border": "1px solid #3E075B",
+        //     "margin-bottom": "0px",
+        //     "margin-top": "10px"
+        // })
+        // updateTimeForm.slideUp(200)
+        // flightTaskStatusBox.delay(200).slideDown(500)
+        // taskBoxes.slideUp(100)
+        // statusBars.slideDown(200)
+        // aircraftStatusbox.css({ "margin-bottom": "0px" })
+        // submitBtns.slideUp(100)
+
+        // }
     })
 
     // Aircraft Status Button Control=======================
     $(".airplane-icon-box > div").click(function() {
-        const aircraftStatusbox = $(this).parents(".flight-prep-box").find(".aircraft-status");
-        const flightTaskStatusBox = $(this).parents(".flight-prep-box").find(".flight-task-status");
-        const updateTimeBtn = $(this).parents(".flight-prep-box").find(".update-time-btn")
+        const aircraftStatusbox = $(this).parents(".flight-data-box").find(".aircraft-status");
+        const flightTaskStatusBox = $(this).parents(".flight-data-box").find(".flight-task-status");
+        const updateTimeBtn = $(this).parents(".flight-data-box").find(".update-time-btn")
 
         if (updateTimeBtn.hasClass("closed")) {
             if ($(this).hasClass("closed")) {
@@ -82,8 +99,8 @@ $(document).ready(function() {
 
     //Update Time Button Control===========================
     $(".update-time-btn").click(function() {
-        const updateTimeForm = $(this).parents(".flight-prep-box").find(".time-update-form");
-        const flightTaskStatusBox = $(this).parents(".flight-prep-box").find(".flight-task-status");
+        const updateTimeForm = $(this).parents(".flight-data-box").find(".time-update-form");
+        const flightTaskStatusBox = $(this).parents(".flight-data-box").find(".flight-task-status");
         const flightInfoInputs = $(this).parents(".flight-box").find(".flight-info-inputs")
         const aircraftBtn = $(this).parents(".flight-box").find(".airplane-icon-box > div")
         const confirmBtn = $(this).parents(".flight-box").find(".time-update-buttons > button")
@@ -96,7 +113,8 @@ $(document).ready(function() {
                 flightInfoInputs.slideUp(200)
                 $(this).text("Cancel").css({
                     "background": "#FCC1CA 0% 0% no-repeat padding-box",
-                    "border": "1px solid #CA637A"
+                    "border": "1px solid #CA637A",
+                    "margin-bottom": "15px"
                 })
 
 
@@ -104,11 +122,12 @@ $(document).ready(function() {
                 $(this).toggleClass("closed")
                 updateTimeForm.slideUp(200)
                 flightTaskStatusBox.delay(200).slideDown(500)
-                $(this).css({ "margin-bottom": "0px" })
+                    // $(this).css({ "margin-bottom": "0px" })
                 flightInfoInputs.slideDown(200)
                 $(this).text("").append("<img src='./FARM-CNC-image/update-time.svg'> Update Time").css({
                     "background": "#CBB1F9  0% 0% no-repeat padding-box",
-                    "border": "1px solid #3E075B"
+                    "border": "1px solid #3E075B",
+                    "margin-bottom": "0px"
                 })
                 confirmBtn.css({ "display": "none" })
             }
@@ -139,5 +158,6 @@ $(document).ready(function() {
     // Inputs after update=============================
     $(".time-update-inputs > div > div > input").change(function() {
         $(this).css({ "border": "2px solid black", "color": "black" })
+
     });
 });

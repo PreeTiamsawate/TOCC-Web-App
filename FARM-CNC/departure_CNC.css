@@ -107,26 +107,32 @@ nav>a:hover {
     border: 1px solid #707070;
     border-radius: 10px;
     background-color: #fff;
+    margin-bottom: 5px;
+    position: relative;
 }
 
 
 /* Flight Preparation Box =============================== */
 
-.flight-prep-box {
+.flight-data-box {
     width: 100%;
     height: auto;
     min-height: 72px;
-    padding-top: 3px;
+    padding-top: 5px;
     display: flex;
     justify-content: space-between;
-    position: relative;
 }
 
 .pin-mark {
     position: absolute;
-    top: -15px;
-    left: -15px;
+    top: -20px;
+    left: -25px;
     cursor: pointer;
+}
+
+.pin-mark>button {
+    background: none;
+    border: none;
 }
 
 .flight-number-box {
@@ -243,26 +249,26 @@ nav>a:hover {
     width: 100%;
     height: 23px;
     align-items: center;
-    /* justify-content: space-between; */
+    justify-content: space-between;
 }
 
-.count-down-box>div:nth-of-type(1) {
-    text-align: left;
+.count-down-box>div:nth-of-type(2) {
+    text-align: center;
     font: normal normal 600 11px/23px Poppins;
     letter-spacing: 0px;
     color: #CA637A;
     width: 23%;
 }
 
-.count-down-box>div:nth-of-type(2) {
+.count-down-box>div:nth-of-type(1) {
     background: #E6E6E6 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
     border-radius: 10px;
-    width: 75%;
+    width: 77%;
     height: 8px;
 }
 
-.count-down-box>div:nth-of-type(2)>div {
+.count-down-box>div:nth-of-type(1)>div {
     width: 100%;
     height: 100%;
     background: #CA637A 0% 0% no-repeat padding-box;
@@ -483,7 +489,7 @@ nav>a:hover {
     height: auto;
     min-height: 72px;
     width: 10%;
-    padding-top: 3px;
+    padding-top: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -525,7 +531,7 @@ nav>a:hover {
 .collapse-btn {
     width: 50px;
     height: 60px;
-    padding-top: 3px;
+    padding-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -662,6 +668,9 @@ nav>a:hover {
         font: normal normal 600 10.5px/20px Poppins;
     }
     .count-down-box>div:nth-of-type(1) {
+        width: 72%;
+    }
+    .count-down-box>div:nth-of-type(2) {
         font: normal normal 600 10px/23px Poppins;
         width: 28%;
     }
