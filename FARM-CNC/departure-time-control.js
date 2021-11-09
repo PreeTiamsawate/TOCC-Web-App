@@ -3,7 +3,7 @@ const timeControl = function() {
     for (let flightBox of flightBoxes) {
         let STD = new Date(Date.parse($(flightBox).find(".inputs-from-backend .STD_millisecond").text()));
         let ETD = new Date(Date.parse($(flightBox).find(".inputs-from-backend .ETD_millisecond").text()));
-        let currentTime = Date.now()
+        let currentTime = new Date(Date.now())
         let STD0005 = STD - 300000
         let STD0010 = STD - 600000
         let STD0040 = STD - 2.4e+6
@@ -163,13 +163,30 @@ const timeControl = function() {
                 $(statusBar).css(greenStatus)
             }
         }
-
+        // Departure Time Box status
+        if (ETD > STD) {
+            $(flightBox).find(".departure-time-box > div:nth-of-type(1)").css(pinkStatus)
+            $(flightBox).find(".red-bell").removeClass("d-none")
+        } else {
+            $(flightBox).find(".departure-time-box > div:nth-of-type(1)").css(greenStatus)
+            $(flightBox).find(".red-bell").addClass("d-none")
+        }
         // Displaying the data===================================================
+
         const customGetHours = function(timeStamp) {
-            return ("0" + timeStamp.getHours().toString()).slice(-2)
+            if ($(".time-zone-form #UTC").is(":checked")) {
+                return ("0" + timeStamp.getUTCHours().toString()).slice(-2)
+            } else if ($(".time-zone-form #LT").is(":checked")) {
+                return ("0" + timeStamp.getHours().toString()).slice(-2)
+            }
+
         }
         const customGetMinutes = function(timeStamp) {
-            return ("0" + timeStamp.getMinutes().toString()).slice(-2)
+            if ($(".time-zone-form #UTC").is(":checked")) {
+                return ("0" + timeStamp.getUTCMinutes().toString()).slice(-2)
+            } else if ($(".time-zone-form #LT").is(":checked")) {
+                return ("0" + timeStamp.getMinutes().toString()).slice(-2)
+            }
         }
 
         // display STD ETD
@@ -219,3 +236,4 @@ const timeControl = function() {
 }
 timeControl()
 setInterval(timeControl, 60000);
+$(".time-zone-form input").change(timeControl);
