@@ -808,7 +808,8 @@ nav>a:hover {
     width: 23.5%;
 }
 
-.html-duration-picker-wrapper>.html-duration-picker {
+
+/* .html-duration-picker-wrapper>.html-duration-picker {
     background: #FFFFFF 0% 0% no-repeat padding-box !important;
     border-radius: 10px !important;
     opacity: 1;
@@ -825,7 +826,7 @@ nav>a:hover {
 
 .form-group>form>.html-duration-picker-wrapper {
     width: 100%;
-}
+} */
 
 .flight-info-inputs>div:nth-of-type(4) {
     width: 36.5%;

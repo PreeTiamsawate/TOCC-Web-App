@@ -1,5 +1,5 @@
+// Collapse Button Control=======================
 $(document).ready(function() {
-    // Collapse Button Control=======================
     $(".collapse-btn > img").click(function() {
         const taskBoxes = $(this).parents(".flight-data-box").find(".flight-task-status > div > div:nth-of-type(2)")
         const updateTimeBtn = $(this).parents(".flight-data-box").find(".update-time-btn")
@@ -127,7 +127,8 @@ $(document).ready(function() {
                 $(this).text("").append("<img src='./FARM-CNC-image/update-time.svg'> Update Time").css({
                     "background": "#CBB1F9  0% 0% no-repeat padding-box",
                     "border": "1px solid #3E075B",
-                    "margin-bottom": "0px"
+                    "margin-bottom": "0px",
+                    "margin-top": "10px"
                 })
                 confirmBtn.css({ "display": "none" })
             }
@@ -160,4 +161,4 @@ $(document).ready(function() {
         $(this).css({ "border": "2px solid black", "color": "black" })
 
     });
-});
+})
