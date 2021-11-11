@@ -189,6 +189,11 @@ $(document).ready(function() {
                     return ("0" + timeStamp.getMinutes().toString()).slice(-2)
                 }
             }
+            if ($(".time-zone-form #UTC").is(":checked")) {
+                $(flightBox).find(".LT_UTC").text("UTC")
+            } else if ($(".time-zone-form #LT").is(":checked")) {
+                $(flightBox).find(".LT_UTC").text("LT")
+            }
 
             // display STD ETD
             $(flightBox).find(".carrier_code").text($(flightBox).find(".inputs-from-backend .CARRIER_CODE").text())

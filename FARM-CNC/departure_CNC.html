@@ -18,8 +18,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/avenir-lt-std" rel="stylesheet">
     <!-- local css -->
+    <link rel="stylesheet" href="./common_CNC.css">
     <link rel="stylesheet" href="./departure_CNC.css">
     <title>Departure - CNC </title>
+
 </head>
 
 <body>
@@ -78,20 +80,18 @@
         <nav>
             <a href="./departure_CNC.html">DEPARTURE</a>
             <a href="./offblock_CNC.html">OFF BLOCK</a>
-            <a href="#">ARRIVAL</a>
+            <a href="./arrival_CNC.html">ARRIVAL</a>
             <a href="#">ON BLOCK</a>
-            <a href="#">ON BLOCK</a>
-
         </nav>
         <div class="accordion" id="accordionPanelsStayOpenExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <button class="custom-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    <button class="custom-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
                         <img src="./FARM-CNC-image/accordion_position_mark.svg">
                         Pinned Flights
                     </button>
                 </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
                     <div class="accordion-body">
                         <!-- Flight for each flight -->
                         <div class="flight-box">
@@ -417,13 +417,13 @@
                                     <div>
                                         <div>
                                             <span>STD</span>
-                                            <span class="STD">####</span>
+                                            <span class="STD">##</span>
                                             <span class="LT_UTC">LT</span>
 
                                         </div>
                                         <div>
                                             <span>ETD</span>
-                                            <span class="ETD">####</span>
+                                            <span class="ETD">##</span>
                                             <span class="LT_UTC">LT</span>
                                         </div>
                                     </div>
@@ -545,9 +545,7 @@
                                 <span class="AIRCRAFT_POWER_UP_TIME_millisecond"> 8 Nov 2021 19:19:00 GMT+0700</span>
                                 <span class="AIRCRAFT_RELEASED_TIME_millisecond"> 8 Nov 2021 17:19:00 GMT+0700</span>
                             </div>
-                            <div class="notification-bell">
 
-                            </div>
                             <div class="flight-data-box">
 
                                 <!-- Flight Number and Route ========== -->
@@ -828,13 +826,13 @@
                                     <div>
                                         <div>
                                             <span>STD</span>
-                                            <span class="STD">####</span>
+                                            <span class="STD">##</span>
                                             <span class="LT_UTC">LT</span>
 
                                         </div>
                                         <div>
                                             <span>ETD</span>
-                                            <span class="ETD">####</span>
+                                            <span class="ETD">##</span>
                                             <span class="LT_UTC">LT</span>
                                         </div>
                                     </div>
@@ -943,9 +941,7 @@
                                 <span class="AIRCRAFT_POWER_UP_TIME_millisecond"> 8 Nov 2021 19:19:00 GMT+0700</span>
                                 <span class="AIRCRAFT_RELEASED_TIME_millisecond"> 8 Nov 2021 17:19:00 GMT+0700</span>
                             </div>
-                            <div class="notification-bell">
 
-                            </div>
                             <div class="flight-data-box">
 
                                 <!-- Flight Number and Route ========== -->
@@ -1226,13 +1222,13 @@
                                     <div>
                                         <div>
                                             <span>STD</span>
-                                            <span class="STD">####</span>
+                                            <span class="STD">##</span>
                                             <span class="LT_UTC">LT</span>
 
                                         </div>
                                         <div>
                                             <span>ETD</span>
-                                            <span class="ETD">####</span>
+                                            <span class="ETD">##</span>
                                             <span class="LT_UTC">LT</span>
                                         </div>
                                     </div>
@@ -1311,15 +1307,15 @@
     </script>
     <!-- jquery js link -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-
     <!-- local js -->
     <script src="./navbar-control.js"></script>
     <script src="./accordion-mark-contol.js"></script>
-    <script src="./flight-box-control.js"></script>
+    <script src="./departure-flight-box-control.js"></script>
     <script src="./departure-time-control.js"></script>
-
     <script src="./sidebar-control.js"></script>
+
+
+
 </body>
 
 </html>
