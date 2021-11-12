@@ -34,17 +34,17 @@ $(document).ready(function() {
     $(".icon-bar > img").click(function() {
         $(this).toggleClass("getNoti");
         if ($(this).hasClass("getNoti")) {
-            $(".red-bell.d-none").parents(".flight-box").fadeOut();
+            $(".noti-bell.d-none").parents(".flight-box").fadeOut();
 
         } else {
-            $(".red-bell.d-none").parents(".flight-box").fadeIn();
+            $(".noti-bell.d-none").parents(".flight-box").fadeIn();
         }
     });
     const filterDelayFlights = function() {
         if ($(".icon-bar > img").hasClass("getNoti")) {
-            $(".red-bell.d-none").parents(".flight-box").fadeOut();
+            $(".noti-bell.d-none").parents(".flight-box").fadeOut();
         } else {
-            $(".red-bell.d-none").parents(".flight-box").fadeIn();
+            $(".noti-bell.d-none").parents(".flight-box").fadeIn();
         }
     }
 

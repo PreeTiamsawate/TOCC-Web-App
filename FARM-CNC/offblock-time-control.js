@@ -167,10 +167,10 @@ $(document).ready(function() {
             // Departure Time Box status
             if (ETD > STD) {
                 $(flightBox).find(".departure-time-box > div:nth-of-type(1)").css(pinkStatus)
-                $(flightBox).find(".red-bell").removeClass("d-none")
+                $(flightBox).find(".noti-bell").removeClass("d-none")
             } else {
                 $(flightBox).find(".departure-time-box > div:nth-of-type(1)").css(greenStatus)
-                $(flightBox).find(".red-bell").addClass("d-none")
+                $(flightBox).find(".noti-bell").addClass("d-none")
             }
             // Displaying the data===================================================
 
@@ -236,6 +236,6 @@ $(document).ready(function() {
         }
     }
     timeControl()
-        // setInterval(timeControl, 10000);
+    setInterval(timeControl, 300000);
     $(".time-zone-form input").change(timeControl);
 })

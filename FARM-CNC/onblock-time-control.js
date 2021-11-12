@@ -173,6 +173,6 @@ $(document).ready(function() {
         }
     }
     timeControl()
-    setInterval(timeControl, 10000);
+    setInterval(timeControl, 300000);
     $(".time-zone-form input").change(timeControl);
 })

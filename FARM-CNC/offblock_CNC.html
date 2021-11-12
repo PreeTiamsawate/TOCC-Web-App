@@ -80,25 +80,25 @@
             <a href="./departure_CNC.html">DEPARTURE</a>
             <a href="./offblock_CNC.html">OFF BLOCK</a>
             <a href="./arrival_CNC.html">ARRIVAL</a>
-            <a href="#">ON BLOCK</a>
+            <a href="./onblock_CNC.html">ON BLOCK</a>
         </nav>
         <div class="accordion" id="accordionPanelsStayOpenExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <button class="custom-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    <button class="custom-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
                         <img src="./FARM-CNC-image/accordion_position_mark.svg">
                         Pinned Flights
                     </button>
                 </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
                     <div class="accordion-body">
-                        <!-- Flight for each flight -->
+                        <!-- Flight box for each flight -->
                         <div class="flight-box">
                             <form action="" class="pin-mark">
                                 <input type="checkbox" name="isPinned" class="d-none" checked>
                                 <button type="submit"><img src="./FARM-CNC-image/active-pin.svg"></button>
                             </form>
-                            <div class="red-bell d-none">
+                            <div class="noti-bell d-none">
                                 <img src="./FARM-CNC-image/red-bell.png">
                             </div>
                             <div class="inputs-from-backend d-none">
@@ -359,10 +359,7 @@
                                             </div>
 
                                         </div>
-                                        <!-- <div class="time-update-buttons">
-                                            <div class="save">Save</div>
-                                            <button type="submit">Confirm</button>
-                                        </div> -->
+
 
                                     </div>
                                     <!-- Aircraft Status Box ====== -->
@@ -432,58 +429,7 @@
                                     <img src="./FARM-CNC-image/dropdown.svg" class="closed">
                                 </div>
                             </div>
-                            <!-- Input from Office Units  -->
-                            <!-- <div class="flight-info-inputs">
-                                <div class="passenger-numbers">
-                                    <img src="./FARM-CNC-image/passenger-icon.svg">
-                                    <div>
-                                        C <span class="C-CLASS">00</span> / Y <span class="Y-CLASS">000</span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <form action="">
-                                        <label>Gross Weight</label>
-                                        <input type="number" name="" class="gross-wight">
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                    <form action="">
-                                        <label>Ballast</label>
-                                        <input type="number" name="" class="ballast">
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                </div>
-                                <div class=" form-group">
-                                    <form action="">
-                                        <label>Planning Fuel</label>
-                                        <input type="number" name="" class="planning-fuel">
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                    <form action="">
-                                        <label>Flight Time</label>
-                                        <input type="time" name="" class="flight-time">
-                                        <button type="submit">Submit</button>
-                                    </form>
 
-                                </div>
-                                <div class="form-group">
-                                    <form action="">
-                                        <label>TOBT</label>
-                                        <input type="time" name="" class="TOBT">
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                    <form action="">
-                                        <label>TSAT</label>
-                                        <input type="time" name="" class="TSAT">
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                    <form action="">
-                                        <label>CTOT</label>
-                                        <input type="time" name="" class="CTOT">
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                </div>
-
-                            </div> -->
                         </div>
 
                     </div>
@@ -503,7 +449,7 @@
                                 <input type="checkbox" name="isPinned" class="d-none">
                                 <button type="submit"><img src="./FARM-CNC-image/disable-pin.svg"></button>
                             </form>
-                            <div class="red-bell d-none">
+                            <div class="noti-bell d-none">
                                 <img src="./FARM-CNC-image/red-bell.png">
                             </div>
                             <div class="inputs-from-backend d-none">
@@ -765,12 +711,6 @@
                                             </div>
 
                                         </div>
-                                        <!-- <div class="time-update-buttons">
-                                            <div class="save">Save</div>
-                                            <button type="submit">Confirm</button>
-
-
-                                        </div> -->
 
                                     </form>
                                     <!-- Aircraft Status Box ====== -->
@@ -840,59 +780,9 @@
                                     <img src="./FARM-CNC-image/dropdown.svg" class="closed">
                                 </div>
                             </div>
-                            <!-- Input from Office Units  -->
-                            <!-- <div class="flight-info-inputs">
-                                <div class="passenger-numbers">
-                                    <img src="./FARM-CNC-image/passenger-icon.svg">
-                                    <div>
-                                        C <span class="C-CLASS">00</span> / Y <span class="Y-CLASS">000</span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <form action="">
-                                        <label>Gross Weight</label>
-                                        <input type="number" name="" class="gross-wight">
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                    <form action="">
-                                        <label>Ballast</label>
-                                        <input type="number" name="" class="ballast">
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                </div>
-                                <div class=" form-group">
-                                    <form action="">
-                                        <label>Planning Fuel</label>
-                                        <input type="number" name="" class="planning-fuel">
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                    <form action="">
-                                        <label>Flight Time</label>
-                                        <input type="time" name="" class="flight-time">
-                                        <button type="submit">Submit</button>
-                                    </form>
 
-                                </div>
-                                <div class="form-group">
-                                    <form action="">
-                                        <label>TOBT</label>
-                                        <input type="time" name="" class="TOBT">
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                    <form action="">
-                                        <label>TSAT</label>
-                                        <input type="time" name="" class="TSAT">
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                    <form action="">
-                                        <label>CTOT</label>
-                                        <input type="time" name="" class="CTOT">
-                                        <button type="submit">Submit</button>
-                                    </form>
-                                </div>
-
-                            </div> -->
                         </div>
+
 
 
                     </div>
