@@ -1,4 +1,16 @@
 $(document).ready(function() {
+    $('.time').timepicker({
+        timeFormat: 'HH:mm ',
+        interval: 30,
+        minTime: '00',
+        maxTime: '23:30',
+        defaultTime: '',
+        startTime: '',
+        dynamic: false,
+        dropdown: true,
+        scrollbar: true
+    });
+
     const timeControl = function() {
         const flightBoxes = $(".flight-box")
         for (let flightBox of flightBoxes) {
@@ -77,7 +89,7 @@ $(document).ready(function() {
             const gateOpenInput = $(flightBox).find(".Gate-Open-field > input")
             const cleanerArrInput = $(flightBox).find(".Cleaner-ARR-field > input")
             const cateringArrInput = $(flightBox).find(".Catering-ARR-field > input")
-            const crewArrInput = $(flightBox).find(".Cre-ARR-field > input")
+            const crewArrInput = $(flightBox).find(".Crew-ARR-field > input")
 
             const cargoCompTime = new Date($(flightBox).find(".inputs-from-backend .Cargo-COMP-Time_millisecond").text())
             const boardingCompTime = new Date($(flightBox).find(".inputs-from-backend .Boarding-COMP-Time_millisecond").text())
@@ -175,19 +187,22 @@ $(document).ready(function() {
             // Displaying the data===================================================
 
             const customGetHours = function(timeStamp) {
-                if ($(".time-zone-form #UTC").is(":checked")) {
-                    return ("0" + timeStamp.getUTCHours().toString()).slice(-2)
-                } else if ($(".time-zone-form #LT").is(":checked")) {
-                    return ("0" + timeStamp.getHours().toString()).slice(-2)
-                }
-
+                if (timeStamp != "Invalid Date") {
+                    if ($(".time-zone-form #UTC").is(":checked")) {
+                        return ("0" + timeStamp.getUTCHours().toString()).slice(-2) + ":"
+                    } else if ($(".time-zone-form #LT").is(":checked")) {
+                        return ("0" + timeStamp.getHours().toString()).slice(-2) + ":"
+                    }
+                } else { return "" }
             }
             const customGetMinutes = function(timeStamp) {
-                if ($(".time-zone-form #UTC").is(":checked")) {
-                    return ("0" + timeStamp.getUTCMinutes().toString()).slice(-2)
-                } else if ($(".time-zone-form #LT").is(":checked")) {
-                    return ("0" + timeStamp.getMinutes().toString()).slice(-2)
-                }
+                if (timeStamp != "Invalid Date") {
+                    if ($(".time-zone-form #UTC").is(":checked")) {
+                        return ("0" + timeStamp.getUTCMinutes().toString()).slice(-2)
+                    } else if ($(".time-zone-form #LT").is(":checked")) {
+                        return ("0" + timeStamp.getMinutes().toString()).slice(-2)
+                    }
+                } else { return "" }
             }
             if ($(".time-zone-form #UTC").is(":checked")) {
                 $(flightBox).find(".LT_UTC").text("UTC")
@@ -205,19 +220,19 @@ $(document).ready(function() {
             $(flightBox).find(".ETD").text(customGetHours(ETD) + customGetMinutes(ETD))
 
             // display task times in at their inputs
-            cargoCompInput.val(customGetHours(cargoCompTime) + ":" + customGetMinutes(cargoCompTime))
-            boardingCompInput.val(customGetHours(boardingCompTime) + ":" + customGetMinutes(boardingCompTime))
-            pushbackStbyInput.val(customGetHours(pushbackStbyTime) + ":" + customGetMinutes(pushbackStbyTime))
-            boardingInput.val(customGetHours(boardingTime) + ":" + customGetMinutes(boardingTime))
-            cateringCompInput.val(customGetHours(cateringCompTime) + ":" + customGetMinutes(cateringCompTime))
-            cleanerCompInput.val(customGetHours(cleanerCompTime) + ":" + customGetMinutes(cleanerCompTime))
-            rampBusInput.val(customGetHours(rampBusTime) + ":" + customGetMinutes(rampBusTime))
-            paxStepInput.val(customGetHours(paxStepTime) + ":" + customGetMinutes(paxStepTime))
-            cargoArrInput.val(customGetHours(cargoArrTime) + ":" + customGetMinutes(cargoArrTime))
-            gateOpenInput.val(customGetHours(gateOpenTime) + ":" + customGetMinutes(gateOpenTime))
-            cleanerArrInput.val(customGetHours(cleanerArrTime) + ":" + customGetMinutes(cleanerArrTime))
-            cateringArrInput.val(customGetHours(cateringArrTime) + ":" + customGetMinutes(cateringArrTime))
-            crewArrInput.val(customGetHours(crewArrTime) + ":" + customGetMinutes(crewArrTime))
+            cargoCompInput.val(customGetHours(cargoCompTime) + customGetMinutes(cargoCompTime))
+            boardingCompInput.val(customGetHours(boardingCompTime) + customGetMinutes(boardingCompTime))
+            pushbackStbyInput.val(customGetHours(pushbackStbyTime) + customGetMinutes(pushbackStbyTime))
+            boardingInput.val(customGetHours(boardingTime) + customGetMinutes(boardingTime))
+            cateringCompInput.val(customGetHours(cateringCompTime) + customGetMinutes(cateringCompTime))
+            cleanerCompInput.val(customGetHours(cleanerCompTime) + customGetMinutes(cleanerCompTime))
+            rampBusInput.val(customGetHours(rampBusTime) + customGetMinutes(rampBusTime))
+            paxStepInput.val(customGetHours(paxStepTime) + customGetMinutes(paxStepTime))
+            cargoArrInput.val(customGetHours(cargoArrTime) + customGetMinutes(cargoArrTime))
+            gateOpenInput.val(customGetHours(gateOpenTime) + customGetMinutes(gateOpenTime))
+            cleanerArrInput.val(customGetHours(cleanerArrTime) + customGetMinutes(cleanerArrTime))
+            cateringArrInput.val(customGetHours(cateringArrTime) + customGetMinutes(cateringArrTime))
+            crewArrInput.val(customGetHours(crewArrTime) + customGetMinutes(crewArrTime))
 
             // display aircraft status
             let aircraftStartTime = new Date($(flightBox).find(".inputs-from-backend .START_TIME_millisecond").text());
@@ -241,6 +256,6 @@ $(document).ready(function() {
         }
     }
     timeControl()
-    setInterval(timeControl, 10000);
+    setInterval(timeControl, 30000);
     $(".time-zone-form input").change(timeControl);
 })
