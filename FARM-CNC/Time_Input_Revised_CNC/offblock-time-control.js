@@ -10,7 +10,6 @@ $(document).ready(function() {
         dropdown: true,
         scrollbar: true
     });
-
     const timeControl = function() {
         const flightBoxes = $(".flight-box")
         for (let flightBox of flightBoxes) {
@@ -253,12 +252,9 @@ $(document).ready(function() {
             $(flightBox).find(".start_gate_bay").text($(flightBox).find(".inputs-from-backend .START_GATE_BAY").text())
             $(flightBox).find(".arrive_gate_bay").text($(flightBox).find(".inputs-from-backend .ARRIVE_GATE_BAY").text())
             $(flightBox).find(".repair_status_image").attr("href", $(flightBox).find(".inputs-from-backend .REPAIR_STATUS_IMAGE_URL").text())
-            $(flightBox).find(".C-CLASS").text($(flightBox).find(".inputs-from-backend .C_Class_PAX_input").text())
-            $(flightBox).find(".Y-CLASS").text($(flightBox).find(".inputs-from-backend .Y_Class_PAX_input").text())
-
         }
     }
     timeControl()
-    setInterval(timeControl, 30000);
+    setInterval(timeControl, 300000);
     $(".time-zone-form input").change(timeControl);
 })
