@@ -65,11 +65,11 @@
             <div>
                 <h4>Airline</h4>
                 <div>
-                    <input type="checkbox" name="TG" id="TG" value="TG">
+                    <input type="checkbox" name="TG" id="TG" value="TG" checked>
                     <label for="TG">TG</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="WE" id="WE" value="WE">
+                    <input type="checkbox" name="WE" id="WE" value="WE" checked>
                     <label for="WE">WE</label>
                 </div>
                 <button type="submit">Confirm</button>
@@ -92,195 +92,8 @@
                     </button>
                 </h2>
                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-                    <div class="accordion-body">
+                    <div id="pinned-list" class="accordion-body">
                         <!-- Flight for each flight -->
-                        <div class="flight-box">
-                            <form action="" class="pin-mark">
-                                <input type="checkbox" name="isPinned" class="d-none" checked>
-                                <button type="submit"><img src="./FARM-CNC-image/active-pin.svg"></button>
-                            </form>
-                            <div class="noti-bell d-none">
-                                <img src="./FARM-CNC-image/yellow-bell.svg">
-                            </div>
-                            <div class="inputs-from-backend d-none">
-                                <!-- Flight information -->
-                                <span class="CARRIER_CODE">TG</span>
-                                <span class="FLIGHT_NUMBER">9999</span>
-                                <span class="DEPARTURE_AIRPORT_IATA">HKT</span>
-                                <span class="DESTINATION_AIRPORT_IATA">BKK</span>
-                                <span class="AC_REG">HS-THBC</span>
-                                <span class="STA_millisecond">11 Nov 2021 19:45:00 GMT+0700</span>
-                                <span class="ETA_millisecond">11 Nov 2021 19:55:00 GMT+0700</span>
-                                <span class="NEXT_FLIGHT_NUMBER">8888</span>
-                                <span class="NEXT_FLIGHT_STD_millisecond">10 Nov 2021 15:20:00 GMT+0700</span>
-                                <span class="ARRIVAL_GATE_BAY">G2345</span>
-
-                                <!-- Task Finish Times -->
-                                <span class="GA-A-Time_millisecond">11 Nov 2021 19:25:00 GMT+0700</span>
-                                <span class="Ramp-Bus-Time_millisecond">11 Nov 2021 19:36:00 GMT+0700</span>
-                                <span class="PAX-Step-Time_millisecond"></span>
-                                <span class="Cargo-STBY-Time_millisecond">11 Nov 2021 19:40:00 GMT+0700</span>
-                                <span class="RO-Time_millisecond"></span>
-                                <span class="Catering-Time_millisecond">11 Nov 2021 19:40:00 GMT+0700</span>
-                                <span class="Tractor-Time_millisecond">11 Nov 2021 19:46:00 GMT+0700</span>
-                                <span class="Cleaner-Time_millisecond"></span>
-                            </div>
-                            <div class="flight-data-box">
-
-                                <!-- Flight Number and Route ========== -->
-                                <div class="flight-number-box">
-                                    <div>
-                                        <span class="carrier_code">##</span>
-                                        <span class="flight_number">####</span>
-                                    </div>
-                                    <div>
-                                        <span class="departure_airport_iata">###</span> -
-                                        <span class="destination_airport_iata">###</span>
-                                    </div>
-                                </div>
-
-
-                                <!-- Main Box ============================ -->
-                                <section class="main-box">
-
-                                    <!-- Status of all tasks -->
-                                    <div class="flight-task-status">
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="GA-A-status">GA-A Staff</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="Ramp-Bus-status">Ramp Bus</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="PAX-Step-status">PAX Step</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="Cargo-STBY-status">Cargo STBY</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="RO-status">RO</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="Catering-status">Catering</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="Tractor-status">Tractor</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="Cleaner-status">Cleaner</div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="count-down-container">
-                                        <div>
-                                            <div>
-                                                <div class="bar-0010"></div>
-                                            </div>
-                                            <div>00:10</div>
-                                        </div>
-                                        <div>
-                                            <div>
-                                                <div class="bar-STA"></div>
-                                            </div>
-                                            <div>STA</div>
-                                        </div>
-                                    </div>
-
-
-                                </section>
-                                <!-- STD ETD Time box -->
-                                <div class="arrival-time-box">
-                                    <div>
-                                        <div>
-                                            <span>STA</span>
-                                            <span class="STA">##</span>
-                                            <span class="LT_UTC">UTC</span>
-
-                                        </div>
-                                        <div>
-                                            <span>ETA</span>
-                                            <span class="ETA">##</span>
-                                            <span class="LT_UTC">UTC</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- Next Flight Time box -->
-                                <div class="next-flight-time-box">
-                                    <div>
-                                        <div>
-                                            <span class="ac_reg">####</span> at
-                                            <span class="arr_gate_bay">####</span>
-                                        </div>
-                                        <div>
-                                            <span>Next</span>
-                                            <span>: </span>
-                                            <span class="carrier_code">##</span>
-                                            <span class="next_flight_number">##</span>
-
-                                        </div>
-                                        <div>
-
-                                            <span class="next_flight_STD">##</span>,
-                                            <span class="next_flight_date">## ## ##</span>
-                                            <span class="LT_UTC">LT</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="collapse-btn">
-                                    <img src="./FARM-CNC-image/dropdown.svg" class="closed">
-                                </div>
-                            </div>
-
-                        </div>
 
                     </div>
                 </div>
@@ -293,194 +106,9 @@
                     </button>
                 </h2>
                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
-                    <div class="accordion-body">
-                        <div class="flight-box">
-                            <form action="" class="pin-mark">
-                                <input type="checkbox" name="isPinned" class="d-none" checked>
-                                <button type="submit"><img src="./FARM-CNC-image/disable-pin.svg"></button>
-                            </form>
-                            <div class="noti-bell d-none">
-                                <img src="./FARM-CNC-image/yellow-bell.svg">
-                            </div>
-                            <div class="inputs-from-backend d-none">
-                                <!-- Flight information -->
-                                <span class="CARRIER_CODE">TG</span>
-                                <span class="FLIGHT_NUMBER">9999</span>
-                                <span class="DEPARTURE_AIRPORT_IATA">HKT</span>
-                                <span class="DESTINATION_AIRPORT_IATA">BKK</span>
-                                <span class="AC_REG">HS-THBC</span>
-                                <span class="STA_millisecond">11 Nov 2021 19:45:00 GMT+0700</span>
-                                <span class="ETA_millisecond">11 Nov 2021 19:40:00 GMT+0700</span>
-                                <span class="NEXT_FLIGHT_NUMBER">8888</span>
-                                <span class="NEXT_FLIGHT_STD_millisecond">10 Nov 2021 15:20:00 GMT+0700</span>
-                                <span class="ARRIVAL_GATE_BAY">G2345</span>
+                    <div id="unpinned-list" class="accordion-body">
+                        <!-- Flight for each flight -->
 
-                                <!-- Task Finish Times -->
-                                <span class="GA-A-Time_millisecond">11 Nov 2021 19:25:00 GMT+0700</span>
-                                <span class="Ramp-Bus-Time_millisecond">11 Nov 2021 19:36:00 GMT+0700</span>
-                                <span class="PAX-Step-Time_millisecond"></span>
-                                <span class="Cargo-STBY-Time_millisecond">11 Nov 2021 19:40:00 GMT+0700</span>
-                                <span class="RO-Time_millisecond"></span>
-                                <span class="Catering-Time_millisecond">11 Nov 2021 19:40:00 GMT+0700</span>
-                                <span class="Tractor-Time_millisecond">11 Nov 2021 19:46:00 GMT+0700</span>
-                                <span class="Cleaner-Time_millisecond"></span>
-                            </div>
-                            <div class="flight-data-box">
-
-                                <!-- Flight Number and Route ========== -->
-                                <div class="flight-number-box">
-                                    <div>
-                                        <span class="carrier_code">##</span>
-                                        <span class="flight_number">####</span>
-                                    </div>
-                                    <div>
-                                        <span class="departure_airport_iata">###</span> -
-                                        <span class="destination_airport_iata">###</span>
-                                    </div>
-                                </div>
-
-
-                                <!-- Main Box ============================ -->
-                                <section class="main-box">
-
-                                    <!-- Status of all tasks -->
-                                    <div class="flight-task-status">
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="GA-A-status">GA-A Staff</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="Ramp-Bus-status">Ramp Bus</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="PAX-Step-status">PAX Step</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="Cargo-STBY-status">Cargo STBY</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="RO-status">RO</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="Catering-status">Catering</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="Tractor-status">Tractor</div>
-
-                                            </div>
-
-                                        </div>
-                                        <div>
-                                            <div class="status-bar  ">
-                                            </div>
-                                            <div>
-                                                <div class="Cleaner-status">Cleaner</div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="count-down-container">
-                                        <div>
-                                            <div>
-                                                <div class="bar-0010"></div>
-                                            </div>
-                                            <div>00:10</div>
-                                        </div>
-                                        <div>
-                                            <div>
-                                                <div class="bar-STA"></div>
-                                            </div>
-                                            <div>STA</div>
-                                        </div>
-                                    </div>
-
-
-                                </section>
-                                <!-- STD ETD Time box -->
-                                <div class="arrival-time-box">
-                                    <div>
-                                        <div>
-                                            <span>STA</span>
-                                            <span class="STA">##</span>
-                                            <span class="LT_UTC">UTC</span>
-
-                                        </div>
-                                        <div>
-                                            <span>ETA</span>
-                                            <span class="ETA">##</span>
-                                            <span class="LT_UTC">UTC</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- Next Flight Time box -->
-                                <div class="next-flight-time-box">
-                                    <div>
-                                        <div>
-                                            <span class="ac_reg">####</span> at
-                                            <span class="arr_gate_bay">####</span>
-                                        </div>
-                                        <div>
-                                            <span>Next</span>
-                                            <span>: </span>
-                                            <span class="carrier_code">##</span>
-                                            <span class="next_flight_number">##</span>
-
-                                        </div>
-                                        <div>
-
-                                            <span class="next_flight_STD">##</span>,
-                                            <span class="next_flight_date">## ## ##</span>
-                                            <span class="LT_UTC">LT</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="collapse-btn">
-                                    <img src="./FARM-CNC-image/dropdown.svg" class="closed">
-                                </div>
-                            </div>
-
-                        </div>
 
 
                     </div>
@@ -491,6 +119,8 @@
 
 
     </main>
+
+
     <!-- bootstrap 5 js link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
@@ -502,6 +132,14 @@
     <script src="./arrival-flight-box-control.js"></script>
     <script src="./onblock-time-control.js"></script>
     <script src="./sidebar-control.js"></script>
+    <script src="./delay_notification_control.js"></script>
+    <!-- Data Control========================================= -->
+    <script src="./dummyData.js"></script>
+    <script src="./build_onblock_list.js"></script>
+    <script>
+        var rawData = dummyData
+        buildOnblockList(rawData);
+    </script>
 
 
 

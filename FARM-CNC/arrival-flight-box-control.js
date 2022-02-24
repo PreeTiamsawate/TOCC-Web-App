@@ -1,5 +1,5 @@
 // Collapse Button Control=======================
-$(document).ready(function() {
+const arrivalFlightBoxControl = function() {
     $(".collapse-btn > img").click(function() {
         const taskBoxes = $(this).parents(".flight-data-box").find(".flight-task-status > div > div:nth-of-type(2)")
 
@@ -28,4 +28,4 @@ $(document).ready(function() {
     })
 
 
-})
+}

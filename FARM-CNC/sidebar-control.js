@@ -22,31 +22,24 @@ $(document).ready(function() {
             $(".current-time-box > .current-time").text(getCurrentTime());
             $(".full-date").text(getCurrentDate());
         }
+
+        const setTimePlaceholder = function() {
+            if ($(".time-zone-form #UTC").is(":checked")) {
+                $("input.time").attr("placeholder", "UTC")
+            } else if ($(".time-zone-form #LT").is(":checked")) {
+                $("input.time").attr("placeholder", "LT")
+            }
+            $("input.flight-time").attr("placeholder", "")
+        }
         insertCurrentDateTime();
+        setTimePlaceholder()
         $(".user-profile > img").attr("src", $(".info-from-backend >.USER_IMAGE_URL").text())
         $(".user-profile > div").text($(".info-from-backend >.USER_FULL_NAME").text())
         $(".time-zone-form input").change(insertCurrentDateTime);
+        $(".time-zone-form input").change(setTimePlaceholder);
     }
     sidebarControl()
     setInterval(sidebarControl, 10000);
 
-    // Alert filter control========
-    $(".icon-bar > img").click(function() {
-        $(this).toggleClass("getNoti");
-        if ($(this).hasClass("getNoti")) {
-            $(".noti-bell.d-none").parents(".flight-box").fadeOut();
 
-        } else {
-            $(".noti-bell.d-none").parents(".flight-box").fadeIn();
-        }
-    });
-    const filterDelayFlights = function() {
-        if ($(".icon-bar > img").hasClass("getNoti")) {
-            $(".noti-bell.d-none").parents(".flight-box").fadeOut();
-        } else {
-            $(".noti-bell.d-none").parents(".flight-box").fadeIn();
-        }
-    }
-
-    setInterval(filterDelayFlights, 10000);
 })
