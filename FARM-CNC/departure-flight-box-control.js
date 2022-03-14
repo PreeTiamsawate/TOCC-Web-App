@@ -73,12 +73,40 @@ const departureFlightBoxControl = function() {
             });
         })
 
-        // Submit Button Control================================
+        // Submit Button Show================================
         $(".form-group > form > input").focus(function() {
             $(this).next().css("display", "block");
         });
+        $(".form-group > form > input").keyup(function(e) {
+            if (e.code !== 'Enter') {
+                $(this).next().css("display", "block");
+            }
+        });
+
+        //hide submit btn on submit
+        $(".form-group > form").submit(function(e) {
+            e.preventDefault();
+            $(this).children("button").hide();
+        });
+
+        // prevent submit with Enter key
+        $(".time-update-form").keydown(
+            function(e) {
+                return e.key != "Enter";
+            }
+        )
+
+        //force submit parrent form on enter key
+        // $(".form-group > form > .time").keyup(function(e) {
+        //     if (e.code === 'Enter') {
+        //         e.preventDefault();
+        //         $(this).parent().submit()
+        //     }
+        // });
+
         $(".form-group > form > .html-duration-picker-wrapper").click(function() {
             $(this).next().css("display", "block");
+            console.log("I am here!!!")
         });
 
         //Update Time Button Control===========================
@@ -141,5 +169,22 @@ const departureFlightBoxControl = function() {
             $(this).css({ "border": "2px solid black", "color": "black" })
 
         });
+
+        //move pin - unpin
+        $(".pin-mark > button[type=submit]").click(function(e) {
+            e.preventDefault()
+            if ($(this).siblings("input.d-none").attr("name") === "to_pin") {
+                $(this).parents(".flight-box").prependTo('#pinned-list');
+                $(this).children("img").attr("src", "./FARM-CNC-image/active-pin.svg");
+                $(this).siblings("input.d-none").attr("name", "to_unpin");
+                accrdionControl()
+            } else if ($(this).siblings("input.d-none").attr("name") === "to_unpin") {
+                $(this).parents(".flight-box").prependTo('#unpinned-list');
+                $(this).children("img").attr("src", "./FARM-CNC-image/disable-pin.svg");
+                $(this).siblings("input.d-none").attr("name", "to_pin");
+                accrdionControl()
+            }
+        })
+
     }
     // $(document).ready(flightBoxControl)

@@ -1,15 +1,26 @@
 const timeControl = function() {
-    $('.time').timepicker({
-        timeFormat: 'HH:mm ',
-        interval: 30,
-        minTime: '00',
-        maxTime: '23:30',
-        defaultTime: '',
-        startTime: '',
-        dynamic: false,
-        dropdown: true,
-        scrollbar: true
-    });
+    // $('time-update-inputs .time').timepicker({
+    //     timeFormat: 'HH:mm',
+    //     interval: 1,
+    //     minTime: '00:00',
+    //     maxTime: '23:59',
+    //     defaultTime: '',
+    //     startTime: '',
+    //     dynamic: false,
+    //     dropdown: false,
+    //     scrollbar: true
+    // });
+    // $('form-group .time').timepicker({
+    //     timeFormat: 'HHmm',
+    //     interval: 1,
+    //     minTime: '0000',
+    //     maxTime: '2359',
+    //     defaultTime: '',
+    //     startTime: '',
+    //     dynamic: false,
+    //     dropdown: false,
+    //     scrollbar: true
+    // });
     const flightBoxes = $(".flight-box")
     for (let flightBox of flightBoxes) {
         let STD = new Date($(flightBox).find(".inputs-from-backend .STD_millisecond").text());
@@ -219,6 +230,11 @@ const timeControl = function() {
                 }
             } else { return "" }
         }
+        const customGetHoursZz = function(timeStamp) {
+            if (timeStamp != "Invalid Date") {
+                return ("0" + timeStamp.getUTCHours().toString()).slice(-2)
+            } else { return "" }
+        }
         const customGetMinutes = function(timeStamp) {
             if (timeStamp != "Invalid Date") {
                 if ($(".time-zone-form #UTC").is(":checked")) {
@@ -228,12 +244,25 @@ const timeControl = function() {
                 }
             } else { return "" }
         }
+        const customGetMinutesZz = function(timeStamp) {
+            if (timeStamp != "Invalid Date") {
+                return ("0" + timeStamp.getUTCMinutes().toString()).slice(-2)
+            } else { return "" }
+        }
         const customGetFullTime = function(timeStamp) {
             if (timeStamp == "Invalid Date") {
                 return ("")
             } else {
                 console.log(timeStamp)
                 return (customGetHours(timeStamp) + ":" + customGetMinutes(timeStamp))
+            }
+        }
+        const customGetFullTimeZZzz = function(timeStamp) {
+            if (timeStamp == "Invalid Date") {
+                return ("")
+            } else {
+                console.log(timeStamp)
+                return (customGetHoursZz(timeStamp) + customGetMinutesZz(timeStamp))
             }
         }
         if ($(".time-zone-form #UTC").is(":checked")) {
@@ -267,11 +296,11 @@ const timeControl = function() {
         crewArrInput.val(customGetFullTime(crewArrTime))
 
 
-        TSATInput.val(customGetFullTime(TSAT))
-        CTOTInput.val(customGetFullTime(CTOT))
-        TOBTInput.val(customGetFullTime(TOBT))
+        TSATInput.val(customGetFullTimeZZzz(TSAT))
+        CTOTInput.val(customGetFullTimeZZzz(CTOT))
+        TOBTInput.val(customGetFullTimeZZzz(TOBT))
         console.log("TOBT" +
-            customGetFullTime(TOBT))
+            customGetFullTimeZZzz(TOBT))
 
         // display aircraft status
         let aircraftStartTime = new Date($(flightBox).find(".inputs-from-backend .START_TIME_millisecond").text());

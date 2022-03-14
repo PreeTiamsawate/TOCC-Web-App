@@ -25,11 +25,12 @@ $(document).ready(function() {
 
         const setTimePlaceholder = function() {
             if ($(".time-zone-form #UTC").is(":checked")) {
-                $("input.time").attr("placeholder", "UTC")
+                $("input.time").attr("placeholder", "HH:mm (UTC)")
             } else if ($(".time-zone-form #LT").is(":checked")) {
-                $("input.time").attr("placeholder", "LT")
+                $("input.time").attr("placeholder", "HH:mm (LT)")
             }
-            $("input.flight-time").attr("placeholder", "")
+            $("input.flight-time").attr("placeholder", "HH:mm")
+            $(".form-group > form > .time").attr("placeholder", "HHmm (z)");
         }
         insertCurrentDateTime();
         setTimePlaceholder()

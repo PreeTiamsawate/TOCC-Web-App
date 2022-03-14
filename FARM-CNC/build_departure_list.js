@@ -30,7 +30,7 @@ const buildDepartureList = function(data) {
         var pinnedFlightbox = `
         <div class="flight-box">
             <form action="" class="pin-mark">
-                <input type="checkbox" name="to_unpin[${i.carrierCode+i.flightNo}]" class="d-none">
+                <input type="checkbox" name="to_unpin" value="${i.carrierCode+i.flightNo}/${i.flightDate}" checked class="d-none">
                 <button type="submit"><img src="./FARM-CNC-image/active-pin.svg"></button>
             </form>
             <div class="noti-bell d-none">
@@ -225,76 +225,76 @@ const buildDepartureList = function(data) {
                             <div>
                                 <div class="Crew-ARR-field">
                                     <label>Crew ARR</label>
-                                    <input type="text" name="crewArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="crewArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
                                 <div class="Catering-ARR-field">
                                     <label>Catering ARR</label>
-                                    <input type="text" name="cateringArrTime[${i.carrierCode+i.flightNo}]"  class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="cateringArrTime[${i.carrierCode+i.flightNo}]"  class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Cleaner-ARR-field">
                                     <label>Cleaner ARR</label>
-                                    <input type="text" name="cleanerArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="cleanerArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Gate-Open-field">
                                     <label>Gate Open</label>
-                                    <input type="text" name="gateOpenTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="gateOpenTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Cargo-ARR-field">
                                     <label>Cargo ARR</label>
-                                    <input type="text" name="cargoArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="cargoArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
                                 <div class="PAX-Step-field">
                                     <label>PAX Step</label>
-                                    <input type="text" name="paxStepTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="paxStepTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Ramp-Bus-field">
                                     <label>Ramp Bus</label>
-                                    <input type="text" name="rampBusTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="rampBusTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
                                 <div class="Cleaner-COMP-field">
                                     <label>Cleaner COMP</label>
-                                    <input type="text" name="cleanerCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="cleanerCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Catering-COMP-field">
                                     <label>Catering COMP</label>
-                                    <input type="text" name="cateringCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="cateringCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
                                 <div class="Boarding-field">
                                     <label>Boarding</label>
-                                    <input type="text" name="boardingTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="boardingTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Pushback-STBY-field">
                                     <label>Pushback STBY</label>
-                                    <input type="text" name="pushbackStby[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="pushbackStby[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
                                 <div class="Boarding-COMP-field">
                                     <label>Boarding COMP</label>
-                                    <input type="text" name="boardingCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="boardingCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Cargo-COMP-field">
                                     <label>Cargo COMP</label>
-                                    <input type="text" name="cargoCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="cargoCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
@@ -392,29 +392,29 @@ const buildDepartureList = function(data) {
                             </div>
 
                         </div>
-                        <input type="number" name="zfw[${i.carrierCode+i.flightNo}]" class="zfw">
+                        <input type="number" step=".1"  name="zfw[${i.carrierCode+i.flightNo}]" class="zfw">
                         <button type="submit">Submit</button>
                     </form>
-                    <form action=""  class="gross-wight-form">
+                    <form action=""  class="gross-weight-form">
                         <label>Gross Weight</label>
-                        <input type="number" name="grossWeight[${i.carrierCode+i.flightNo}]" class="gross-wight">
+                        <input type="number" step=".1"  name="grossWeight[${i.carrierCode+i.flightNo}]" class="gross-weight">
                         <button type="submit">Submit</button>
                     </form>
                     <form action="" class="ballast-form">
                         <label>Ballast</label>
-                        <input type="number" name="ballast[${i.carrierCode+i.flightNo}]" class="ballast">
+                        <input type="number" step=".1"  name="ballast[${i.carrierCode+i.flightNo}]" class="ballast">
                         <button type="submit">Submit</button>
                     </form>
                 </div>
                 <div class=" form-group">
                     <form action="" class="planning-fuel-form">
                         <label>Planning Fuel</label>
-                        <input type="number" name="planningFuel[${i.carrierCode+i.flightNo}]" class="planning-fuel">
+                        <input type="number" step=".1"  name="planningFuel[${i.carrierCode+i.flightNo}]" class="planning-fuel">
                         <button type="submit">Submit</button>
                     </form>
                     <form action="" class="flight-time-form">
                         <label>Flight Time</label>
-                        <input type="text" name="flightTime[${i.carrierCode+i.flightNo}]" class="flight-time time" pattern="[0-9]{2}:[0-9]{2}">
+                        <input type="text" name="flightTime[${i.carrierCode+i.flightNo}]" class="flight-time time" pattern="([0-9]|[1-9][0-9]):[0-5][0-9]">
                         <button type="submit">Submit</button>
                     </form>
 
@@ -422,17 +422,17 @@ const buildDepartureList = function(data) {
                 <div class="form-group">
                     <form action="" class="TOBT-form">
                         <label>TOBT</label>
-                        <input type="text" name="TOBT[${i.carrierCode+i.flightNo}]" class="TOBT time" pattern="[0-9]{2}:[0-9]{2}">
+                        <input type="text" name="TOBT[${i.carrierCode+i.flightNo}]" class="TOBT time" pattern="([01]?[0-9]|2[0-3])[0-5][0-9]">
                         <button type="submit">Submit</button>
                     </form>
                     <form action="" class="TSAT-form">
                         <label>TSAT</label>
-                        <input type="text" name="TSAT[${i.carrierCode+i.flightNo}]" class="TSAT time" pattern="[0-9]{2}:[0-9]{2}">
+                        <input type="text" name="TSAT[${i.carrierCode+i.flightNo}]" class="TSAT time" pattern="([01]?[0-9]|2[0-3])[0-5][0-9]">
                         <button type="submit">Submit</button>
                     </form>
                     <form action="" class="CTOT-form">
                         <label>CTOT</label>
-                        <input type="text" name="CTOT[${i.carrierCode+i.flightNo}]" class="CTOT time" pattern="[0-9]{2}:[0-9]{2}">
+                        <input type="text" name="CTOT[${i.carrierCode+i.flightNo}]" class="CTOT time" pattern="([01]?[0-9]|2[0-3])[0-5][0-9]">
                         <button type="submit">Submit</button>
                     </form>
                 </div>
@@ -446,7 +446,7 @@ const buildDepartureList = function(data) {
         var unpinnedFlightbox = `
         <div class="flight-box">
             <form action="" class="pin-mark">
-                <input type="checkbox" name="to_pin[${i.carrierCode+i.flightNo}]" class="d-none" checked>
+                <input type="checkbox" name="to_pin" value="${i.carrierCode+i.flightNo}/${i.flightDate}" class="d-none" checked>
                 <button type="submit"><img src="./FARM-CNC-image/disable-pin.svg"></button>
             </form>
             <div class="noti-bell d-none">
@@ -641,76 +641,76 @@ const buildDepartureList = function(data) {
                             <div>
                                 <div class="Crew-ARR-field">
                                     <label>Crew ARR</label>
-                                    <input type="text" name="crewArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="crewArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
                                 <div class="Catering-ARR-field">
                                     <label>Catering ARR</label>
-                                    <input type="text" name="cateringArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}" >
+                                    <input type="text" name="cateringArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" >
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Cleaner-ARR-field">
                                     <label>Cleaner ARR</label>
-                                    <input type="text" name="cleanerArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="cleanerArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Gate-Open-field">
                                     <label>Gate Open</label>
-                                    <input type="text" name="gateOpenTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="gateOpenTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Cargo-ARR-field">
                                     <label>Cargo ARR</label>
-                                    <input type="text" name="cargoArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="cargoArrTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
                                 <div class="PAX-Step-field">
                                     <label>PAX Step</label>
-                                    <input type="text" name="paxStepTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="paxStepTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Ramp-Bus-field">
                                     <label>Ramp Bus</label>
-                                    <input type="text" name="rampBusTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="rampBusTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
                                 <div class="Cleaner-COMP-field">
                                     <label>Cleaner COMP</label>
-                                    <input type="text" name="cleanerCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="cleanerCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Catering-COMP-field">
                                     <label>Catering COMP</label>
-                                    <input type="text" name="cateringCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="cateringCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
                                 <div class="Boarding-field">
                                     <label>Boarding</label>
-                                    <input type="text" name="boardingTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="boardingTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Pushback-STBY-field">
                                     <label>Pushback STBY</label>
-                                    <input type="text" name="pushbackStby[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="pushbackStby[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
                                 <div class="Boarding-COMP-field">
                                     <label>Boarding COMP</label>
-                                    <input type="text" name="boardingCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="boardingCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
                             <div>
                                 <div class="Cargo-COMP-field">
                                     <label>Cargo COMP</label>
-                                    <input type="text" name="cargoCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                                    <input type="text" name="cargoCompTime[${i.carrierCode+i.flightNo}]" class="time" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
                                 </div>
 
                             </div>
@@ -808,29 +808,29 @@ const buildDepartureList = function(data) {
                             </div>
 
                         </div>
-                        <input type="number" name="zfw[${i.carrierCode+i.flightNo}]" class="zfw">
+                        <input type="number" step=".1"   name="zfw[${i.carrierCode+i.flightNo}]" class="zfw">
                         <button type="submit">Submit</button>
                     </form>
-                    <form action=""  class="gross-wight-form">
+                    <form action=""  class="gross-weight-form">
                         <label>Gross Weight</label>
-                        <input type="number" name="grossWeight[${i.carrierCode+i.flightNo}]" class="gross-wight">
+                        <input type="number" step=".1"   name="grossWeight[${i.carrierCode+i.flightNo}]" class="gross-weight">
                         <button type="submit">Submit</button>
                     </form>
                     <form action="" class="ballast-form">
                         <label>Ballast</label>
-                        <input type="number" name="ballast[${i.carrierCode+i.flightNo}]" class="ballast">
+                        <input type="number" step=".1"   name="ballast[${i.carrierCode+i.flightNo}]" class="ballast">
                         <button type="submit">Submit</button>
                     </form>
                 </div>
                 <div class=" form-group">
                     <form action="" class="planning-fuel-form">
                         <label>Planning Fuel</label>
-                        <input type="number" name="planningFuel[${i.carrierCode+i.flightNo}]" class="planning-fuel">
+                        <input type="number" step=".1"   name="planningFuel[${i.carrierCode+i.flightNo}]" class="planning-fuel">
                         <button type="submit">Submit</button>
                     </form>
                     <form action="" class="flight-time-form">
                         <label>Flight Time</label>
-                        <input type="text" name="flightTime[${i.carrierCode+i.flightNo}]" class="flight-time time" pattern="[0-9]{2}:[0-9]{2}">
+                        <input type="text" name="flightTime[${i.carrierCode+i.flightNo}]" class="flight-time time" pattern="([0-9]|[1-9][0-9]):[0-5][0-9]">
                         <button type="submit">Submit</button>
                     </form>
 
@@ -838,17 +838,17 @@ const buildDepartureList = function(data) {
                 <div class="form-group">
                     <form action="" class="TOBT-form">
                         <label>TOBT</label>
-                        <input type="text" name="TOBT[${i.carrierCode+i.flightNo}]" class="TOBT time" pattern="[0-9]{2}:[0-9]{2}">
+                        <input type="text" name="TOBT[${i.carrierCode+i.flightNo}]" class="TOBT time" pattern="([01]?[0-9]|2[0-3])[0-5][0-9]">
                         <button type="submit">Submit</button>
                     </form>
                     <form action="" class="TSAT-form">
                         <label>TSAT</label>
-                        <input type="text" name="TSAT[${i.carrierCode+i.flightNo}]" class="TSAT time" pattern="[0-9]{2}:[0-9]{2}">
+                        <input type="text" name="TSAT[${i.carrierCode+i.flightNo}]" class="TSAT time" pattern="([01]?[0-9]|2[0-3])[0-5][0-9]">
                         <button type="submit">Submit</button>
                     </form>
                     <form action="" class="CTOT-form">
                         <label>CTOT</label>
-                        <input type="text" name="CTOT[${i.carrierCode+i.flightNo}]" class="CTOT time" pattern="[0-9]{2}:[0-9]{2}">
+                        <input type="text" name="CTOT[${i.carrierCode+i.flightNo}]" class="CTOT time" pattern="([01]?[0-9]|2[0-3])[0-5][0-9]">
                         <button type="submit">Submit</button>
                     </form>
                 </div>
