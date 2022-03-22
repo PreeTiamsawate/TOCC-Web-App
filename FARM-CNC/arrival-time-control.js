@@ -8,7 +8,7 @@ const timeControl = function() {
         let STA0010 = STA - 600000
 
 
-        const barSTA = $(flightBox).find(".bar-STA")
+        // const barSTA = $(flightBox).find(".bar-STA")
         const bar0010 = $(flightBox).find(".bar-0010")
 
 
@@ -29,7 +29,7 @@ const timeControl = function() {
             }
         }
 
-        countDown(barSTA, STA0010, STA);
+        // countDown(barSTA, STA0010, STA);
         countDown(bar0010, STD0015, STA0010);
 
 
@@ -38,20 +38,20 @@ const timeControl = function() {
         const GAABar = $(flightBox).find(".GA-A-status")
         const rampBusBar = $(flightBox).find(".Ramp-Bus-status")
         const paxStepBar = $(flightBox).find(".PAX-Step-status")
-        const cargoSTBYBar = $(flightBox).find(".Cargo-STBY-status")
+            // const cargoSTBYBar = $(flightBox).find(".Cargo-STBY-status")
         const ROBar = $(flightBox).find(".RO-status")
-        const cateringBar = $(flightBox).find(".Catering-status")
+            // const cateringBar = $(flightBox).find(".Catering-status")
         const tractorBar = $(flightBox).find(".Tractor-status")
-        const cleanerBar = $(flightBox).find(".Cleaner-status")
+            // const cleanerBar = $(flightBox).find(".Cleaner-status")
 
         const GAATime = new Date($(flightBox).find(".inputs-from-backend .GA-A-Time_millisecond").text())
         const rampBusTime = new Date($(flightBox).find(".inputs-from-backend .Ramp-Bus-Time_millisecond").text())
         const paxStepTime = new Date($(flightBox).find(".inputs-from-backend .PAX-Step-Time_millisecond").text())
-        const cargoSTBYTime = new Date($(flightBox).find(".inputs-from-backend .Cargo-STBY-Time_millisecond").text())
+            // const cargoSTBYTime = new Date($(flightBox).find(".inputs-from-backend .Cargo-STBY-Time_millisecond").text())
         const ROTime = new Date($(flightBox).find(".inputs-from-backend .RO-Time_millisecond").text())
-        const cateringTime = new Date($(flightBox).find(".inputs-from-backend .Catering-Time_millisecond").text())
+            // const cateringTime = new Date($(flightBox).find(".inputs-from-backend .Catering-Time_millisecond").text())
         const tractorTime = new Date($(flightBox).find(".inputs-from-backend .Tractor-Time_millisecond").text())
-        const cleanerTime = new Date($(flightBox).find(".inputs-from-backend .Cleaner-Time_millisecond").text())
+            // const cleanerTime = new Date($(flightBox).find(".inputs-from-backend .Cleaner-Time_millisecond").text())
 
         const pinkStatus = {
             "background": "#FCC1CA 0% 0% no-repeat padding-box",
@@ -85,11 +85,11 @@ const timeControl = function() {
         tastStatusDisplay(GAABar, GAATime, STA0010)
         tastStatusDisplay(rampBusBar, rampBusTime, STA0010)
         tastStatusDisplay(paxStepBar, paxStepTime, STA0010)
-        tastStatusDisplay(cargoSTBYBar, cargoSTBYTime, STA0010)
+            // tastStatusDisplay(cargoSTBYBar, cargoSTBYTime, STA0010)
         tastStatusDisplay(ROBar, ROTime, STA0010)
-        tastStatusDisplay(cateringBar, cateringTime, STA)
-        tastStatusDisplay(tractorBar, tractorTime, STA)
-        tastStatusDisplay(cleanerBar, cleanerTime, STA)
+            // tastStatusDisplay(cateringBar, cateringTime, STA)
+        tastStatusDisplay(tractorBar, tractorTime, STA0010)
+            // tastStatusDisplay(cleanerBar, cleanerTime, STA)
 
 
 

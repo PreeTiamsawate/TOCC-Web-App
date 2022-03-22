@@ -30,7 +30,7 @@ const buildArrivalList = function(data) {
         var pinnedFlightbox = `
         <div class="flight-box">
             <form action="" class="pin-mark">
-                <input type="checkbox" name="to_unpin[${i.carrierCode+i.flightNo}]" class="d-none">
+                <input type="checkbox" name="to_unpin" value="${i.carrierCode+i.flightNo}/${i.flightDate}" checked class="d-none">
                 <button type="submit"><img src="./FARM-CNC-image/active-pin.svg"></button>
             </form>
             <div class="noti-bell d-none">
@@ -105,7 +105,7 @@ const buildArrivalList = function(data) {
                             <div class="status-bar  ">
                             </div>
                             <div>
-                                <div class="Cargo-STBY-status">Cargo STBY</div>
+                                <div class="Tractor-status">Tractor</div>
 
                             </div>
 
@@ -119,33 +119,7 @@ const buildArrivalList = function(data) {
                             </div>
 
                         </div>
-                        <div>
-                            <div class="status-bar  ">
-                            </div>
-                            <div>
-                                <div class="Catering-status">Catering</div>
-
-                            </div>
-
-                        </div>
-                        <div>
-                            <div class="status-bar  ">
-                            </div>
-                            <div>
-                                <div class="Tractor-status">Tractor</div>
-
-                            </div>
-
-                        </div>
-                        <div>
-                            <div class="status-bar  ">
-                            </div>
-                            <div>
-                                <div class="Cleaner-status">Cleaner</div>
-
-                            </div>
-
-                        </div>
+                        
                     </div>
                     <div class="count-down-container">
                         <div>
@@ -154,12 +128,7 @@ const buildArrivalList = function(data) {
                             </div>
                             <div>00:10</div>
                         </div>
-                        <div>
-                            <div>
-                                <div class="bar-STA"></div>
-                            </div>
-                            <div>STA</div>
-                        </div>
+                        
                     </div>
 
 
@@ -217,7 +186,7 @@ const buildArrivalList = function(data) {
         var unpinnedFlightbox = `
         <div class="flight-box">
             <form action="" class="pin-mark">
-                <input type="checkbox" name="to_pin[${i.carrierCode+i.flightNo}]" class="d-none" checked>
+                <input type="checkbox" name="to_pin" value="${i.carrierCode+i.flightNo}/${i.flightDate}" class="d-none" checked>
                 <button type="submit"><img src="./FARM-CNC-image/disable-pin.svg"></button>
             </form>
             <div class="noti-bell d-none">
@@ -292,7 +261,7 @@ const buildArrivalList = function(data) {
                             <div class="status-bar  ">
                             </div>
                             <div>
-                                <div class="Cargo-STBY-status">Cargo STBY</div>
+                                <div class="Tractor-status">Tractor</div>
 
                             </div>
 
@@ -306,33 +275,7 @@ const buildArrivalList = function(data) {
                             </div>
 
                         </div>
-                        <div>
-                            <div class="status-bar  ">
-                            </div>
-                            <div>
-                                <div class="Catering-status">Catering</div>
-
-                            </div>
-
-                        </div>
-                        <div>
-                            <div class="status-bar  ">
-                            </div>
-                            <div>
-                                <div class="Tractor-status">Tractor</div>
-
-                            </div>
-
-                        </div>
-                        <div>
-                            <div class="status-bar  ">
-                            </div>
-                            <div>
-                                <div class="Cleaner-status">Cleaner</div>
-
-                            </div>
-
-                        </div>
+                        
                     </div>
                     <div class="count-down-container">
                         <div>
@@ -341,12 +284,7 @@ const buildArrivalList = function(data) {
                             </div>
                             <div>00:10</div>
                         </div>
-                        <div>
-                            <div>
-                                <div class="bar-STA"></div>
-                            </div>
-                            <div>STA</div>
-                        </div>
+                        
                     </div>
 
 

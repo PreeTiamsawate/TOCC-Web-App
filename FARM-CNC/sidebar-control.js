@@ -25,12 +25,17 @@ $(document).ready(function() {
 
         const setTimePlaceholder = function() {
             if ($(".time-zone-form #UTC").is(":checked")) {
-                $("input.time").attr("placeholder", "HH:mm (UTC)")
+                $(".time-update-inputs .time").attr("placeholder", "HH:mm (UTC)")
+                $(".TSAT-form label").text("TSAT (UTC)")
+                $(".TOBT-form label").text("TOBT (UTC)")
+                $(".CTOT-form label").text("CTOT (UTC)")
+                $(".form-group .time").prev("")
             } else if ($(".time-zone-form #LT").is(":checked")) {
-                $("input.time").attr("placeholder", "HH:mm (LT)")
+                $(".time-update-inputs .time").attr("placeholder", "HH:mm (LT)")
+                $(".TSAT-form label").text("TSAT (LT)")
+                $(".TOBT-form label").text("TOBT (LT)")
+                $(".CTOT-form label").text("CTOT (LT)")
             }
-            $("input.flight-time").attr("placeholder", "HH:mm")
-            $(".form-group > form > .time").attr("placeholder", "HHmm (z)");
         }
         insertCurrentDateTime();
         setTimePlaceholder()

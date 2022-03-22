@@ -35,7 +35,7 @@ const timeControl = function() {
         let STD0120 = STD - 4.8e+6
         let STD0130 = STD - 5.4e+6
 
-        const barSTD = $(flightBox).find(".bar-STD")
+        // const barSTD = $(flightBox).find(".bar-STD")
         const bar0005 = $(flightBox).find(".bar-0005")
         const bar0010 = $(flightBox).find(".bar-0010")
         const bar0040 = $(flightBox).find(".bar-0040")
@@ -61,7 +61,7 @@ const timeControl = function() {
             }
         }
 
-        countDown(barSTD, STD0005, STD);
+        // countDown(barSTD, STD0005, STD);
         countDown(bar0005, STD0010, STD0005);
         countDown(bar0010, STD0040, STD0010);
         countDown(bar0040, STD0050, STD0040);
@@ -72,7 +72,7 @@ const timeControl = function() {
 
 
         // Task Status Controller=============================================
-        const cargoCompBar = $(flightBox).find(".Cargo-COMP-status")
+        const loadingCompBar = $(flightBox).find(".Cargo-COMP-status")
         const boardingCompBar = $(flightBox).find(".Boarding-COMP-status")
         const pushbackStbyBar = $(flightBox).find(".Pushback-STBY-status")
         const boardingBar = $(flightBox).find(".Boarding-status")
@@ -80,13 +80,13 @@ const timeControl = function() {
         const cleanerCompBar = $(flightBox).find(".Cleaner-COMP-status")
         const rampBusBar = $(flightBox).find(".Ramp-Bus-status")
         const paxStepBar = $(flightBox).find(".PAX-Step-status")
-        const cargoArrBar = $(flightBox).find(".Cargo-ARR-status")
+        const loadingStartBar = $(flightBox).find(".Cargo-ARR-status")
         const gateOpenBar = $(flightBox).find(".Gate-Open-status")
         const cleanerArrBar = $(flightBox).find(".Cleaner-ARR-status")
         const cateringArrBar = $(flightBox).find(".Catering-ARR-status")
         const crewArrBar = $(flightBox).find(".Crew-ARR-status")
 
-        const cargoCompInput = $(flightBox).find(".Cargo-COMP-field > input")
+        const loadingCompInput = $(flightBox).find(".Cargo-COMP-field > input")
         const boardingCompInput = $(flightBox).find(".Boarding-COMP-field > input")
         const pushbackStbyInput = $(flightBox).find(".Pushback-STBY-field > input")
         const boardingInput = $(flightBox).find(".Boarding-field > input")
@@ -94,13 +94,13 @@ const timeControl = function() {
         const cleanerCompInput = $(flightBox).find(".Cleaner-COMP-field > input")
         const rampBusInput = $(flightBox).find(".Ramp-Bus-field > input")
         const paxStepInput = $(flightBox).find(".PAX-Step-field > input")
-        const cargoArrInput = $(flightBox).find(".Cargo-ARR-field > input")
+        const loadingStartInput = $(flightBox).find(".Cargo-ARR-field > input")
         const gateOpenInput = $(flightBox).find(".Gate-Open-field > input")
         const cleanerArrInput = $(flightBox).find(".Cleaner-ARR-field > input")
         const cateringArrInput = $(flightBox).find(".Catering-ARR-field > input")
         const crewArrInput = $(flightBox).find(".Crew-ARR-field > input")
 
-        const cargoCompTime = new Date($(flightBox).find(".inputs-from-backend .Cargo-COMP-Time_millisecond").text())
+        const loadingCompTime = new Date($(flightBox).find(".inputs-from-backend .Cargo-COMP-Time_millisecond").text())
         const boardingCompTime = new Date($(flightBox).find(".inputs-from-backend .Boarding-COMP-Time_millisecond").text())
         const pushbackStbyTime = new Date($(flightBox).find(".inputs-from-backend .Pushback-STBY-Time_millisecond").text())
         const boardingTime = new Date($(flightBox).find(".inputs-from-backend .Boarding-Time_millisecond").text())
@@ -108,7 +108,7 @@ const timeControl = function() {
         const cleanerCompTime = new Date($(flightBox).find(".inputs-from-backend .Cleaner-COMP-Time_millisecond").text())
         const rampBusTime = new Date($(flightBox).find(".inputs-from-backend .Ramp-Bus-Time_millisecond").text())
         const paxStepTime = new Date($(flightBox).find(".inputs-from-backend .PAX-Step-Time_millisecond").text())
-        const cargoArrTime = new Date($(flightBox).find(".inputs-from-backend .Cargo-ARR-Time_millisecond").text())
+        const loadingStartTime = new Date($(flightBox).find(".inputs-from-backend .Cargo-ARR-Time_millisecond").text())
         const gateOpenTime = new Date($(flightBox).find(".inputs-from-backend .Gate-Open-Time_millisecond").text())
         const cleanerArrTime = new Date($(flightBox).find(".inputs-from-backend .Cleaner-ARR-Time_millisecond").text())
         const cateringArrTime = new Date($(flightBox).find(".inputs-from-backend .Catering-ARR-Time_millisecond").text())
@@ -176,16 +176,16 @@ const timeControl = function() {
             }
             // }
         }
-        tastStatusDisplay(cargoCompBar, cargoCompInput, cargoCompTime, STD)
-        tastStatusDisplay(boardingCompBar, boardingCompInput, boardingCompTime, STD0005)
-        tastStatusDisplay(pushbackStbyBar, pushbackStbyInput, pushbackStbyTime, STD0005)
-        tastStatusDisplay(boardingBar, boardingInput, boardingTime, STD0010)
-        tastStatusDisplay(cateringCompBar, cateringCompInput, cateringCompTime, STD0010)
-        tastStatusDisplay(cleanerCompBar, cleanerCompInput, cleanerCompTime, STD0040)
+        tastStatusDisplay(loadingCompBar, loadingCompInput, loadingCompTime, STD0005)
+        tastStatusDisplay(boardingCompBar, boardingCompInput, boardingCompTime, STD0010)
+        tastStatusDisplay(pushbackStbyBar, pushbackStbyInput, pushbackStbyTime, STD0010)
+        tastStatusDisplay(boardingBar, boardingInput, boardingTime, STD0040)
         tastStatusDisplay(rampBusBar, rampBusInput, rampBusTime, STD0040)
-        tastStatusDisplay(paxStepBar, paxStepInput, paxStepTime, STD0050)
-        tastStatusDisplay(cargoArrBar, cargoArrInput, cargoArrTime, STD0050)
-        tastStatusDisplay(gateOpenBar, gateOpenInput, gateOpenTime, STD0100)
+        tastStatusDisplay(cateringCompBar, cateringCompInput, cateringCompTime, STD0050)
+        tastStatusDisplay(cleanerCompBar, cleanerCompInput, cleanerCompTime, STD0050)
+        tastStatusDisplay(paxStepBar, paxStepInput, paxStepTime, STD0100)
+        tastStatusDisplay(loadingStartBar, loadingStartInput, loadingStartTime, STD0100)
+        tastStatusDisplay(gateOpenBar, gateOpenInput, gateOpenTime, STD0115)
         tastStatusDisplay(cleanerArrBar, cleanerArrInput, cleanerArrTime, STD0115)
         tastStatusDisplay(cateringArrBar, cateringArrInput, cateringArrTime, STD0120)
         tastStatusDisplay(crewArrBar, crewArrInput, crewArrTime, STD0120)
@@ -230,11 +230,7 @@ const timeControl = function() {
                 }
             } else { return "" }
         }
-        const customGetHoursZz = function(timeStamp) {
-            if (timeStamp != "Invalid Date") {
-                return ("0" + timeStamp.getUTCHours().toString()).slice(-2)
-            } else { return "" }
-        }
+
         const customGetMinutes = function(timeStamp) {
             if (timeStamp != "Invalid Date") {
                 if ($(".time-zone-form #UTC").is(":checked")) {
@@ -244,11 +240,7 @@ const timeControl = function() {
                 }
             } else { return "" }
         }
-        const customGetMinutesZz = function(timeStamp) {
-            if (timeStamp != "Invalid Date") {
-                return ("0" + timeStamp.getUTCMinutes().toString()).slice(-2)
-            } else { return "" }
-        }
+
         const customGetFullTime = function(timeStamp) {
             if (timeStamp == "Invalid Date") {
                 return ("")
@@ -257,14 +249,7 @@ const timeControl = function() {
                 return (customGetHours(timeStamp) + ":" + customGetMinutes(timeStamp))
             }
         }
-        const customGetFullTimeZZzz = function(timeStamp) {
-            if (timeStamp == "Invalid Date") {
-                return ("")
-            } else {
-                console.log(timeStamp)
-                return (customGetHoursZz(timeStamp) + customGetMinutesZz(timeStamp))
-            }
-        }
+
         if ($(".time-zone-form #UTC").is(":checked")) {
             $(flightBox).find(".LT_UTC").text("UTC")
         } else if ($(".time-zone-form #LT").is(":checked")) {
@@ -281,7 +266,7 @@ const timeControl = function() {
         $(flightBox).find(".ETD").text(customGetFullTime(ETD))
 
         // display task times in at their inputs
-        cargoCompInput.val(customGetFullTime(cargoCompTime))
+        loadingCompInput.val(customGetFullTime(loadingCompTime))
         boardingCompInput.val(customGetFullTime(boardingCompTime))
         pushbackStbyInput.val(customGetFullTime(pushbackStbyTime))
         boardingInput.val(customGetFullTime(boardingTime))
@@ -289,18 +274,17 @@ const timeControl = function() {
         cleanerCompInput.val(customGetFullTime(cleanerCompTime))
         rampBusInput.val(customGetFullTime(rampBusTime))
         paxStepInput.val(customGetFullTime(paxStepTime))
-        cargoArrInput.val(customGetFullTime(cargoArrTime))
+        loadingStartInput.val(customGetFullTime(loadingStartTime))
         gateOpenInput.val(customGetFullTime(gateOpenTime))
         cleanerArrInput.val(customGetFullTime(cleanerArrTime))
         cateringArrInput.val(customGetFullTime(cateringArrTime))
         crewArrInput.val(customGetFullTime(crewArrTime))
 
 
-        TSATInput.val(customGetFullTimeZZzz(TSAT))
-        CTOTInput.val(customGetFullTimeZZzz(CTOT))
-        TOBTInput.val(customGetFullTimeZZzz(TOBT))
-        console.log("TOBT" +
-            customGetFullTimeZZzz(TOBT))
+        TSATInput.val(customGetHours(TSAT) + customGetMinutes(TSAT))
+        CTOTInput.val(customGetHours(CTOT) + customGetMinutes(CTOT))
+        TOBTInput.val(customGetHours(TOBT) + customGetMinutes(TOBT))
+
 
         // display aircraft status
         let aircraftStartTime = new Date($(flightBox).find(".inputs-from-backend .START_TIME_millisecond").text());
@@ -335,5 +319,5 @@ const timeControl = function() {
     }
 }
 
-setInterval(timeControl, 30000);
+setInterval(timeControl, 60000);
 $(".time-zone-form input").change(timeControl);

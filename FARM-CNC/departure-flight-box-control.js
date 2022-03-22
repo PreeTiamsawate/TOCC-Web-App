@@ -13,7 +13,7 @@ const departureFlightBoxControl = function() {
                     $(this).css("transform", "rotate(0deg)").toggleClass("closed");
                     taskBoxes.slideDown(200).css({ "display": "flex", "flex-direction": "column", "justify-content": "space-evenly" })
                     updateTimeBtn.slideDown(200)
-                    flightInfoInputs.slideDown(200).css({ "display": "flex" })
+                    flightInfoInputs.slideDown(200).css({ "display": "flex", })
                     statusBars.slideUp(100)
                     aircraftStatusbox.css({ "margin-bottom": "30px" })
                 } else if (!$(this).hasClass("closed")) {
@@ -87,6 +87,7 @@ const departureFlightBoxControl = function() {
         $(".form-group > form").submit(function(e) {
             e.preventDefault();
             $(this).children("button").hide();
+
         });
 
         // prevent submit with Enter key
@@ -173,15 +174,13 @@ const departureFlightBoxControl = function() {
         //move pin - unpin
         $(".pin-mark > button[type=submit]").click(function(e) {
             e.preventDefault()
-            if ($(this).siblings("input.d-none").attr("name") === "to_pin") {
+            if ($(this).children("img").attr("src") === "./FARM-CNC-image/disable-pin.svg") {
                 $(this).parents(".flight-box").prependTo('#pinned-list');
                 $(this).children("img").attr("src", "./FARM-CNC-image/active-pin.svg");
-                $(this).siblings("input.d-none").attr("name", "to_unpin");
                 accrdionControl()
-            } else if ($(this).siblings("input.d-none").attr("name") === "to_unpin") {
+            } else if ($(this).children("img").attr("src") === "./FARM-CNC-image/active-pin.svg") {
                 $(this).parents(".flight-box").prependTo('#unpinned-list');
                 $(this).children("img").attr("src", "./FARM-CNC-image/disable-pin.svg");
-                $(this).siblings("input.d-none").attr("name", "to_pin");
                 accrdionControl()
             }
         })

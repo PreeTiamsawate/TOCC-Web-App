@@ -30,7 +30,7 @@ const buildOffblockList = function(data) {
         var pinnedFlightbox = `
         <div class="flight-box">
         <form action="" class="pin-mark">
-            <input type="checkbox" name="to_unpin[${i.carrierCode+i.flightNo}]" class="d-none" >
+            <input type="checkbox" name="to_unpin" value="${i.carrierCode+i.flightNo}/${i.flightDate}" checked class="d-none" >
             <button type="submit"><img src="./FARM-CNC-image/active-pin.svg"></button>
         </form>
         <div class="noti-bell d-none">
@@ -108,8 +108,8 @@ const buildOffblockList = function(data) {
                         <div class="status-bar  ">
                         </div>
                         <div>
+                            <div class="Gate-Open-status">Gate Open</div>
                             <div class="Cleaner-ARR-status">Cleaner ARR</div>
-
                         </div>
                         <div class="count-down-box">
 
@@ -123,8 +123,8 @@ const buildOffblockList = function(data) {
                         <div class="status-bar  ">
                         </div>
                         <div>
-                            <div class="Gate-Open-status">Gate Open</div>
-
+                            <div class="Cargo-ARR-status">Loading Start</div>
+                            <div class="PAX-Step-status">PAX Step</div>
                         </div>
                         <div class="count-down-box">
                             <div>
@@ -137,8 +137,8 @@ const buildOffblockList = function(data) {
                         <div class="status-bar  ">
                         </div>
                         <div>
-                            <div class="Cargo-ARR-status">Cargo ARR</div>
-                            <div class="PAX-Step-status">PAX Step</div>
+                            <div class="Catering-COMP-status">Catering COMP</div>
+                            <div class="Cleaner-COMP-status">Cleaner COMP</div>
                         </div>
                         <div class="count-down-box">
                             <div>
@@ -152,7 +152,7 @@ const buildOffblockList = function(data) {
                         </div>
                         <div>
                             <div class="Ramp-Bus-status">Ramp Bus</div>
-                            <div class="Cleaner-COMP-status">Cleaner COMP</div>
+                            <div class="Boarding-status">Boarding</div>
                         </div>
                         <div class="count-down-box">
                             <div>
@@ -166,8 +166,9 @@ const buildOffblockList = function(data) {
                         <div class="status-bar  ">
                         </div>
                         <div>
-                            <div class="Catering-COMP-status">Catering COMP</div>
-                            <div class="Boarding-status">Boarding</div>
+                            <div class="Pushback-STBY-status">Pushback STBY</div>
+                            <div class="Boarding-COMP-status">Boarding COMP</div>
+                            
                         </div>
                         <div class="count-down-box">
 
@@ -181,8 +182,7 @@ const buildOffblockList = function(data) {
                         <div class="status-bar  ">
                         </div>
                         <div>
-                            <div class="Pushback-STBY-status">Pushback STBY</div>
-                            <div class="Boarding-COMP-status">Boarding COMP</div>
+                            <div class="Cargo-COMP-status">Loading COMP</div>
                         </div>
                         <div class="count-down-box">
 
@@ -192,21 +192,7 @@ const buildOffblockList = function(data) {
                             <div>00:05</div>
                         </div>
                     </div>
-                    <div>
-                        <div class="status-bar  ">
-                        </div>
-                        <div>
-                            <div class="Cargo-COMP-status">Cargo COMP</div>
-
-                        </div>
-                        <div class="count-down-box">
-
-                            <div>
-                                <div class="bar-STD"></div>
-                            </div>
-                            <div>STD</div>
-                        </div>
-                    </div>
+                
                 </div>
 
                 <div class="time-update-form">
@@ -223,22 +209,20 @@ const buildOffblockList = function(data) {
 
                         </div>
                         <div>
+                            <div class="Gate-Open-field">
+                                <label>Gate Open</label>
+                                <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                            </div>
                             <div class="Cleaner-ARR-field">
                                 <label>Cleaner ARR</label>
                                 <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
                             </div>
 
                         </div>
-                        <div>
-                            <div class="Gate-Open-field">
-                                <label>Gate Open</label>
-                                <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
-                            </div>
-
-                        </div>
+                     
                         <div>
                             <div class="Cargo-ARR-field">
-                                <label>Cargo ARR</label>
+                                <label>Loading Start</label>
                                 <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
                             </div>
                             <div class="PAX-Step-field">
@@ -248,10 +232,11 @@ const buildOffblockList = function(data) {
 
                         </div>
                         <div>
-                            <div class="Ramp-Bus-field">
-                                <label>Ramp Bus</label>
+                            <div class="Catering-COMP-field">
+                                <label>Catering COMP</label>
                                 <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
                             </div>
+                            
                             <div class="Cleaner-COMP-field">
                                 <label>Cleaner COMP</label>
                                 <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
@@ -259,8 +244,8 @@ const buildOffblockList = function(data) {
 
                         </div>
                         <div>
-                            <div class="Catering-COMP-field">
-                                <label>Catering COMP</label>
+                            <div class="Ramp-Bus-field">
+                                <label>Ramp Bus</label>
                                 <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
                             </div>
                             <div class="Boarding-field">
@@ -282,7 +267,7 @@ const buildOffblockList = function(data) {
                         </div>
                         <div>
                             <div class="Cargo-COMP-field">
-                                <label>Cargo COMP</label>
+                                <label>Loading COMP</label>
                                 <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
                             </div>
 
@@ -367,7 +352,7 @@ const buildOffblockList = function(data) {
         var unpinnedFlightbox = `
         <div class="flight-box">
         <form action="" class="pin-mark">
-            <input type="checkbox" name="to_pin[${i.carrierCode+i.flightNo}]" class="d-none" checked>
+            <input type="checkbox"  name="to_pin" value="${i.carrierCode+i.flightNo}/${i.flightDate}" class="d-none" checked>
             <button type="submit"><img src="./FARM-CNC-image/disable-pin.svg"></button>
         </form>
         <div class="noti-bell d-none">
@@ -445,8 +430,8 @@ const buildOffblockList = function(data) {
                         <div class="status-bar  ">
                         </div>
                         <div>
+                            <div class="Gate-Open-status">Gate Open</div>
                             <div class="Cleaner-ARR-status">Cleaner ARR</div>
-
                         </div>
                         <div class="count-down-box">
 
@@ -460,8 +445,8 @@ const buildOffblockList = function(data) {
                         <div class="status-bar  ">
                         </div>
                         <div>
-                            <div class="Gate-Open-status">Gate Open</div>
-
+                            <div class="Cargo-ARR-status">Loading Start</div>
+                            <div class="PAX-Step-status">PAX Step</div>
                         </div>
                         <div class="count-down-box">
                             <div>
@@ -474,8 +459,8 @@ const buildOffblockList = function(data) {
                         <div class="status-bar  ">
                         </div>
                         <div>
-                            <div class="Cargo-ARR-status">Cargo ARR</div>
-                            <div class="PAX-Step-status">PAX Step</div>
+                            <div class="Catering-COMP-status">Catering COMP</div>
+                            <div class="Cleaner-COMP-status">Cleaner COMP</div>
                         </div>
                         <div class="count-down-box">
                             <div>
@@ -489,7 +474,7 @@ const buildOffblockList = function(data) {
                         </div>
                         <div>
                             <div class="Ramp-Bus-status">Ramp Bus</div>
-                            <div class="Cleaner-COMP-status">Cleaner COMP</div>
+                            <div class="Boarding-status">Boarding</div>
                         </div>
                         <div class="count-down-box">
                             <div>
@@ -503,8 +488,9 @@ const buildOffblockList = function(data) {
                         <div class="status-bar  ">
                         </div>
                         <div>
-                            <div class="Catering-COMP-status">Catering COMP</div>
-                            <div class="Boarding-status">Boarding</div>
+                            <div class="Pushback-STBY-status">Pushback STBY</div>
+                            <div class="Boarding-COMP-status">Boarding COMP</div>
+                            
                         </div>
                         <div class="count-down-box">
 
@@ -518,8 +504,7 @@ const buildOffblockList = function(data) {
                         <div class="status-bar  ">
                         </div>
                         <div>
-                            <div class="Pushback-STBY-status">Pushback STBY</div>
-                            <div class="Boarding-COMP-status">Boarding COMP</div>
+                            <div class="Cargo-COMP-status">Loading COMP</div>
                         </div>
                         <div class="count-down-box">
 
@@ -529,21 +514,7 @@ const buildOffblockList = function(data) {
                             <div>00:05</div>
                         </div>
                     </div>
-                    <div>
-                        <div class="status-bar  ">
-                        </div>
-                        <div>
-                            <div class="Cargo-COMP-status">Cargo COMP</div>
-
-                        </div>
-                        <div class="count-down-box">
-
-                            <div>
-                                <div class="bar-STD"></div>
-                            </div>
-                            <div>STD</div>
-                        </div>
-                    </div>
+                
                 </div>
 
                 <div class="time-update-form">
@@ -560,22 +531,20 @@ const buildOffblockList = function(data) {
 
                         </div>
                         <div>
+                            <div class="Gate-Open-field">
+                                <label>Gate Open</label>
+                                <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
+                            </div>
                             <div class="Cleaner-ARR-field">
                                 <label>Cleaner ARR</label>
                                 <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
                             </div>
 
                         </div>
-                        <div>
-                            <div class="Gate-Open-field">
-                                <label>Gate Open</label>
-                                <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
-                            </div>
-
-                        </div>
+                     
                         <div>
                             <div class="Cargo-ARR-field">
-                                <label>Cargo ARR</label>
+                                <label>Loading Start</label>
                                 <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
                             </div>
                             <div class="PAX-Step-field">
@@ -585,10 +554,11 @@ const buildOffblockList = function(data) {
 
                         </div>
                         <div>
-                            <div class="Ramp-Bus-field">
-                                <label>Ramp Bus</label>
+                            <div class="Catering-COMP-field">
+                                <label>Catering COMP</label>
                                 <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
                             </div>
+                            
                             <div class="Cleaner-COMP-field">
                                 <label>Cleaner COMP</label>
                                 <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
@@ -596,8 +566,8 @@ const buildOffblockList = function(data) {
 
                         </div>
                         <div>
-                            <div class="Catering-COMP-field">
-                                <label>Catering COMP</label>
+                            <div class="Ramp-Bus-field">
+                                <label>Ramp Bus</label>
                                 <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
                             </div>
                             <div class="Boarding-field">
@@ -619,7 +589,7 @@ const buildOffblockList = function(data) {
                         </div>
                         <div>
                             <div class="Cargo-COMP-field">
-                                <label>Cargo COMP</label>
+                                <label>Loading COMP</label>
                                 <input type="text" class="time" pattern="[0-9]{2}:[0-9]{2}">
                             </div>
 

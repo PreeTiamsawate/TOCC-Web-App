@@ -111,7 +111,7 @@
 .flight-task-status>div {
     height: auto;
     min-height: 72px;
-    width: 11%;
+    width: 12.5%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -208,7 +208,7 @@
 .time-update-inputs>div {
     height: auto;
     min-height: 95px;
-    width: 11%;
+    width: 12.5%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -492,7 +492,7 @@
     padding-left: 0.5%;
     padding-right: 0.5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .form-group>form {
@@ -561,15 +561,18 @@
 }
 
 .flight-info-inputs>div:nth-of-type(2) {
-    width: 31.7%;
+    /* width: 31.7%; */
+    width: 28%;
 }
 
 .flight-info-inputs>div:nth-of-type(3) {
-    width: 20.5%;
+    /* width: 20.5%; */
+    width: 28%;
 }
 
 .flight-info-inputs>div:nth-of-type(4) {
-    width: 31.7%;
+    /* width: 31.7%; */
+    width: 28%;
 }
 
 @media (max-width: 1550px) {
