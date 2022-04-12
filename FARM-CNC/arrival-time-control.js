@@ -1,11 +1,12 @@
 const timeControl = function() {
     const flightBoxes = $(".flight-box")
+
     for (let flightBox of flightBoxes) {
         let STA = new Date($(flightBox).find(".inputs-from-backend .STA_millisecond").text());
         let ETA = new Date($(flightBox).find(".inputs-from-backend .ETA_millisecond").text());
         let currentTime = new Date()
-        let STD0015 = STA - 900000
-        let STA0010 = STA - 600000
+        let STD0015 = ETA - 900000
+        let STA0010 = ETA - 600000
 
 
         // const barSTA = $(flightBox).find(".bar-STA")
@@ -43,6 +44,14 @@ const timeControl = function() {
             // const cateringBar = $(flightBox).find(".Catering-status")
         const tractorBar = $(flightBox).find(".Tractor-status")
             // const cleanerBar = $(flightBox).find(".Cleaner-status")
+
+        const GAAInput = $(flightBox).find(".GA-A-field > input")
+        const rampBusInput = $(flightBox).find(".Ramp-Bus-field > input")
+        const paxStepInput = $(flightBox).find(".PAX-Step-field > input")
+        const ROInput = $(flightBox).find(".Tractor-field > input")
+        const tractorInput = $(flightBox).find(".RO-field > input")
+
+
 
         const GAATime = new Date($(flightBox).find(".inputs-from-backend .GA-A-Time_millisecond").text())
         const rampBusTime = new Date($(flightBox).find(".inputs-from-backend .Ramp-Bus-Time_millisecond").text())
@@ -90,6 +99,12 @@ const timeControl = function() {
             // tastStatusDisplay(cateringBar, cateringTime, STA)
         tastStatusDisplay(tractorBar, tractorTime, STA0010)
             // tastStatusDisplay(cleanerBar, cleanerTime, STA)
+
+        tastStatusDisplay(GAAInput, GAATime, STA0010)
+        tastStatusDisplay(rampBusInput, rampBusTime, STA0010)
+        tastStatusDisplay(paxStepInput, paxStepTime, STA0010)
+        tastStatusDisplay(ROInput, ROTime, STA0010)
+        tastStatusDisplay(tractorInput, tractorTime, STA0010)
 
 
 
@@ -143,7 +158,7 @@ const timeControl = function() {
             if (timeStamp == "Invalid Date") {
                 return ("")
             } else {
-                console.log(timeStamp)
+
                 return (customGetHours(timeStamp) + ":" + customGetMinutes(timeStamp))
             }
         }
@@ -161,6 +176,13 @@ const timeControl = function() {
             }
         }
 
+        // display task times in at their inputs
+        GAAInput.val(customGetFullTime(GAATime) || GAAInput.val())
+        rampBusInput.val(customGetFullTime(rampBusTime) || rampBusInput.val())
+        paxStepInput.val(customGetFullTime(paxStepTime) || paxStepInput.val())
+        ROInput.val(customGetFullTime(ROTime) || ROInput.val())
+        tractorInput.val(customGetFullTime(tractorTime) || tractorInput.val())
+
         // display STD ETD
         $(flightBox).find(".carrier_code").text($(flightBox).find(".inputs-from-backend .CARRIER_CODE").text())
         $(flightBox).find(".flight_number").text($(flightBox).find(".inputs-from-backend .FLIGHT_NUMBER").text())
@@ -174,11 +196,8 @@ const timeControl = function() {
         $(flightBox).find(".next_flight_STD").text(customGetFullTime(nextFlightSTDDateTime))
         $(flightBox).find(".next_flight_date").text(getDate(nextFlightSTDDateTime))
 
-
-
-
     }
 }
 
-setInterval(timeControl, 10000);
+setInterval(timeControl, 60000);
 $(".time-zone-form input").change(timeControl);

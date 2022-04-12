@@ -26,14 +26,14 @@ const timeControl = function() {
         let STD = new Date($(flightBox).find(".inputs-from-backend .STD_millisecond").text());
         let ETD = new Date($(flightBox).find(".inputs-from-backend .ETD_millisecond").text());
         let currentTime = new Date()
-        let STD0005 = STD - 300000
-        let STD0010 = STD - 600000
-        let STD0040 = STD - 2.4e+6
-        let STD0050 = STD - 3e+6
-        let STD0100 = STD - 3.6e+6
-        let STD0115 = STD - 4.5e+6
-        let STD0120 = STD - 4.8e+6
-        let STD0130 = STD - 5.4e+6
+        let STD0005 = ETD - 300000
+        let STD0010 = ETD - 600000
+        let STD0040 = ETD - 2.4e+6
+        let STD0050 = ETD - 3e+6
+        let STD0100 = ETD - 3.6e+6
+        let STD0115 = ETD - 4.5e+6
+        let STD0120 = ETD - 4.8e+6
+        let STD0130 = ETD - 5.4e+6
 
         // const barSTD = $(flightBox).find(".bar-STD")
         const bar0005 = $(flightBox).find(".bar-0005")
@@ -134,7 +134,7 @@ const timeControl = function() {
             $(flightBox).find("input.zfw").val(zfw)
             $(flightBox).find("input.final-zfw-checkbox").val()
         }
-        $(flightBox).find("input.gross-wight").val(grossWeight)
+        $(flightBox).find("input.gross-weight").val(grossWeight)
         $(flightBox).find("input.ballast").val(ballast)
         $(flightBox).find("input.planning-fuel").val(planningFuel)
         $(flightBox).find("input.flight-time").val(flightTime)
@@ -245,7 +245,7 @@ const timeControl = function() {
             if (timeStamp == "Invalid Date") {
                 return ("")
             } else {
-                console.log(timeStamp)
+                // console.log(timeStamp)
                 return (customGetHours(timeStamp) + ":" + customGetMinutes(timeStamp))
             }
         }
@@ -266,24 +266,24 @@ const timeControl = function() {
         $(flightBox).find(".ETD").text(customGetFullTime(ETD))
 
         // display task times in at their inputs
-        loadingCompInput.val(customGetFullTime(loadingCompTime))
-        boardingCompInput.val(customGetFullTime(boardingCompTime))
-        pushbackStbyInput.val(customGetFullTime(pushbackStbyTime))
-        boardingInput.val(customGetFullTime(boardingTime))
-        cateringCompInput.val(customGetFullTime(cateringCompTime))
-        cleanerCompInput.val(customGetFullTime(cleanerCompTime))
-        rampBusInput.val(customGetFullTime(rampBusTime))
-        paxStepInput.val(customGetFullTime(paxStepTime))
-        loadingStartInput.val(customGetFullTime(loadingStartTime))
-        gateOpenInput.val(customGetFullTime(gateOpenTime))
-        cleanerArrInput.val(customGetFullTime(cleanerArrTime))
-        cateringArrInput.val(customGetFullTime(cateringArrTime))
-        crewArrInput.val(customGetFullTime(crewArrTime))
+        loadingCompInput.val(customGetFullTime(loadingCompTime) || loadingCompInput.val())
+        boardingCompInput.val(customGetFullTime(boardingCompTime) || boardingCompInput.val())
+        pushbackStbyInput.val(customGetFullTime(pushbackStbyTime) || pushbackStbyInput.val())
+        boardingInput.val(customGetFullTime(boardingTime) || boardingInput.val())
+        cateringCompInput.val(customGetFullTime(cateringCompTime) || cateringCompInput.val())
+        cleanerCompInput.val(customGetFullTime(cleanerCompTime) || cleanerCompInput.val())
+        rampBusInput.val(customGetFullTime(rampBusTime) || rampBusInput.val())
+        paxStepInput.val(customGetFullTime(paxStepTime) || paxStepInput.val())
+        loadingStartInput.val(customGetFullTime(loadingStartTime) || loadingStartInput.val())
+        gateOpenInput.val(customGetFullTime(gateOpenTime) || gateOpenInput.val())
+        cleanerArrInput.val(customGetFullTime(cleanerArrTime) || cleanerArrInput.val())
+        cateringArrInput.val(customGetFullTime(cateringArrTime) || cateringArrInput.val())
+        crewArrInput.val(customGetFullTime(crewArrTime) || crewArrInput.val())
 
 
-        TSATInput.val(customGetHours(TSAT) + customGetMinutes(TSAT))
-        CTOTInput.val(customGetHours(CTOT) + customGetMinutes(CTOT))
-        TOBTInput.val(customGetHours(TOBT) + customGetMinutes(TOBT))
+        TSATInput.val((customGetHours(TSAT) + customGetMinutes(TSAT)) || TSATInput.val())
+        CTOTInput.val((customGetHours(CTOT) + customGetMinutes(CTOT)) || CTOTInput.val())
+        TOBTInput.val((customGetHours(TOBT) + customGetMinutes(TOBT)) || TOBTInput.val())
 
 
         // display aircraft status

@@ -1,7 +1,8 @@
 const buildDepartureList = function(data) {
     let { pinned, unpinned } = data;
-    let pinnedList = document.querySelector("#pinned-list");
-    let unpinnedList = document.querySelector("#unpinned-list");
+
+    let pinnedList = $("#pinned-list");
+    let unpinnedList = $("#unpinned-list");
 
     const airlineFilterInputs = document.querySelectorAll('.airline-filter-form input');
     let checkedAirlineFilters = Array.from(airlineFilterInputs).filter(airlineFilterInput => airlineFilterInput.checked)
@@ -21,13 +22,52 @@ const buildDepartureList = function(data) {
     filteredPinned = filteredPinned.filter(data => data.flightNo.includes(searchValue) || data.carrierCode.toUpperCase().includes(searchValue.toUpperCase()))
     filteredUnpinned = filteredUnpinned.filter(data => data.flightNo.includes(searchValue) || data.carrierCode.toUpperCase().includes(searchValue.toUpperCase()))
 
+    const updateOpenBox = function(openBox) {
+        openBox.find(".AC_REG").text(i.acReg)
+        openBox.find(".STD_millisecond").text(i.STD)
+        openBox.find(".ETD_millisecond").text(i.ETD)
+        openBox.find(".BOOKING_Str").text(i.bookingStr)
+
+        openBox.find(".Crew-ARR-Time_millisecond").text(i.crewArrTime)
+        openBox.find(".Catering-ARR-Time_millisecond").text(i.cateringArrTime)
+        openBox.find(".Cleaner-ARR-Time_millisecond").text(i.cleanerArrTime)
+        openBox.find(".Gate-Open-Time_millisecond").text(i.gateOpenTime)
+        openBox.find(".Cargo-ARR-Time_millisecond").text(i.cargoArrTime)
+        openBox.find(".PAX-Step-Time_millisecond").text(i.paxStepTime)
+        openBox.find(".Ramp-Bus-Time_millisecond").text(i.rampBusTime)
+        openBox.find(".Cleaner-COMP-Time_millisecond").text(i.cleanerCompTime)
+        openBox.find(".Catering-COMP-Time_millisecond").text(i.cateringCompTime)
+        openBox.find(".Boarding-Time_millisecond").text(i.boardingTime)
+        openBox.find(".Pushback-STBY-Time_millisecond").text(i.pushbackStbyTime)
+        openBox.find(".Boarding-COMP-Time_millisecond").text(i.boardingCompTime)
+        openBox.find(".Cargo-COMP-Time_millisecond").text(i.cargoCompTime)
+
+        openBox.find(".ZFW-FINAL").text(i.zfwFinal)
+        openBox.find(".ZFW").text(i.zfw)
+        openBox.find(".GROSS_WEIGHT").text(i.grossWeight)
+        openBox.find(".BALLAST").text(i.ballast)
+        openBox.find(".PLN-FUEL").text(i.planningFuel)
+        openBox.find(".FLT_TIME").text(i.flightTime)
+        openBox.find(".TOBT_millisecond").text(i.TOBT)
+        openBox.find(".TSAT_millisecond").text(i.TSAT)
+        openBox.find(".CTOT_millisecond").text(i.CTOT)
 
 
-    pinnedList.innerHTML = ``;
-    unpinnedList.innerHTML = ``;
+        //Don't forget to update data from Licence Engineer!
+    }
+    let openPinnedFlightBox = $('#pinned-list .open-flight-box')
+    let openPinnedCarrierCode = openPinnedFlightBox.find(".CARRIER_CODE").text()
+    let openPinnedFlightNo = openPinnedFlightBox.find(".FLIGHT_NUMBER").text()
+    let openPinnedFlightBoxIndex = openPinnedFlightBox.index() + 1
+
+    $("#pinned-list").children(":not(.open-flight-box)").remove();
 
     for (var i of filteredPinned) {
-        var pinnedFlightbox = `
+        if (i.carrierCode === openPinnedCarrierCode && i.flightNo === openPinnedFlightNo) {
+            console.log("The open box, let's update!");
+            updateOpenBox(openPinnedFlightBox)
+        } else {
+            var pinnedFlightbox = `
         <div class="flight-box">
             <form action="" class="pin-mark">
                 <input type="checkbox" name="to_unpin" value="${i.carrierCode+i.flightNo}/${i.flightDate}" checked class="d-none">
@@ -61,15 +101,6 @@ const buildDepartureList = function(data) {
                 <span class="Boarding-COMP-Time_millisecond">${i.boardingCompTime}</span>
                 <span class="Cargo-COMP-Time_millisecond">${i.cargoCompTime}</span>
 
-                <span class="START_TIME_millisecond"></span>
-                <span class="ARRIVE_TIME_millisecond"></span>
-                <span class="START_GATE_BAY"></span>
-                <span class="ARRIVE_GATE_BAY"></span>
-                <span class="REPAIR_EST_COMPLETE_TIME_millisecond"></span>
-                <span class="REPAIR_STATUS_IMAGE_URL"></span>
-                <span class="AIRCRAFT_POWER_UP_TIME_millisecond"></span>
-                <span class="AIRCRAFT_RELEASED_TIME_millisecond"></span>
-
                 <span class="ZFW-FINAL">${i.zfwFinal}</span>
                 <span class="ZFW">${i.zfw}</span>
                 <span class="GROSS_WEIGHT">${i.grossWeight}</span>
@@ -79,6 +110,16 @@ const buildDepartureList = function(data) {
                 <span class="TOBT_millisecond">${i.TOBT}</span>
                 <span class="TSAT_millisecond">${i.TSAT}</span>
                 <span class="CTOT_millisecond">${i.CTOT}</span>
+
+              
+                <span class="START_TIME_millisecond"></span>
+                <span class="ARRIVE_TIME_millisecond"></span>
+                <span class="START_GATE_BAY"></span>
+                <span class="ARRIVE_GATE_BAY"></span>
+                <span class="REPAIR_EST_COMPLETE_TIME_millisecond"></span>
+                <span class="REPAIR_STATUS_IMAGE_URL"></span>
+                <span class="AIRCRAFT_POWER_UP_TIME_millisecond"></span>
+                <span class="AIRCRAFT_RELEASED_TIME_millisecond"></span>
             </div>
             <div class="flight-data-box">
 
@@ -424,10 +465,28 @@ const buildDepartureList = function(data) {
             </div>
         </div>
         `;
-        pinnedList.innerHTML = pinnedList.innerHTML + pinnedFlightbox;
+            pinnedList.append(pinnedFlightbox)
+
+        }
     }
+    if (openPinnedFlightBoxIndex > 1) {
+        $(`#pinned-list .flight-box:nth-of-type(${1})`).insertAfter(`#pinned-list .flight-box:nth-of-type(${openPinnedFlightBoxIndex})`)
+    }
+
+    let openUnpinnedFlightBox = $('#unpinned-list .open-flight-box')
+    let openUnpinnedCarrierCode = openUnpinnedFlightBox.find(".CARRIER_CODE").text()
+    let openUnpinnedFlightNo = openUnpinnedFlightBox.find(".FLIGHT_NUMBER").text()
+    let openUnpinnedFlightBoxIndex = openUnpinnedFlightBox.index() + 1
+    console.log(openUnpinnedCarrierCode + openUnpinnedFlightNo)
+    console.log(openUnpinnedFlightBoxIndex);
+    $("#unpinned-list").children(":not(.open-flight-box)").remove();
     for (var i of filteredUnpinned) {
-        var unpinnedFlightbox = `
+        if (i.carrierCode === openUnpinnedCarrierCode && i.flightNo === openUnpinnedFlightNo) {
+            console.log("The open box, let's update!");
+            updateOpenBox(openUnpinnedFlightBox)
+
+        } else {
+            var unpinnedFlightbox = `
         <div class="flight-box">
             <form action="" class="pin-mark">
                 <input type="checkbox" name="to_pin" value="${i.carrierCode+i.flightNo}/${i.flightDate}" class="d-none" checked>
@@ -824,7 +883,12 @@ const buildDepartureList = function(data) {
             </div>
         </div>
         `;
-        unpinnedList.innerHTML = unpinnedList.innerHTML + unpinnedFlightbox;
+            unpinnedList.append(unpinnedFlightbox)
+
+        }
+    }
+    if (openUnpinnedFlightBoxIndex > 1) {
+        $(`#unpinned-list .flight-box:nth-of-type(${1})`).insertAfter(`#unpinned-list .flight-box:nth-of-type(${openUnpinnedFlightBoxIndex})`)
     }
 
     accrdionControl()

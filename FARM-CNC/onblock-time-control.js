@@ -4,8 +4,8 @@ const timeControl = function() {
         let STA = new Date($(flightBox).find(".inputs-from-backend .STA_millisecond").text());
         let ETA = new Date($(flightBox).find(".inputs-from-backend .ETA_millisecond").text());
         let currentTime = new Date()
-        let STD0015 = STA - 900000
-        let STA0010 = STA - 600000
+        let STD0015 = ETA - 900000
+        let STA0010 = ETA - 600000
 
 
         // const barSTA = $(flightBox).find(".bar-STA")
