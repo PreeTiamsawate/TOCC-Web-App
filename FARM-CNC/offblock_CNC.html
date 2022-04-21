@@ -125,11 +125,9 @@
     <!-- local js -->
     <script src="./navbar-control.js"></script>
     <script src="./accordion-mark-contol.js"></script>
-    <script src="./departure-flight-box-control.js"></script>
-    <!-- <script src="./departure-time-control.js"></script> -->
+    <script src="./offblcok-flight-box-control.js"></script>
     <script src="./offblock-time-control.js"></script>
     <script src="./sidebar-control.js"></script>
-    <script src="./offblock-disable-inputs.js"></script>
     <script src="./delay_notification_control.js"></script>
 
     <!-- Data Control========================================= -->
@@ -138,6 +136,9 @@
     <script>
         var rawData = dummyData
         buildOffblockList(rawData);
+        // setInterval(() => {
+        //     buildOffblockList(rawData);
+        // }, 10000);
     </script>
 </body>
 

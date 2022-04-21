@@ -48,8 +48,8 @@ const timeControl = function() {
         const GAAInput = $(flightBox).find(".GA-A-field > input")
         const rampBusInput = $(flightBox).find(".Ramp-Bus-field > input")
         const paxStepInput = $(flightBox).find(".PAX-Step-field > input")
-        const ROInput = $(flightBox).find(".Tractor-field > input")
-        const tractorInput = $(flightBox).find(".RO-field > input")
+        const ROInput = $(flightBox).find(".RO-field > input")
+        const tractorInput = $(flightBox).find(".Tractor-field > input")
 
 
 
@@ -192,12 +192,23 @@ const timeControl = function() {
         $(flightBox).find(".STA").text(customGetFullTime(STA))
         $(flightBox).find(".ETA").text(customGetFullTime(ETA))
         $(flightBox).find(".arr_gate_bay").text($(flightBox).find(".inputs-from-backend .ARRIVAL_GATE_BAY").text())
-        $(flightBox).find(".next_flight_number").text($(flightBox).find(".inputs-from-backend .NEXT_FLIGHT_NUMBER").text())
-        $(flightBox).find(".next_flight_STD").text(customGetFullTime(nextFlightSTDDateTime))
-        $(flightBox).find(".next_flight_date").text(getDate(nextFlightSTDDateTime))
+
+
+        const nextFlightnumber = $(flightBox).find(".inputs-from-backend .NEXT_FLIGHT_NUMBER").text();
+
+        if (nextFlightnumber === "") {
+            $(flightBox).find(".next-flight-time-box> div >div:nth-of-type(2)").css("display", "none");
+            $(flightBox).find(".next-flight-time-box> div >div:nth-of-type(3)").css("display", "none");
+        } else {
+            $(flightBox).find(".next_flight_number").text(nextFlightnumber)
+            $(flightBox).find(".next_flight_STD").text(customGetFullTime(nextFlightSTDDateTime))
+            $(flightBox).find(".next_flight_date").text(getDate(nextFlightSTDDateTime))
+        }
+
+
 
     }
 }
 
-setInterval(timeControl, 60000);
+// setInterval(timeControl, 60000);
 $(".time-zone-form input").change(timeControl);
