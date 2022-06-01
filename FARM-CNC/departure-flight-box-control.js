@@ -168,12 +168,12 @@ const departureFlightBoxControl = function() {
                             // $(this).css({ "margin-bottom": "0px" })
                         flightInfoInputs.slideDown(200).css({ "display": "flex" });
                         $(this).text("").append("<img src='./FARM-CNC-image/update-time.svg'> Update Time").css({
-                            "background": "#CBB1F9  0% 0% no-repeat padding-box",
-                            "border": "1px solid #3E075B",
-                            "margin-bottom": "0px",
-                            "margin-top": "10px"
-                        })
-                        confirmBtn.css({ "display": "none" })
+                                "background": "#CBB1F9  0% 0% no-repeat padding-box",
+                                "border": "1px solid #3E075B",
+                                "margin-bottom": "0px",
+                                "margin-top": "10px"
+                            })
+                            // confirmBtn.css({ "display": "none" })
                     }
                 }
                 $(this).mousedown(function() {
@@ -188,11 +188,6 @@ const departureFlightBoxControl = function() {
                 });
             })
 
-            //Save Time Buttom Control=============================
-            $(flightBox).find(".time-update-buttons > div:nth-of-type(1)").click(function() {
-                $(this).siblings("button").fadeIn(500)
-                    // $(this).css({ "display": "none" })
-            })
 
 
             // Inputs after update=============================

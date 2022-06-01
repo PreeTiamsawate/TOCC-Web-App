@@ -63,48 +63,43 @@ const arrivalFlightBoxControl = function() {
             })
             //Update Time Button Control===========================
         $(flightBox).find(".update-time-btn").click(function() {
-                const updateTimeForm = $(flightBox).find(".time-update-form");
-                const flightTaskStatusBox = $(flightBox).find(".flight-task-status");
-                const flightInfoInputs = $(flightBox).find(".flight-info-inputs")
-                const confirmBtn = $(flightBox).find(".time-update-buttons > button")
-                const countDownContainer = $(flightBox).find(".count-down-container")
+            const updateTimeForm = $(flightBox).find(".time-update-form");
+            const flightTaskStatusBox = $(flightBox).find(".flight-task-status");
+            const flightInfoInputs = $(flightBox).find(".flight-info-inputs")
+            const confirmBtn = $(flightBox).find(".time-update-buttons > button")
+            const countDownContainer = $(flightBox).find(".count-down-container")
 
-                if ($(this).hasClass("closed")) {
-                    $(this).removeClass("closed")
-                    $(this).css({ "margin-bottom": "10px" })
-                    updateTimeForm.slideDown(200);
-                    flightTaskStatusBox.hide()
-                    countDownContainer.hide()
-                    flightInfoInputs.slideUp(200)
-                    $(this).text("Cancel").css({
-                        "background": "#FCC1CA 0% 0% no-repeat padding-box",
-                        "border": "1px solid #CA637A",
-                        "margin-bottom": "15px"
-                    })
+            if ($(this).hasClass("closed")) {
+                $(this).removeClass("closed")
+                $(this).css({ "margin-bottom": "10px" })
+                updateTimeForm.slideDown(200);
+                flightTaskStatusBox.hide()
+                countDownContainer.hide()
+                flightInfoInputs.slideUp(200)
+                $(this).text("Cancel").css({
+                    "background": "#FCC1CA 0% 0% no-repeat padding-box",
+                    "border": "1px solid #CA637A",
+                    "margin-bottom": "15px"
+                })
 
 
-                } else if (!$(this).hasClass("closed")) {
-                    $(this).addClass("closed")
-                    updateTimeForm.slideUp(200)
-                    flightTaskStatusBox.delay(200).slideDown(500)
-                    countDownContainer.slideDown(500)
-                        // $(this).css({ "margin-bottom": "0px" })
-                    flightInfoInputs.slideDown(200).css({ "display": "flex" });
-                    $(this).text("").append("<img src='./FARM-CNC-image/update-time.svg'> Update Time").css({
+            } else if (!$(this).hasClass("closed")) {
+                $(this).addClass("closed")
+                updateTimeForm.slideUp(200)
+                flightTaskStatusBox.delay(200).slideDown(500)
+                countDownContainer.slideDown(500)
+                    // $(this).css({ "margin-bottom": "0px" })
+                flightInfoInputs.slideDown(200).css({ "display": "flex" });
+                $(this).text("").append("<img src='./FARM-CNC-image/update-time.svg'> Update Time").css({
                         "background": "#CBB1F9  0% 0% no-repeat padding-box",
                         "border": "1px solid #3E075B",
                         "margin-bottom": "0px",
                         "margin-top": "10px"
                     })
-                    confirmBtn.css({ "display": "none" })
-                }
+                    // confirmBtn.css({ "display": "none" })
+            }
 
 
-            })
-            //Save Time Buttom Control=============================
-        $(flightBox).find(".time-update-buttons > div:nth-of-type(1)").click(function() {
-            $(this).siblings("button").fadeIn(500)
-                // $(this).css({ "display": "none" })
         })
 
 

@@ -19,12 +19,16 @@
     <link href="http://fonts.cdnfonts.com/css/avenir-lt-std" rel="stylesheet">
     <!-- local css -->
     <link rel="stylesheet" href="./common_CNC.css">
-    <link rel="stylesheet" href="./arrival_CNC.css">
-    <title>Arrival - CNC </title>
+    <link rel="stylesheet" href="./departure_CNC.css">
+    <!-- JqTime Picker CSS -->
+    <link rel="stylesheet" href="./jquery.timepicker.min.css">
+    <title>Departure - CNC </title>
 
 </head>
 
+
 <body>
+
     <aside class="side-bar">
         <div class="info-from-backend d-none">
             <span class="USER_IMAGE_URL">./FARM-CNC-image/user_image.png</span>
@@ -93,7 +97,7 @@
                 </h2>
                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
                     <div id="pinned-list" class="accordion-body">
-                        <!-- Flight for each flight -->
+                        <!-- Flight box for each flight -->
 
 
                     </div>
@@ -108,8 +112,7 @@
                 </h2>
                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
                     <div id="unpinned-list" class="accordion-body">
-                        <!-- Flight for each flight -->
-
+                        <!-- Flight box for each flight -->
                     </div>
                 </div>
             </div>
@@ -118,29 +121,37 @@
 
 
     </main>
+
+
     <!-- bootstrap 5 js link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
     <!-- jquery js link -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- <script src="./time-picker.js"></script> -->
+    <script src="./jquery.timepicker.min.js"></script>
+
     <!-- local js -->
     <script src="./navbar-control.js"></script>
+
     <script src="./accordion-mark-contol.js"></script>
-    <script src="./arrival-flight-box-control.js"></script>
-    <script src="./arrival-time-control.js"></script>
+    <script src="./departure-flight-box-control.js"></script>
+    <script src="./departure-time-control.js"></script>
     <script src="./sidebar-control.js"></script>
     <script src="./delay_notification_control.js"></script>
 
     <!-- Data Control========================================= -->
     <script src="./dummyData.js"></script>
-    <script src="./build_arrival_list.js"></script>
+    <script src="./build_departure_list.js"></script>
     <script>
         var rawData = dummyData
-        buildArrivalList(rawData);
+        buildDepartureList(rawData);
         // setInterval(() => {
-        //     buildArrivalList(rawData);
+        //     buildDepartureList(rawData);
         // }, 10000);
     </script>
+
+
 </body>
 
 </html>

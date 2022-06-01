@@ -326,7 +326,7 @@ const buildDepartureList = function(data) {
 
                         </div>
                         <div class="time-update-buttons">
-                            <div class="save">Save</div>
+                      
                             <button type="submit">Confirm</button>
 
                         </div>
@@ -744,7 +744,7 @@ const buildDepartureList = function(data) {
 
                         </div>
                         <div class="time-update-buttons">
-                            <div class="save">Save</div>
+                       
                             <button type="submit">Confirm</button>
 
                         </div>

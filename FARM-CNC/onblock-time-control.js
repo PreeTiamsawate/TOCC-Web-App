@@ -166,12 +166,18 @@ const timeControl = function() {
         }
         const nextFlightSTDDateTime = new Date($(flightBox).find(".inputs-from-backend .NEXT_FLIGHT_STD_millisecond").text())
         const getDate = function(fullDateTime) {
-            if ($(".time-zone-form #UTC").is(":checked")) {
-                return fullDateTime.toUTCString().slice(0, -13).replace(',', '').slice(4, 15)
-            } else if ($(".time-zone-form #LT").is(":checked")) {
-                return fullDateTime.toDateString().slice(4, 15)
+                if ($(".time-zone-form #UTC").is(":checked")) {
+                    return fullDateTime.toUTCString().slice(0, -13).replace(',', '').slice(4, 15)
+                } else if ($(".time-zone-form #LT").is(":checked")) {
+                    return fullDateTime.toDateString().slice(4, 15)
+                }
             }
-        }
+            // display task times in at their inputs
+        GAAInput.val(customGetFullTime(GAATime) || GAAInput.val())
+        rampBusInput.val(customGetFullTime(rampBusTime) || rampBusInput.val())
+        paxStepInput.val(customGetFullTime(paxStepTime) || paxStepInput.val())
+        ROInput.val(customGetFullTime(ROTime) || ROInput.val())
+        tractorInput.val(customGetFullTime(tractorTime) || tractorInput.val())
 
         // display STD ETD
         $(flightBox).find(".carrier_code").text($(flightBox).find(".inputs-from-backend .CARRIER_CODE").text())

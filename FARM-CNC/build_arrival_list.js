@@ -196,11 +196,7 @@ const buildArrivalList = function(data) {
                             
                         </div>
                         <div class="time-update-buttons">
-                            <div class="save">Save</div>
-                            <button type="submit">Confirm</button>
-
-                            <!-- <div>Cancel</div> -->
-
+                            <button type="submit">Save</button>
                         </div>
 
                     </form>
@@ -424,11 +420,7 @@ const buildArrivalList = function(data) {
                             
                         </div>
                         <div class="time-update-buttons">
-                            <div class="save">Save</div>
-                            <button type="submit">Confirm</button>
-
-                            <!-- <div>Cancel</div> -->
-
+                            <button type="submit">Save</button>
                         </div>
 
                     </form>

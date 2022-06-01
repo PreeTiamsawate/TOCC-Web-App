@@ -262,5 +262,5 @@ const timeControl = function() {
     }
 }
 
-setInterval(timeControl, 300000);
+// setInterval(timeControl, 300000);
 $(".time-zone-form input").change(timeControl);
