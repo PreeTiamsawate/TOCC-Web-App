@@ -25,6 +25,8 @@ const timeControl = function() {
     for (let flightBox of flightBoxes) {
         let STD = new Date($(flightBox).find(".inputs-from-backend .STD_millisecond").text());
         let ETD = new Date($(flightBox).find(".inputs-from-backend .ETD_millisecond").text());
+        //ADD HERE
+        let ATD = new Date($(flightBox).find(".inputs-from-backend .ATD_millisecond").text());
         let currentTime = new Date()
         let STD0005 = ETD - 300000
         let STD0010 = ETD - 600000
@@ -127,6 +129,9 @@ const timeControl = function() {
         const TSATInput = $(flightBox).find("input.TSAT")
         const CTOTInput = $(flightBox).find("input.CTOT")
 
+        const isBus =  $(flightBox).find(".bus-status").text()
+        const isPaxStep = $(flightBox).find(".step-status").text()
+
         if (zfwFinal != "") {
             $(flightBox).find("input.zfw").val(zfwFinal)
             $(flightBox).find("input.final-zfw-checkbox").attr("checked", "checked");
@@ -154,12 +159,13 @@ const timeControl = function() {
         const greenStatus = {
             "background": "#A2F6CA 0% 0% no-repeat padding-box",
             "border": "1px solid #5FA980",
-            "color": "##5FA980"
+            "color": "##5FA980"     
         }
-        const tastStatusDisplay = function(taskBar, taskInput, taskTime, deadLine) {
-
-            // if (!(!taskTime && deadLine && currentTime <= deadLine)) {
-            if (taskTime == "Invalid Date" && currentTime > deadLine) {
+        const tastStatusDisplay = function(taskBar, taskInput, taskTime, deadLine, isTaskNeeded) {
+            //ADD HERE!
+            if(isTaskNeeded == "1"){
+                taskBar.attr("task-status", "disabled")
+            }else if (taskTime == "Invalid Date" && currentTime > deadLine) {
                 taskBar.css(pinkStatus)
                 taskBar.attr("task-status", "pink")
                 taskInput.css(pinkStatus)
@@ -174,21 +180,21 @@ const timeControl = function() {
             } else {
                 taskBar.attr("task-status", "grey")
             }
-            // }
-        }
-        tastStatusDisplay(loadingCompBar, loadingCompInput, loadingCompTime, STD0005)
-        tastStatusDisplay(boardingCompBar, boardingCompInput, boardingCompTime, STD0010)
-        tastStatusDisplay(pushbackStbyBar, pushbackStbyInput, pushbackStbyTime, STD0010)
-        tastStatusDisplay(boardingBar, boardingInput, boardingTime, STD0040)
-        tastStatusDisplay(rampBusBar, rampBusInput, rampBusTime, STD0040)
-        tastStatusDisplay(cateringCompBar, cateringCompInput, cateringCompTime, STD0050)
-        tastStatusDisplay(cleanerCompBar, cleanerCompInput, cleanerCompTime, STD0050)
-        tastStatusDisplay(paxStepBar, paxStepInput, paxStepTime, STD0100)
-        tastStatusDisplay(loadingStartBar, loadingStartInput, loadingStartTime, STD0100)
-        tastStatusDisplay(gateOpenBar, gateOpenInput, gateOpenTime, STD0115)
-        tastStatusDisplay(cleanerArrBar, cleanerArrInput, cleanerArrTime, STD0115)
-        tastStatusDisplay(cateringArrBar, cateringArrInput, cateringArrTime, STD0120)
-        tastStatusDisplay(crewArrBar, crewArrInput, crewArrTime, STD0120)
+
+        }                                                                               //ADD HERE!
+        tastStatusDisplay(loadingCompBar, loadingCompInput, loadingCompTime, STD0005, "0")
+        tastStatusDisplay(boardingCompBar, boardingCompInput, boardingCompTime, STD0010, "0")
+        tastStatusDisplay(pushbackStbyBar, pushbackStbyInput, pushbackStbyTime, STD0010, "0")
+        tastStatusDisplay(boardingBar, boardingInput, boardingTime, STD0040, "0")
+        tastStatusDisplay(rampBusBar, rampBusInput, rampBusTime, STD0040, isBus)
+        tastStatusDisplay(cateringCompBar, cateringCompInput, cateringCompTime, STD0050, "0")
+        tastStatusDisplay(cleanerCompBar, cleanerCompInput, cleanerCompTime, STD0050, "0")
+        tastStatusDisplay(paxStepBar, paxStepInput, paxStepTime, STD0100, isPaxStep)
+        tastStatusDisplay(loadingStartBar, loadingStartInput, loadingStartTime, STD0100, "0")
+        tastStatusDisplay(gateOpenBar, gateOpenInput, gateOpenTime, STD0115, "0")
+        tastStatusDisplay(cleanerArrBar, cleanerArrInput, cleanerArrTime, STD0115, "0")
+        tastStatusDisplay(cateringArrBar, cateringArrInput, cateringArrTime, STD0120, "0")
+        tastStatusDisplay(crewArrBar, crewArrInput, crewArrTime, STD0120, "0")
 
         // Status Bar Controller=============================================
         const statusBars = $(flightBox).find(".status-bar")
@@ -212,8 +218,12 @@ const timeControl = function() {
             }
         }
         // Departure Time Box status
-        if (ETD > STD) {
+        //ADD HERE
+        if(ATD > ETD){
             $(flightBox).find(".departure-time-box > div:nth-of-type(1)").css(pinkStatus)
+            $(flightBox).find(".noti-bell").addClass("d-none")
+        }else if (ETD > STD) {
+            $(flightBox).find(".departure-time-box > div:nth-of-type(1)").css(orangeStatus)
             $(flightBox).find(".noti-bell").removeClass("d-none")
         } else {
             $(flightBox).find(".departure-time-box > div:nth-of-type(1)").css(greenStatus)
@@ -264,6 +274,13 @@ const timeControl = function() {
         $(flightBox).find(".ac_reg").text($(flightBox).find(".inputs-from-backend .AC_REG").text())
         $(flightBox).find(".STD").text(customGetFullTime(STD))
         $(flightBox).find(".ETD").text(customGetFullTime(ETD))
+        //ADD HERE
+        if(customGetFullTime(ATD) == ""){
+            $(flightBox).find(".ATD").parent().addClass('d-none')
+        }else{
+            $(flightBox).find(".ATD").text(customGetFullTime(ATD))
+        }
+        
 
         // display task times in at their inputs
         loadingCompInput.val(customGetFullTime(loadingCompTime) || loadingCompInput.val())

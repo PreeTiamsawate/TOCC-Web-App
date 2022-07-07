@@ -29,6 +29,9 @@ const buildOnblockList = function(data) {
         openBox.find(".NEXT_FLIGHT_NUMBER").text(i.nextFlightNo)
         openBox.find(".NEXT_FLIGHT_STD_millisecond").text(i.nextSTD)
         openBox.find(".ARRIVAL_GATE_BAY").text(i.gateBay)
+        //ADD HERE!
+        openBox.find(".bus-status").text(i.noBus)
+        openBox.find(".step-status").text(i.noStep)
 
         openBox.find(".GA-A-Time_millisecond").text(i.gaaTime)
         openBox.find(".Ramp-Bus-Time_millisecond").text(i.rampBusTime)
@@ -70,7 +73,10 @@ const buildOnblockList = function(data) {
                 <span class="NEXT_FLIGHT_NUMBER">${i.nextFlightNo}</span>
                 <span class="NEXT_FLIGHT_STD_millisecond">${i.nextSTD}</span>
                 <span class="ARRIVAL_GATE_BAY">${i.gateBay}</span>
-
+                //ADD HERE!
+                <span class="bus-status">${i.noBus}</span>
+                <span class="step-status">${i.noStep}</span>
+                
                 <span class="GA-A-Time_millisecond">${i.gaaTime}</span>
                 <span class="Ramp-Bus-Time_millisecond">${i.rampBusTime}</span>
                 <span class="PAX-Step-Time_millisecond">${i.paxStepTime}</span>
@@ -294,7 +300,10 @@ const buildOnblockList = function(data) {
                 <span class="NEXT_FLIGHT_NUMBER">${i.nextFlightNo}</span>
                 <span class="NEXT_FLIGHT_STD_millisecond">${i.nextSTD}</span>
                 <span class="ARRIVAL_GATE_BAY">${i.gateBay}</span>
-
+                //ADD HERE!
+                <span class="bus-status">${i.noBus}</span>
+                <span class="step-status">${i.noStep}</span>
+                
                 <span class="GA-A-Time_millisecond">${i.gaaTime}</span>
                 <span class="Ramp-Bus-Time_millisecond">${i.rampBusTime}</span>
                 <span class="PAX-Step-Time_millisecond">${i.paxStepTime}</span>

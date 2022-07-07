@@ -58,6 +58,9 @@ const timeControl = function() {
             // const cateringTime = new Date($(flightBox).find(".inputs-from-backend .Catering-Time_millisecond").text())
         const tractorTime = new Date($(flightBox).find(".inputs-from-backend .Tractor-Time_millisecond").text())
             // const cleanerTime = new Date($(flightBox).find(".inputs-from-backend .Cleaner-Time_millisecond").text())
+        //ADD HERE!
+        const isBus =  $(flightBox).find(".bus-status").text()
+        const isPaxStep = $(flightBox).find(".step-status").text()
 
         const pinkStatus = {
             "background": "#FCC1CA 0% 0% no-repeat padding-box",
@@ -74,8 +77,10 @@ const timeControl = function() {
             "border": "1px solid #5FA980",
             "color": "##5FA980"
         }
-        const tastStatusDisplay = function(taskBar, taskTime, deadLine) {
-            if (taskTime == "Invalid Date" && currentTime > deadLine) {
+        const tastStatusDisplay = function(taskBar, taskTime, deadLine, isTaskNeeded) {
+            if(isTaskNeeded == "1"){
+                taskBar.attr("task-status", "disabled")
+            }else if (taskTime == "Invalid Date" && currentTime > deadLine) {
                 taskBar.css(pinkStatus)
                 taskBar.attr("task-status", "pink")
             } else if (taskTime > deadLine) {
@@ -88,20 +93,20 @@ const timeControl = function() {
                 taskBar.attr("task-status", "grey")
             }
         }
-        tastStatusDisplay(GAABar, GAATime, STA0010)
-        tastStatusDisplay(rampBusBar, rampBusTime, STA0010)
-        tastStatusDisplay(paxStepBar, paxStepTime, STA0010)
-            // tastStatusDisplay(cargoSTBYBar, cargoSTBYTime, STA0010)
-        tastStatusDisplay(ROBar, ROTime, STA0010)
-            // tastStatusDisplay(cateringBar, cateringTime, STA)
-        tastStatusDisplay(tractorBar, tractorTime, STA0010)
-            // tastStatusDisplay(cleanerBar, cleanerTime, STA)
+        tastStatusDisplay(GAABar, GAATime, STA0010, "0")
+        tastStatusDisplay(rampBusBar, rampBusTime, STA0010, isBus)
+        tastStatusDisplay(paxStepBar, paxStepTime, STA0010, isPaxStep)
+            // tastStatusDisplay(cargoSTBYBar, cargoSTBYTime, STA0010, "0")
+        tastStatusDisplay(ROBar, ROTime, STA0010, "0")
+            // tastStatusDisplay(cateringBar, cateringTime, STA, "0")
+        tastStatusDisplay(tractorBar, tractorTime, STA0010, "0")
+            // tastStatusDisplay(cleanerBar, cleanerTime, STA, "0")
 
-        tastStatusDisplay(GAAInput, GAATime, STA0010)
-        tastStatusDisplay(rampBusInput, rampBusTime, STA0010)
-        tastStatusDisplay(paxStepInput, paxStepTime, STA0010)
-        tastStatusDisplay(ROInput, ROTime, STA0010)
-        tastStatusDisplay(tractorInput, tractorTime, STA0010)
+        tastStatusDisplay(GAAInput, GAATime, STA0010, "0")
+        tastStatusDisplay(rampBusInput, rampBusTime, STA0010, isBus)
+        tastStatusDisplay(paxStepInput, paxStepTime, STA0010, isPaxStep)
+        tastStatusDisplay(ROInput, ROTime, STA0010, "0")
+        tastStatusDisplay(tractorInput, tractorTime, STA0010, "0")
 
 
 

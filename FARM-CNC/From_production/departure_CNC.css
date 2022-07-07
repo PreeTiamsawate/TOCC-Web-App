@@ -263,7 +263,6 @@
     font: normal normal 600 12px/20px Poppins;
     letter-spacing: 0px;
     color: #3e075B;
-    /* display: none; */
 }
 
 .time-update-buttons>div:nth-of-type(1) {
@@ -397,7 +396,6 @@
     height: auto;
     min-height: 72px;
     width: 10%;
-    /* ADD HERE */
     padding-top: 0px;
     display: flex;
     flex-direction: column;
@@ -406,8 +404,7 @@
 
 .departure-time-box>div:nth-of-type(1) {
     width: 100%;
-    /* ADD HERE */
-    height: 70px; 
+    height: 70px;
     background: #A2F6CA 0% 0% no-repeat padding-box;
     border: 1px solid #5FA980;
     border-radius: 10px;
@@ -418,7 +415,7 @@
 
 .departure-time-box>div:nth-of-type(1)>div {
     text-align: center;
-    font: normal normal 600 16px/18px Poppins;
+    font: normal normal 600 16px/22px Poppins;
     letter-spacing: 0px;
     color: #707070;
 }

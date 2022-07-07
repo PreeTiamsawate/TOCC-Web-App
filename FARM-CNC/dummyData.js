@@ -5,6 +5,7 @@ const dummyData = {
             "flightDate": "2022-01-31",
             "STD": "10 Nov 2021 15:20:00 GMT+0700",
             "ETD": "10 Nov 2021 15:20:00 GMT+0700",
+            "ATD": "10 Nov 2021 15:25:00 GMT+0700",
             "fromStn": "BKK",
             "toStn": "LHR",
             "acReg": "HS-TKU",
@@ -51,12 +52,15 @@ const dummyData = {
             "cargoStbyTime": "8 Nov 2021 17:19:00 GMT+0700",
             "roTime": "8 Nov 2021 17:19:00 GMT+0700",
             "tractorTime": "8 Nov 2021 17:19:00 GMT+0700",
+            "noBus":1,
+            "noStep":1
         }, {
             "carrierCode": "WE",
             "flightNo": "930",
             "flightDate": "2022-01-30",
-            "STD": "08 Nov 2021 15:00:00 GMT+0700",
-            "ETD": "08 Nov 2021 14:20:00 GMT+0700",
+            "STD": "08 Nov 2021 15:20:00 GMT+0700",
+            "ETD": "08 Nov 2021 15:25:00 GMT+0700",
+            "ATD": "08 Nov 2021 15:20:00 GMT+0700",
             "fromStn": "BKK",
             "toStn": "CDG",
             "acReg": "HS-TUA",
@@ -103,6 +107,8 @@ const dummyData = {
             "cargoStbyTime": "8 Nov 2021 17:19:00 GMT+0700",
             "roTime": "8 Nov 2021 17:19:00 GMT+0700",
             "tractorTime": "8 Nov 2021 17:19:00 GMT+0700",
+            "noBus":1,
+            "noStep":1
         },
         {
             "carrierCode": "TG",
@@ -110,6 +116,7 @@ const dummyData = {
             "flightDate": "2022-01-31",
             "STD": "10 Nov 2021 15:20:00 GMT+0700",
             "ETD": "10 Nov 2021 15:20:00 GMT+0700",
+            "ATD": "",
             "fromStn": "BKK",
             "toStn": "LHR",
             "acReg": "HS-TKU",
@@ -156,6 +163,8 @@ const dummyData = {
             "cargoStbyTime": "8 Nov 2021 17:19:00 GMT+0700",
             "roTime": "8 Nov 2021 17:19:00 GMT+0700",
             "tractorTime": "8 Nov 2021 17:19:00 GMT+0700",
+            "noBus":1,
+            "noStep":1
         }
     ],
     "unpinned": [{
@@ -164,6 +173,7 @@ const dummyData = {
         "flightDate": "2022-01-30",
         "STD": "08 Nov 2021 15:00:00 GMT+0700",
         "ETD": "08 Nov 2021 14:20:00 GMT+0700",
+        "ATD": "08 Nov 2021 12:20:00 GMT+0700",
         "fromStn": "BKK",
         "toStn": "CDG",
         "acReg": "HS-TUA",
@@ -210,12 +220,15 @@ const dummyData = {
         "cargoStbyTime": "8 Nov 2021 17:19:00 GMT+0700",
         "roTime": "8 Nov 2021 17:19:00 GMT+0700",
         "tractorTime": "8 Nov 2021 17:19:00 GMT+0700",
+        "noBus":1,
+        "noStep":1
     }, {
         "carrierCode": "TG",
         "flightNo": "116",
         "flightDate": "2022-01-31",
         "STD": "08 Nov 2021 15:00:00 GMT+0700",
         "ETD": "08 Nov 2021 15:20:00 GMT+0700",
+        "ATD": "08 Nov 2021 15:20:00 GMT+0700",
         "fromStn": "BKK",
         "toStn": "CNX",
         "acReg": "HS-TKZ",
@@ -262,12 +275,15 @@ const dummyData = {
         "cargoStbyTime": "8 Nov 2021 17:19:00 GMT+0700",
         "roTime": "8 Nov 2021 17:19:00 GMT+0700",
         "tractorTime": "8 Nov 2021 17:19:00 GMT+0700",
+        "noBus":1,
+        "noStep":1
     }, {
         "carrierCode": "TG",
         "flightNo": "910",
         "flightDate": "2022-01-31",
         "STD": "10 Nov 2021 15:20:00 GMT+0700",
         "ETD": "10 Nov 2021 15:20:00 GMT+0700",
+        "ATD": "10 Nov 2021 15:25:00 GMT+0700",
         "fromStn": "BKK",
         "toStn": "LHR",
         "acReg": "HS-TKU",
@@ -314,6 +330,8 @@ const dummyData = {
         "cargoStbyTime": "8 Nov 2021 17:19:00 GMT+0700",
         "roTime": "8 Nov 2021 17:19:00 GMT+0700",
         "tractorTime": "8 Nov 2021 17:19:00 GMT+0700",
+        "noBus":1,
+        "noStep":1
     }, ]
 }
 

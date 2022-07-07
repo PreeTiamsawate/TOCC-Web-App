@@ -29,12 +29,15 @@ const buildArrivalList = function(data) {
         openBox.find(".NEXT_FLIGHT_NUMBER").text(i.nextFlightNo)
         openBox.find(".NEXT_FLIGHT_STD_millisecond").text(i.nextSTD)
         openBox.find(".ARRIVAL_GATE_BAY").text(i.gateBay)
-
+        
         openBox.find(".GA-A-Time_millisecond").text(i.gaaTime)
         openBox.find(".Ramp-Bus-Time_millisecond").text(i.rampBusTime)
         openBox.find(".PAX-Step-Time_millisecond").text(i.paxStepTime)
         openBox.find(".RO-Time_millisecond").text(i.roTime)
         openBox.find(".Tractor-Time_millisecond").text(i.tractorTime)
+        //ADD HERE!
+        openBox.find(".bus-status").text(i.noBus)
+        openBox.find(".step-status").text(i.noStep)
     }
 
     let openPinnedFlightBox = $('#pinned-list .open-flight-box')
@@ -70,6 +73,9 @@ const buildArrivalList = function(data) {
                 <span class="NEXT_FLIGHT_NUMBER">${i.nextFlightNo}</span>
                 <span class="NEXT_FLIGHT_STD_millisecond">${i.nextSTD}</span>
                 <span class="ARRIVAL_GATE_BAY">${i.gateBay}</span>
+                //ADD HERE!
+                <span class="bus-status">${i.noBus}</span>
+                <span class="step-status">${i.noStep}</span>
 
                 <span class="GA-A-Time_millisecond">${i.gaaTime}</span>
                 <span class="Ramp-Bus-Time_millisecond">${i.rampBusTime}</span>
@@ -296,7 +302,10 @@ const buildArrivalList = function(data) {
                 <span class="NEXT_FLIGHT_NUMBER">${i.nextFlightNo}</span>
                 <span class="NEXT_FLIGHT_STD_millisecond">${i.nextSTD}</span>
                 <span class="ARRIVAL_GATE_BAY">${i.gateBay}</span>
-
+                //ADD HERE!
+                <span class="bus-status">${i.noBus}</span>
+                <span class="step-status">${i.noStep}</span>
+                
                 <span class="GA-A-Time_millisecond">${i.gaaTime}</span>
                 <span class="Ramp-Bus-Time_millisecond">${i.rampBusTime}</span>
                 <span class="PAX-Step-Time_millisecond">${i.paxStepTime}</span>

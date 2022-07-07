@@ -26,6 +26,9 @@ const buildDepartureList = function(data) {
         openBox.find(".AC_REG").text(i.acReg)
         openBox.find(".STD_millisecond").text(i.STD)
         openBox.find(".ETD_millisecond").text(i.ETD)
+        // ADD HERE
+        openBox.find(".ATD_millisecond").text(i.ATD)
+
         openBox.find(".BOOKING_Str").text(i.bookingStr)
 
         openBox.find(".Crew-ARR-Time_millisecond").text(i.crewArrTime)
@@ -41,6 +44,10 @@ const buildDepartureList = function(data) {
         openBox.find(".Pushback-STBY-Time_millisecond").text(i.pushbackStbyTime)
         openBox.find(".Boarding-COMP-Time_millisecond").text(i.boardingCompTime)
         openBox.find(".Cargo-COMP-Time_millisecond").text(i.cargoCompTime)
+       
+        openBox.find(".bus-status").text(i.noBus)
+        openBox.find(".step-status").text(i.noStep)
+        openBox.find(".gate_bay").text(i.gateBay)
 
         openBox.find(".ZFW-FINAL").text(i.zfwFinal)
         openBox.find(".ZFW").text(i.zfw)
@@ -74,7 +81,7 @@ const buildDepartureList = function(data) {
                 <button type="submit"><img src="./FARM-CNC-image/active-pin.svg"></button>
             </form>
             <div class="noti-bell d-none">
-                <img src="./FARM-CNC-image/red-bell.png">
+                <img src="./FARM-CNC-image/yellow-bell.svg">
             </div>
             <div class="inputs-from-backend d-none">
                 
@@ -85,6 +92,8 @@ const buildDepartureList = function(data) {
                 <span class="AC_REG">${i.acReg}</span>
                 <span class="STD_millisecond">${i.STD}</span>
                 <span class="ETD_millisecond">${i.ETD}</span>
+                <!-- ADD HERE -->
+                <span class="ATD_millisecond">${i.ATD}</span>
                 <span class="BOOKING_Str">${i.bookingStr}</span>
 
                 <span class="Crew-ARR-Time_millisecond">${i.crewArrTime}</span>
@@ -100,6 +109,10 @@ const buildDepartureList = function(data) {
                 <span class="Pushback-STBY-Time_millisecond">${i.pushbackStbyTime}</span>
                 <span class="Boarding-COMP-Time_millisecond">${i.boardingCompTime}</span>
                 <span class="Cargo-COMP-Time_millisecond">${i.cargoCompTime}</span>
+                //ADD HERE!
+                <span class="bus-status">${i.noBus}</span>
+                <span class="step-status">${i.noStep}</span>
+                <span class="gate_bay">${i.gateBay}</span>
 
                 <span class="ZFW-FINAL">${i.zfwFinal}</span>
                 <span class="ZFW">${i.zfw}</span>
@@ -131,6 +144,7 @@ const buildDepartureList = function(data) {
                     <div>
                         <span class="departure_airport_iata">###</span> -
                         <span class="destination_airport_iata">###</span>
+                        <span class="gate_bay">${i.gateBay}</span>
                     </div>
                 </div>
                 <div class="airplane-icon-box">
@@ -375,7 +389,7 @@ const buildDepartureList = function(data) {
 
                     </div>
                 </section>
-            
+
                 <div class="departure-time-box">
                     <div>
                         <div>
@@ -387,6 +401,12 @@ const buildDepartureList = function(data) {
                         <div>
                             <span>ETD</span>
                             <span class="ETD">##</span>
+                            <span class="LT_UTC">LT</span>
+                        </div>
+                        <!-- ADD HERE -->
+                        <div>
+                            <span>ATD</span>
+                            <span class="ATD">##</span>
                             <span class="LT_UTC">LT</span>
                         </div>
                     </div>
@@ -493,7 +513,7 @@ const buildDepartureList = function(data) {
                 <button type="submit"><img src="./FARM-CNC-image/disable-pin.svg"></button>
             </form>
             <div class="noti-bell d-none">
-                <img src="./FARM-CNC-image/red-bell.png">
+                <img src="./FARM-CNC-image/yellow-bell.svg">
             </div>
             <div class="inputs-from-backend d-none">
                 
@@ -504,6 +524,9 @@ const buildDepartureList = function(data) {
                 <span class="AC_REG">${i.acReg}</span>
                 <span class="STD_millisecond">${i.STD}</span>
                 <span class="ETD_millisecond">${i.ETD}</span>
+                <!-- ADD HERE -->
+                <span class="ATD_millisecond">${i.ATD}</span>
+
                 <span class="BOOKING_Str">${i.bookingStr}</span>
 
                 <span class="Crew-ARR-Time_millisecond">${i.crewArrTime}</span>
@@ -519,6 +542,10 @@ const buildDepartureList = function(data) {
                 <span class="Pushback-STBY-Time_millisecond">${i.pushbackStbyTime}</span>
                 <span class="Boarding-COMP-Time_millisecond">${i.boardingCompTime}</span>
                 <span class="Cargo-COMP-Time_millisecond">${i.cargoCompTime}</span>
+                //ADD HERE!
+                <span class="bus-status">${i.noBus}</span>
+                <span class="step-status">${i.noStep}</span>
+                <span class="gate_bay">${i.gateBay}</span>
 
                 <span class="START_TIME_millisecond"></span>
                 <span class="ARRIVE_TIME_millisecond"></span>
@@ -549,6 +576,7 @@ const buildDepartureList = function(data) {
                     <div>
                         <span class="departure_airport_iata">###</span> -
                         <span class="destination_airport_iata">###</span>
+                        <span class="gate_bay">${i.gateBay}</span>
                     </div>
                 </div>
                 <div class="airplane-icon-box">
@@ -805,6 +833,12 @@ const buildDepartureList = function(data) {
                         <div>
                             <span>ETD</span>
                             <span class="ETD">##</span>
+                            <span class="LT_UTC">LT</span>
+                        </div>
+                        <!-- ADD HERE -->
+                        <div>
+                            <span>ATD</span>
+                            <span class="ATD">##</span>
                             <span class="LT_UTC">LT</span>
                         </div>
                     </div>
